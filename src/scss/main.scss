@@ -1,0 +1,25 @@
+@import "./abstracts/variables.scss";
+@import "./abstracts/mixins.scss";
+
+@import "./base/typography.scss";
+@import "./base/normilize.scss";
+
+@import "./layout/containers";
+@import "./layout/header";
+@import "./layout/nav-menu";
+@import "./layout/offer";
+@import "./layout/popular-marks";
+@import "./layout/popular-parts";
+@import "./layout/forms";
+@import "./layout/auto-parts";
+@import "./layout/pagination";
+
+@import "./components/button";
+@import "./components/input";
+@import "./components/menu-item";
+@import "./components/banner";
+@import "./components/offer-card";
+@import "./components/section-title";
+@import "./components/popular-marks";
+@import "./components/_product-card";
+

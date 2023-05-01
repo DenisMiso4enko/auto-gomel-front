@@ -1,0 +1,67 @@
+$component: form-control;
+
+$input-padding-y: ($spacer * 0.675);
+$input-padding-x: ($spacer * 1.25);
+
+
+.#{$component} {
+	display: block;
+	width: 100%;
+	padding: $input-padding-y $input-padding-x;
+	font-size: $font-text;
+	font-weight: $font-weight-400;
+	//line-height: $input-line-height;
+	color: $color-black;
+	background-color: $color-light-blue;
+	background-clip: padding-box;
+	border: 1px solid $color-light-blue;
+	appearance: none; // Fix appearance for date inputs in Safari
+	outline: none;
+
+	border-radius: $border-radius-btn;
+
+	transition: border .3s ease;
+
+	&:hover, &:focus {
+		border: 1px solid $color-gray-400;
+	}
+}
+
+
+.select-container {
+	position: relative;
+	width: 100%;
+	//height: 50px;
+}
+.select-box {
+	width: 100%;
+	appearance: none;
+	font-size: $font-text;
+	font-weight: $font-weight-400;
+	padding: $input-padding-y $input-padding-x;
+	color: $color-black;
+	background: $color-light-blue;
+	cursor: pointer;
+	border-radius: $border-radius-btn;
+	border: none;
+	outline: none;
+	&:focus {
+		box-shadow: 0px 0px 0px 1px #38577a,  0px 0px 0px 1px #7e9bbd;
+	}
+	&::-ms-expand {
+		display: none;
+	}
+}
+.icon-container {
+	position: absolute;
+	width: 50px;
+	height: 100%;
+	top: 0;
+	right: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	pointer-events: none;
+}
+
+

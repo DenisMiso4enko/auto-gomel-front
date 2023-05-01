@@ -1,0 +1,23 @@
+$component: menu-item;
+
+.#{$component} {
+	position: relative;
+	font-size: $font-text;
+	font-weight: $font-weight-400;
+	color: $color-black;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 0;
+		height: 1px;
+		left: 0;
+		bottom: -5px;
+		background: $color-black;
+
+		transition: width .3s ease;
+	}
+
+	&.active:before, &:hover:before  {
+		width: 100%;
+	}
+}

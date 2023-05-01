@@ -1,0 +1,20 @@
+.parts {
+
+
+}
+
+.parts-row {
+	display: flex;
+	&__left {
+
+	}
+
+	&__right {
+		width: 80%;
+		margin-left: 20px;
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		gap: 20px;
+
+	}
+}

@@ -1,0 +1,75 @@
+$component: "btn";
+
+$btn-padding-y-lg: ($spacer * 0.675);
+$btn-padding-x-lg: ($spacer * 1.25);
+
+$btn-padding-y-sm: ($spacer * 0.313);
+$btn-padding-x-sm: ($spacer * 0.675);
+
+$btn-sizes: (
+		"lg": (
+				"padding": $btn-padding-y-lg $btn-padding-x-lg,
+		),
+		"sm": (
+				"padding": $btn-padding-y-sm $btn-padding-x-sm,
+		),
+);
+
+$btn-variants: (
+		"default": (
+				"color": $color-black,
+				"color-hover": $color-white,
+				"bg-color": $color-white,
+				"bg-color-hover": $color-green,
+				"border": 1px solid $color-black,
+				"border-hover": 1px solid $color-green,
+		),
+		"success": (
+				"color": $color-white,
+				"color-hover": $color-white,
+				"bg-color": $color-green,
+				"bg-color-hover": $color-green,
+				"border": 1px solid $color-green,
+				"border-hover": 1px solid $color-green,
+		),
+
+);
+
+.#{$component} {
+	outline: 0;
+	border-radius: $border-radius-btn;
+	border: none;
+
+	display: inline-block;
+	align-items: center;
+
+	padding: $btn-padding-x-sm $btn-padding-x-sm;
+
+	font-size: $font-text;
+	font-weight: $font-weight-400;
+	//line-height: 140%;
+	color: var(--btn-color);
+	cursor: pointer;
+
+	transition: border .3s ease, color .3s ease, background .3s ease;
+
+
+	@each $name, $styles in $btn-sizes {
+		&-#{$name} {
+			padding: map-get($styles, "padding");
+		}
+	}
+
+	@each $name, $styles in $btn-variants {
+		&-#{$name} {
+			color: map-get($styles, "color");
+			background: map-get($styles, "bg-color");
+			border: map-get($styles, "border");
+			&:hover {
+				color: map-get($styles, "color-hover");
+				background: map-get($styles, "bg-color-hover");
+				border: map-get($styles, "border-hover");
+			}
+		}
+	}
+}
