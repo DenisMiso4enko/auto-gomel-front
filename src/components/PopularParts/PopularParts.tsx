@@ -2,8 +2,8 @@ import React, { useEffect } from "react";
 import SectionTitle from "../SectionTitle/SectionTitle";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { fetchGetAllParts } from "../../store/slices/autoPartsSlice";
 import ProductCart from "../ProductCart/ProductCart";
+import { fetchGetAllParts } from "../../store/slices/autoParts/autoPartsServices";
 
 const PopularParts = () => {
   const { parts } = useSelector((state: RootState) => state.autoParts);

@@ -1,14 +1,3 @@
-export interface ProductInitialState {
-  products: any;
-  loading: boolean;
-  errors: any;
-  totalPages: number;
-  currentPage: number;
-  totalProducts: number;
-  productQuery: string;
-  markQuery: string;
-}
-
 export interface IProduct {
   article: string;
   box: string;
@@ -40,12 +29,6 @@ export interface IOptionsInitialState {
   status: string;
   errors: any;
   partsCategory: any;
-}
-
-export interface IUserInitialState {
-  userId: string;
-  status: null | string;
-  error: any;
 }
 
 export interface IOptions {

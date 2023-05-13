@@ -2,9 +2,9 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { IAutos } from "../../types/productTypes";
-import { fetchGetAllParts, fetchSearch } from "../../store/slices/autoPartsSlice";
-import { setCurrentPage } from "../../store/slices/autoPartsSlice";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
 import { useNavigate, useParams } from "react-router-dom";
+import { fetchGetAllParts, fetchSearch } from "../../store/slices/autoParts/autoPartsServices";
 
 interface IFormSearch {
   container?: string;
@@ -27,7 +27,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const years = options?.map((el) => el.years);
 
   const dispatch = useDispatch<AppDispatch>();
-  const navigate = useNavigate();
 
   const handlerOnChangeMarks = (e: any) => {
     const mark = e.target.value;
@@ -49,7 +48,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
       };
       dispatch(fetchSearch(formField));
       dispatch(setCurrentPage(1));
-      // navigate(`/parts/mark=${mark}&model=${modelVal}&year=${yearVal}&product=${productVal}&article=${articleVal}&numberOfProduct=${numberVal}`)
     } catch (e: any) {
       console.log(e.message);
     }
@@ -79,7 +77,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           <select className="select-box" value={mark} onChange={handlerOnChangeMarks}>
             <option value="0">Марка</option>
             {marks?.map((el: any) => (
-              <option value={el}>{el}</option>
+              <option key={el} value={el}>{el}</option>
             ))}
           </select>
           <div className="icon-container">
@@ -95,7 +93,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           >
             <option value="0">Модель</option>
             {models?.map((el: any) => (
-              <option value={el}>{el}</option>
+              <option key={el} value={el}>{el}</option>
             ))}
           </select>
           <div className="icon-container">
@@ -110,7 +108,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             onChange={(event) => setYearVal(event.target.value)}
           >
             <option value="0">Год</option>
-            {years && years[0].map((el: any) => <option value={el}>{el}</option>)}
+            {years && years[0].map((el: any) => <option key={el} value={el}>{el}</option>)}
           </select>
           <div className="icon-container">
             <img src="/polygone.svg" alt="polygone" />
@@ -125,7 +123,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           >
             <option value="0">Запчасть</option>
             {partsCategory?.map((el: any) => (
-              <option value={el}>{el}</option>
+              <option key={el} value={el}>{el}</option>
             ))}
           </select>
           <div className="icon-container">

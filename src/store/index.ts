@@ -1,13 +1,9 @@
 import { configureStore, ThunkDispatch } from "@reduxjs/toolkit";
-import userSlice from "./slices/userSlice";
-import productSlice from "./slices/productSlice";
-import settingsSlice from "./slices/settingsSlice";
-import autoPartsSlice from "./slices/autoPartsSlice";
+import settingsSlice from "./slices/settings/settingsSlice";
+import autoPartsSlice from "./slices/autoParts/autoPartsSlice";
 
 export const store = configureStore({
   reducer: {
-    user: userSlice,
-    products: productSlice,
     settings: settingsSlice,
     autoParts: autoPartsSlice,
   },

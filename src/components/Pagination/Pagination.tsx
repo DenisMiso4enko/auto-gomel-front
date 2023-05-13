@@ -2,13 +2,12 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { AppDispatch, RootState } from "../../store";
-import { setCurrentPage } from "../../store/slices/autoPartsSlice";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
 
 const Pagination = ({ currentPage }: any) => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
   const { limit, totalPages } = useSelector((state: RootState) => state.autoParts);
-  console.log(currentPage, '- COMPONENT')
   const dispatch = useDispatch<AppDispatch>();
 
   const handlerOnClickPrevPage = () => dispatch(setCurrentPage(currentPage - 1))

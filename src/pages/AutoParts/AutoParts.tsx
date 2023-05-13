@@ -1,14 +1,15 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
-import { fetchGetAllParts, setCurrentPage } from "../../store/slices/autoPartsSlice";
 import FormSearch from "../../components/FormSerach/FormSearch";
 import Pagination from "../../components/Pagination/Pagination";
 import PartsList from "../../components/PartsList/PartsList";
+import { fetchGetAllParts } from "../../store/slices/autoParts/autoPartsServices";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>();
   const { parts, currentPage } = useSelector((state: RootState) => state.autoParts);
+  console.log("currentPage from component", currentPage);
 
   useEffect(() => {
     dispatch(fetchGetAllParts());
@@ -24,10 +25,10 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          <PartsList parts={parts}/>
+          <PartsList parts={parts} />
         </div>
       </div>
-      <Pagination currentPage={currentPage}/>
+      <Pagination currentPage={currentPage} />
     </div>
   );
 };
