@@ -1,13 +1,10 @@
-import React from "react";
 import ProductCart from "../ProductCart/ProductCart";
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { IProduct } from "../../types/productTypes";
 
-const PartsList = () => {
-  const { parts } = useSelector((state: RootState) => state.autoParts);
+const PartsList = ({ parts }: any) => {
   return (
     <>
-      {parts?.map((part) => (
+      {parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
         <ProductCart key={part._id} {...part} />
       ))}
     </>

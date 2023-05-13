@@ -1,17 +1,9 @@
-import React, { useEffect, useState } from "react";
-import {
-  FormControl,
-  InputLabel,
-  MenuItem,
-  Select,
-  SelectChangeEvent,
-  TextField,
-} from "@mui/material";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { IAutos } from "../../types/productTypes";
 import { fetchGetAllParts, fetchSearch } from "../../store/slices/autoPartsSlice";
-import { setCurrentPage } from "../../store/slices/productSlice";
+import { setCurrentPage } from "../../store/slices/autoPartsSlice";
 import { useNavigate, useParams } from "react-router-dom";
 
 interface IFormSearch {
@@ -55,8 +47,8 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
         article: articleVal,
         numberOfProduct: numberVal,
       };
-      dispatch(setCurrentPage(1));
       dispatch(fetchSearch(formField));
+      dispatch(setCurrentPage(1));
       // navigate(`/parts/mark=${mark}&model=${modelVal}&year=${yearVal}&product=${productVal}&article=${articleVal}&numberOfProduct=${numberVal}`)
     } catch (e: any) {
       console.log(e.message);

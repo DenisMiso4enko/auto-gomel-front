@@ -1,15 +1,18 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { BsArrowRight, BsArrowLeft } from "react-icons/bs";
 import { AppDispatch, RootState } from "../../store";
 import { setCurrentPage } from "../../store/slices/autoPartsSlice";
 
-const Pagination = () => {
+const Pagination = ({ currentPage }: any) => {
   const [isPrevDisabled, setIsPrevDisabled] = useState(false);
   const [isNextDisabled, setIsNextDisabled] = useState(false);
-  const { currentPage, limit, totalPages } = useSelector((state: RootState) => state.autoParts);
-
+  const { limit, totalPages } = useSelector((state: RootState) => state.autoParts);
+  console.log(currentPage, '- COMPONENT')
   const dispatch = useDispatch<AppDispatch>();
+
+  const handlerOnClickPrevPage = () => dispatch(setCurrentPage(currentPage - 1))
+  const handlerOnClickNextPage = () => dispatch(setCurrentPage(currentPage + 1))
 
   useEffect(() => {
     setIsPrevDisabled(currentPage === 1);
@@ -25,7 +28,7 @@ const Pagination = () => {
             className="pagination__btn icon"
             style={{ opacity: isPrevDisabled ? "0.5" : "" }}
             disabled={isPrevDisabled}
-            onClick={() => dispatch(setCurrentPage(currentPage - 1))}
+            onClick={handlerOnClickPrevPage}
           >
             <BsArrowLeft />
           </button>
@@ -36,7 +39,7 @@ const Pagination = () => {
             className="pagination__btn icon"
             disabled={isNextDisabled}
             style={{ opacity: isNextDisabled ? "0.5" : "" }}
-            onClick={() => dispatch(setCurrentPage(currentPage + 1))}
+            onClick={handlerOnClickNextPage}
           >
             <BsArrowRight />
           </button>

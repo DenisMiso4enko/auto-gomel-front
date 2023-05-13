@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { fetchGetAllParts, setCurrentPage } from "../../store/slices/autoPartsSlice";
@@ -24,10 +24,10 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          <PartsList/>
+          <PartsList parts={parts}/>
         </div>
       </div>
-      <Pagination />
+      <Pagination currentPage={currentPage}/>
     </div>
   );
 };
