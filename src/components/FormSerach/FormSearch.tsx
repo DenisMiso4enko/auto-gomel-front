@@ -16,6 +16,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const { mark: markParams } = useParams();
 
   const { autos, options, partsCategory } = useSelector((state: RootState) => state.settings);
+  const { currentPage } = useSelector((state: RootState) => state.autoParts);
   const [mark, setMark] = useState("");
   const [modelVal, setModelVal] = useState("");
   const [yearVal, setYearVal] = useState("");
@@ -28,6 +29,15 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
 
   const dispatch = useDispatch<AppDispatch>();
 
+  const formField = {
+    mark: mark,
+    model: modelVal,
+    year: yearVal,
+    product: productVal,
+    article: articleVal,
+    numberOfProduct: numberVal,
+  };
+
   const handlerOnChangeMarks = (e: any) => {
     const mark = e.target.value;
     setMark(mark);
@@ -38,16 +48,8 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const handlerSearchForm = async (e: any) => {
     e.preventDefault();
     try {
-      const formField = {
-        mark: mark,
-        model: modelVal,
-        year: yearVal,
-        product: productVal,
-        article: articleVal,
-        numberOfProduct: numberVal,
-      };
-      dispatch(fetchSearch(formField));
       dispatch(setCurrentPage(1));
+      dispatch(fetchSearch(formField));
     } catch (e: any) {
       console.log(e.message);
     }

@@ -25,7 +25,11 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          <PartsList parts={parts} />
+          {parts.length ? (
+            <PartsList parts={parts} />
+          ) : (
+            <p>Результаты не найдены</p>
+          )}
         </div>
       </div>
       <Pagination currentPage={currentPage} />

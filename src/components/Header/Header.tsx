@@ -10,10 +10,9 @@ const Header = () => {
         </div>
         <NavMenu />
         <div className="header__search">
-          {/* <form>*/}
-          {/*	<input className="form-control" type="text" placeholder="Поиск запчасти..."/>*/}
-          {/* </form>*/}
-          Telefone
+          <div className="header__phone">
+            <a href="tel:+375298378081">+375 29 837 80 81</a>
+          </div>
         </div>
       </div>
     </header>
