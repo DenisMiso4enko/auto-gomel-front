@@ -17,7 +17,7 @@ const AutoParts = () => {
 
   return (
     <div className="parts container">
-      <h2 style={{ marginBottom: "20px" }} className="page-title">
+      <h2 style={{ marginBottom: "20px" }} className="parts__page-title">
         Запчасти
       </h2>
       <div className="parts-row">

@@ -2,8 +2,10 @@ import React, { FC } from "react";
 import { IProduct } from "../../types/productTypes";
 import { PATHDOMAIN } from "../../constants";
 import noImage from "/no-img.png";
+import dayjs from "dayjs";
 
 const ProductCart: FC<IProduct> = ({
+  description,
   imagesUrl,
   product,
   price,
@@ -23,13 +25,20 @@ const ProductCart: FC<IProduct> = ({
         )}
       </div>
       <div className="product-card__content">
-        <p className="product-card__subtitle">
-          {mark} {model}, {year}
-        </p>
-        <h3 className="product-card__title">{product}</h3>
-        <p className="product-card__price">
-          {price} <span>{currency}</span>
-        </p>
+        <div className="product-card__top">
+          <p className="product-card__subtitle">
+            {mark} {model}, {year}
+          </p>
+          <h3 className="product-card__title">{product}</h3>
+          <p className="product-card__price">
+            {price} <span>{currency}</span>
+          </p>
+          <p className="product-card__description">{description}</p>
+        </div>
+        <div className="product-card__bottom">
+          <div className="product-card__date">{dayjs(createdAt).format("MM.D.YYYY")}</div>
+          <button className="btn btn-success">Узнать больше</button>
+        </div>
       </div>
     </div>
   );

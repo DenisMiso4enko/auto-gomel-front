@@ -17,7 +17,7 @@ const MainPage = () => {
       <Banner />
       <WeOffer />
       <PopularMarks />
-      <PopularParts />
+      {/*<PopularParts />*/}
     </div>
   );
 };
