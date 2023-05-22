@@ -1,5 +1,6 @@
 .parts {
 	min-height: 90vh;
+	margin-top: 60px;
 	&__page-title {
 		font-size: 40px;
 		text-align: center;
@@ -9,9 +10,10 @@
 
 .parts-row {
 	display: flex;
-	gap: 50px;
+	gap: 15px;
 	min-height: 78vh;
 	&__left {
+		width: 20%;
 		position: sticky;
 		top: 0;
 

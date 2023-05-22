@@ -1,6 +1,8 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Banner = () => {
+  const navigate = useNavigate()
   return (
     <main className="section banner">
       <div className="banner__content">
@@ -9,7 +11,7 @@ const Banner = () => {
           Купить автозапчасти в Минске и Беларуси для иномарок и отечественных автомобилей по
           выгодным ценам с доставкой в любой город Беларуси.
         </p>
-        <button className="btn btn-lg btn-default">Узнать больше</button>
+        <button className="btn btn-lg btn-default" onClick={() => navigate('/about')}>Узнать больше</button>
       </div>
     </main>
   );

@@ -1,9 +1,10 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import FormSearch from "../../components/FormSerach/FormSearch";
-import Pagination from "../../components/Pagination/Pagination";
 import PartsList from "../../components/PartsList/PartsList";
-import { setLimit } from "../../store/slices/autoParts/autoPartsSlice";
+import PaginationController from "../../components/Pagination/PaginationController";
+import React from "react";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -32,7 +33,7 @@ const AutoParts = () => {
           )}
         </div>
       </div>
-      <Pagination currentPage={currentPage} />
+      <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />
     </div>
   );
 };

@@ -13,6 +13,7 @@
 @import "./layout/forms";
 @import "./layout/auto-parts";
 @import "./layout/pagination";
+@import "./layout/details";
 
 @import "./components/button";
 @import "./components/input";
@@ -21,5 +22,7 @@
 @import "./components/offer-card";
 @import "./components/section-title";
 @import "./components/popular-marks";
-@import "./components/_product-card";
+@import "./components/product-card";
 
+@import "./pages/main-page";
+@import "./pages/details-page";

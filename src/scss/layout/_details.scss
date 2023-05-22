@@ -1,0 +1,98 @@
+.details-wrapper {
+
+}
+
+.details {
+	&__top {
+		display: flex;
+		justify-content: space-between;
+		margin-bottom: 60px;
+	}
+	&__images {
+		width: 48%;
+		img {
+			display: block;
+			border-radius: 8px;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	&__info {
+		width: 48%;
+	}
+
+	&__product {
+		h2 {
+			font-size: 40px;
+			margin-bottom: 10px;
+		}
+		p {
+			color: #2d2d2c;
+		}
+		.car {
+			display: flex;
+			align-items: center;
+			gap: 10px;
+		}
+	}
+
+
+	&__price {
+		font-size: 24px;
+		font-weight: 600;
+	}
+
+	&__bottom {
+		h3 {
+			margin-bottom: 30px;
+		}
+	}
+}
+
+.details__service {
+	border: 1px solid $color-gray-300;
+	border-radius: 8px;
+	&-item {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+		padding: 10px;
+		&:first-child {
+			border-bottom: 1px solid $color-gray-300;
+		}
+	}
+
+}
+
+.details-item {
+	padding-bottom: 15px;
+	margin-bottom: 15px;
+	border-bottom: 1px solid $color-gray-300;
+}
+
+
+.details__specs {
+	display: flex;
+	justify-content: space-between;
+	&-left, &-right {
+		background-color: #F7F7F7;
+		width: 49%;
+		padding: 20px;
+		border-radius: 8px;
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}
+
+.details__specs-item {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	padding: 10px;
+	border-radius: 8px;
+	&:nth-child(odd) {
+		background-color: $color-white;
+	}
+}
