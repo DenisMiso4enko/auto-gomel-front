@@ -150,14 +150,14 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           onChange={(event) => setArticleVal(event.target.value)}
         />
 
-        <button className="btn btn-lg">Поиск</button>
+        <button className="btn btn-lg btn-success">Поиск</button>
         {mark ||
         productVal.trim() ||
         modelVal ||
         yearVal ||
         articleVal.trim() ||
         numberVal.trim() ? (
-          <button className="btn btn-lg" type="button" onClick={handlerClearSearch}>
+          <button className="btn btn-lg btn-red" type="button" onClick={handlerClearSearch}>
             Сбрость
           </button>
         ) : null}

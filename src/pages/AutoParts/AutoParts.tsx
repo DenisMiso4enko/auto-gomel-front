@@ -14,9 +14,9 @@ const AutoParts = () => {
   };
   return (
     <div className="parts container">
-      <h2 style={{ marginBottom: "20px" }} className="parts__page-title">
-        Запчасти
-      </h2>
+      {/*<h2 style={{ marginBottom: "20px" }} className="parts__page-title">*/}
+      {/*  Запчасти*/}
+      {/*</h2>*/}
       <div className="parts-row">
         <div className="parts-row__left">
           <FormSearch title="Поиск запчастей" />

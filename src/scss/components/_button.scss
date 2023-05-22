@@ -32,6 +32,14 @@ $btn-variants: (
 				"border": 1px solid $color-green,
 				"border-hover": 1px solid $color-green,
 		),
+		"red": (
+				"color": $color-white,
+				"color-hover": $color-white,
+				"bg-color": $color-red,
+				"bg-color-hover": $color-red,
+				"border": 1px solid $color-red,
+				"border-hover": 1px solid $color-red,
+		),
 
 );
 
