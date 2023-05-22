@@ -1,13 +1,17 @@
-import { useSelector } from "react-redux";
-import { RootState } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
 import FormSearch from "../../components/FormSerach/FormSearch";
-import Pagination from "../../components/Pagination/Pagination";
 import PartsList from "../../components/PartsList/PartsList";
+import PaginationController from "../../components/Pagination/PaginationController";
+import React from "react";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
 
 const AutoParts = () => {
-  const { parts, currentPage } = useSelector((state: RootState) => state.autoParts);
-
-
+  const { parts, currentPage, totalPages} = useSelector((state: RootState) => state.autoParts);
+  const dispatch = useDispatch<AppDispatch>();
+  const handlerChangeCurrentPage = (event: React.ChangeEvent<unknown>, value: number) => {
+    dispatch(setCurrentPage(value));
+  };
   return (
     <div className="parts container">
       <h2 style={{ marginBottom: "20px" }} className="parts__page-title">
@@ -25,7 +29,7 @@ const AutoParts = () => {
           )}
         </div>
       </div>
-      <Pagination currentPage={currentPage} />
+      <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />
     </div>
   );
 };
