@@ -3,8 +3,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { IAutos } from "../../types/productTypes";
 import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
-import { useParams} from "react-router-dom";
-import { fetchGetAllParts, fetchSearch } from "../../store/slices/autoParts/autoPartsServices";
+import { useSearchParams} from "react-router-dom";
+import { fetchGetProducts } from "../../store/slices/autoParts/autoPartsServices";
 
 interface IFormSearch {
   container?: string;
@@ -15,21 +15,30 @@ interface IFormSearch {
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const dispatch = useDispatch<AppDispatch>();
 
-  // const { mark: markParams } = useParams();
+  //states searchParams
+  const [ searchParams, setSearchParams ] = useSearchParams();
+  const queryMark = searchParams.get('mark') || ''
+  const queryModel = searchParams.get('model') || ''
+  const queryYear = searchParams.get('year') || ''
+  const queryArticle = searchParams.get('article') || ''
+  const queryNumberOfProduct = searchParams.get('numberOfProduct') || ''
+  const queryProduct = searchParams.get('product') || ''
+
+  //states local
   const { autos, options, partsCategory } = useSelector((state: RootState) => state.settings);
-  const { currentPage } = useSelector((state: RootState) => state.autoParts);
-  const [mark, setMark] = useState("");
-  const [modelVal, setModelVal] = useState("");
-  const [yearVal, setYearVal] = useState("");
-  const [productVal, setProductVal] = useState("");
-  const [articleVal, setArticleVal] = useState("");
-  const [numberVal, setNumberVal] = useState("");
+  const { currentPage, limit } = useSelector((state: RootState) => state.autoParts);
+  const [mark, setMark] = useState(queryMark);
+  const [modelVal, setModelVal] = useState(queryModel);
+  const [yearVal, setYearVal] = useState(queryYear);
+  const [productVal, setProductVal] = useState(queryProduct);
+  const [articleVal, setArticleVal] = useState(queryArticle);
+  const [numberVal, setNumberVal] = useState(queryNumberOfProduct);
   const [models, setModels] = useState([]);
   const marks = autos?.map((el: IAutos) => el.mark);
   const years = options?.map((el) => el.years);
 
 
-  const formField = {
+  const formFields = {
     mark: mark,
     model: modelVal,
     year: yearVal,
@@ -41,18 +50,15 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const handlerOnChangeMarks = (e: any) => {
     const mark = e.target.value;
     setMark(mark);
+    setModelVal("")
     const { models } = autos?.find((el: IAutos) => el.mark === mark);
     setModels(models);
   };
 
-  const handlerSearchForm = async (e: any) => {
+  const handlerOnSubmitSearchForm = async (e: any) => {
     e.preventDefault();
-    try {
+      setSearchParams({...formFields})
       dispatch(setCurrentPage(1));
-      dispatch(fetchSearch({ ...formField, page: currentPage }));
-    } catch (e: any) {
-      console.log(e.message);
-    }
   };
 
   const handlerClearSearch = () => {
@@ -63,20 +69,19 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     setYearVal("");
     setArticleVal("");
     setNumberVal("");
+    setSearchParams({})
     dispatch(setCurrentPage(1));
-    dispatch(fetchGetAllParts())
   };
-  // mark, modelVal, yearVal, articleVal, numberVal, productVal ,
 
   useEffect(() => {
-    dispatch(fetchSearch({ ...formField, page: currentPage }));
-  },[currentPage])
+    dispatch(fetchGetProducts({ ...formFields, page: currentPage }));
+  },[queryMark, queryModel, queryYear, queryArticle, queryNumberOfProduct, queryProduct, currentPage, limit])
 
 
   return (
     <div className="form-search__container">
       <h3 className="form-title">{title}</h3>
-      <form className="form-search" onSubmit={handlerSearchForm}>
+      <form className="form-search" onSubmit={handlerOnSubmitSearchForm}>
         <div className="select-container">
           <select className="select-box" value={mark} onChange={handlerOnChangeMarks}>
             <option value="0">Марка</option>

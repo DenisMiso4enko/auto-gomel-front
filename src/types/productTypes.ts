@@ -47,6 +47,8 @@ export interface IAutoPartsInitialState {
   errors: any;
   totalPages: number;
   currentPage: number;
+  isPrevDisabled: boolean;
+  isNextDisabled: boolean;
   totalProducts: number;
   limit: number;
 }
