@@ -22,13 +22,12 @@ export const fetchGetAllParts = createAsyncThunk(
   }
 );
 
-export const fetchSearch = createAsyncThunk(
-  "parts/fetchSearch",
+export const fetchGetProducts = createAsyncThunk(
+  "parts/fetchGetProducts",
   async function(
     { mark, model, year, article, numberOfProduct, product, page }: any,
     { getState, rejectWithValue }
   ) {
-    console.log(mark, model, year);
     try {
       // @ts-ignore
       const { limit } = getState().autoParts;
