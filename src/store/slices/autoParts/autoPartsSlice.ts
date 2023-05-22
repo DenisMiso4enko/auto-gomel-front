@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IAutoPartsInitialState } from "../../../types/productTypes";
-import { fetchGetAllParts, fetchSearch } from "./autoPartsServices";
+import { fetchGetAllParts, fetchGetProducts } from "./autoPartsServices";
 
 const initialState: IAutoPartsInitialState = {
   parts: [],
@@ -8,6 +8,8 @@ const initialState: IAutoPartsInitialState = {
   errors: "",
   totalPages: 1,
   currentPage: 1,
+  isPrevDisabled: false,
+  isNextDisabled: false,
   totalProducts: 0,
   limit: 8
 };
@@ -18,6 +20,15 @@ export const autoPartsSlice = createSlice({
   reducers: {
     setCurrentPage(state, action) {
       state.currentPage = action.payload;
+    },
+    setLimit(state, action) {
+      state.limit = action.payload
+    },
+    setIsPrevDisabled(state, action) {
+      state.isPrevDisabled = action.payload
+    },
+    setIsNextDisabled(state, action) {
+      state.isNextDisabled = action.payload
     }
   },
   extraReducers: (builder) => {
@@ -37,11 +48,11 @@ export const autoPartsSlice = createSlice({
       state.loading = false;
       state.errors = action.payload;
     });
-    builder.addCase(fetchSearch.pending, (state) => {
+    builder.addCase(fetchGetProducts.pending, (state) => {
       state.loading = true;
       state.errors = undefined;
     });
-    builder.addCase(fetchSearch.fulfilled, (state, action) => {
+    builder.addCase(fetchGetProducts.fulfilled, (state, action) => {
       const { results, totalPages, totalProducts } = action.payload;
       state.parts = results;
       state.totalPages = totalPages;
@@ -49,13 +60,13 @@ export const autoPartsSlice = createSlice({
       state.loading = false;
       state.errors = action.payload;
     });
-    builder.addCase(fetchSearch.rejected, (state, action) => {
+    builder.addCase(fetchGetProducts.rejected, (state, action) => {
       state.loading = false;
       state.errors = action.payload;
     });
   }
 });
 
-export const { setCurrentPage } = autoPartsSlice.actions;
+export const { setCurrentPage, setLimit, setIsPrevDisabled, setIsNextDisabled } = autoPartsSlice.actions;
 
 export default autoPartsSlice.reducer;
