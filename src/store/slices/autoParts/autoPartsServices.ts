@@ -25,15 +25,15 @@ export const fetchGetAllParts = createAsyncThunk(
 export const fetchSearch = createAsyncThunk(
   "parts/fetchSearch",
   async function(
-    { mark, model, year, article, numberOfProduct, product }: any,
+    { mark, model, year, article, numberOfProduct, product, page }: any,
     { getState, rejectWithValue }
   ) {
+    console.log(mark, model, year);
     try {
       // @ts-ignore
-      const { currentPage, limit } = getState().autoParts;
-      console.log("currentPage from seatch ---",currentPage);
+      const { limit } = getState().autoParts;
       const res: Response = await httpRequest(
-        `${PATHDOMAIN}/search?page=${currentPage}&limit=${limit}&mark=${mark}&model=${model}&year=${year}&article=${article}&numberOfProduct=${numberOfProduct}&product=${product}`,
+        `${PATHDOMAIN}/getAllParts?page=${page}&limit=${limit}&mark=${mark || ""}&model=${model || ""}&year=${year || ""}&article=${article || ""}&numberOfProduct=${numberOfProduct || ""}&product=${product || ""}`,
         "GET"
       );
       const data = await res.json();

@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import { IAutos } from "../../types/productTypes";
 import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
-import { useNavigate, useParams } from "react-router-dom";
+import { useParams} from "react-router-dom";
 import { fetchGetAllParts, fetchSearch } from "../../store/slices/autoParts/autoPartsServices";
 
 interface IFormSearch {
@@ -13,8 +13,9 @@ interface IFormSearch {
 }
 
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
-  const { mark: markParams } = useParams();
+  const dispatch = useDispatch<AppDispatch>();
 
+  // const { mark: markParams } = useParams();
   const { autos, options, partsCategory } = useSelector((state: RootState) => state.settings);
   const { currentPage } = useSelector((state: RootState) => state.autoParts);
   const [mark, setMark] = useState("");
@@ -27,7 +28,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const marks = autos?.map((el: IAutos) => el.mark);
   const years = options?.map((el) => el.years);
 
-  const dispatch = useDispatch<AppDispatch>();
 
   const formField = {
     mark: mark,
@@ -35,7 +35,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     year: yearVal,
     product: productVal,
     article: articleVal,
-    numberOfProduct: numberVal,
+    numberOfProduct: numberVal
   };
 
   const handlerOnChangeMarks = (e: any) => {
@@ -49,7 +49,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     e.preventDefault();
     try {
       dispatch(setCurrentPage(1));
-      dispatch(fetchSearch(formField));
+      dispatch(fetchSearch({ ...formField, page: currentPage }));
     } catch (e: any) {
       console.log(e.message);
     }
@@ -59,17 +59,19 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     setMark("");
     setProductVal("");
     setModelVal("");
+    setModels([])
     setYearVal("");
     setArticleVal("");
     setNumberVal("");
-    dispatch(fetchGetAllParts());
+    dispatch(setCurrentPage(1));
+    dispatch(fetchGetAllParts())
   };
+  // mark, modelVal, yearVal, articleVal, numberVal, productVal ,
 
   useEffect(() => {
-    if (markParams) {
-      setMark(mark);
-    }
-  }, []);
+    dispatch(fetchSearch({ ...formField, page: currentPage }));
+  },[currentPage])
+
 
   return (
     <div className="form-search__container">

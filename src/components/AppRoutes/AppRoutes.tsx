@@ -8,11 +8,6 @@ export const AppRoutes = () => {
       <Route path="/">
         <Route index element={<MainPage />} />
         <Route path="/parts" element={<AutoParts />} />
-        <Route path="/parts/:mark" element={<AutoParts />} />
-        <Route
-          path="/parts/:mark/:model/:year/:product/:number/:article"
-          element={<AutoParts />}
-        />
       </Route>
     </Routes>
   );
