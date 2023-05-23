@@ -3,6 +3,7 @@ import Banner from "../../components/Banner/Banner";
 import WeOffer from "../../components/WeOffer/WeOffer";
 import PopularMarks from "../../components/PopularMarks/PopularMarks";
 import PopularParts from "../../components/PopularParts/PopularParts";
+import ScrollButton from "../../components/ScrollButton/ScrollButton";
 
 const MainPage = () => {
   // const {parts} = useSelector((state: RootState) => state.autoParts)
@@ -17,6 +18,7 @@ const MainPage = () => {
       <Banner />
       <WeOffer />
       <PopularMarks />
+
       {/*<PopularParts />*/}
     </div>
   );

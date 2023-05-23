@@ -81,3 +81,16 @@ $btn-variants: (
 		}
 	}
 }
+
+
+.scroll-btn {
+	position: fixed;
+	top: 900px;
+	right: 20px;
+	padding: 4px 6px;
+	border: none;
+	border-radius: 100%;
+	cursor: pointer;
+	background-color: $color-white;
+	box-shadow: 0 0 5px 5px rgba(0,0,0,0.2);
+}

@@ -4,9 +4,10 @@ import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "./store";
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 import { fetchOptions } from "./store/slices/settings/settingsServices";
 import { AppRoutes } from "./components/AppRoutes/AppRoutes";
+import ScrollButton from "./components/ScrollButton/ScrollButton";
 
 function App() {
   const dispatch = useDispatch<AppDispatch>();
@@ -22,9 +23,9 @@ function App() {
         <Container>
           <AppRoutes/>
         </Container>
+        <ScrollButton/>
+        <Footer/>
       </BrowserRouter>
-
-      <Footer />
     </div>
   );
 }
