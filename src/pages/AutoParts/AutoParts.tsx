@@ -8,6 +8,7 @@ import { setCurrentPage, setLimit } from "../../store/slices/autoParts/autoParts
 import Skeleton from "../../components/Skeleton/Skeleton";
 import { IProduct } from "../../types/productTypes";
 import ProductCart from "../../components/ProductCart/ProductCart";
+import ScrollButton from "../../components/ScrollButton/ScrollButton";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -42,6 +43,7 @@ const AutoParts = () => {
         </div>
       </div>
       <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />
+      {/*<ScrollButton/>*/}
     </div>
   );
 };
