@@ -7,7 +7,7 @@ import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
-import noImage from "../../../public/no-img.png"
+import ImagesGallery from "../../components/ImagesGallery/ImagesGallery";
 
 const Details = () => {
   // @ts-ignore
@@ -19,9 +19,7 @@ const Details = () => {
       const response = await httpRequest(`${PATHDOMAIN}/getOne/${id}`, 'GET')
       const data = await response.json()
       setProduct(data)
-      console.log(data);
     } catch (e) {
-      console.log(e);
     }
   }
 
@@ -35,19 +33,13 @@ const Details = () => {
     )
   }
 
-
   return (
     <div className="details container">
       <div>Тут будет хебные крошки</div>
       <div className="details-wrapper">
         <div className="details__top">
           <div className="details__images">
-            {!product?.imagesUrl?.length ? (
-              <img src={noImage} alt={product.product}/>
-              ) : (
-              <img src={`${PATHDOMAIN}${product?.imagesUrl[0]}`} alt={product.product}/>
-            )}
-
+            <ImagesGallery product={product?.product} imagesUrl={product?.imagesUrl}/>
           </div>
           <div className="details__info">
             <div className="details__product details-item">
