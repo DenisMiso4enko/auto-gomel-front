@@ -163,7 +163,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
         articleVal.trim() ||
         numberVal.trim() ? (
           <button className="btn btn-lg btn-red" type="button" onClick={handlerClearSearch}>
-            Сбрость
+            Очистить форму
           </button>
         ) : null}
       </form>

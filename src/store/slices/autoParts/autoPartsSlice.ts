@@ -4,7 +4,7 @@ import { fetchGetAllParts, fetchGetProducts } from "./autoPartsServices";
 
 const initialState: IAutoPartsInitialState = {
   parts: [],
-  loading: false,
+  loading: true,
   errors: "",
   totalPages: 1,
   currentPage: 1,

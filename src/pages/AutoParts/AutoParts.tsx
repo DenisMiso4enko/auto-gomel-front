@@ -11,7 +11,7 @@ import ProductCart from "../../components/ProductCart/ProductCart";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { parts, currentPage, totalPages, loading } = useSelector((state: RootState) => state.autoParts);
+  const { parts, currentPage, totalPages, loading, totalProducts, limit } = useSelector((state: RootState) => state.autoParts);
 
   const handlerChangeCurrentPage = (event: React.ChangeEvent<unknown>, value: number) => {
     dispatch(setCurrentPage(value));
@@ -33,12 +33,10 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          {loading
-            ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
-            : parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
-              <ProductCart key={part._id} {...part} />
-            ))
-          }
+          {loading && [...new Array(limit)].map((_, i) => <Skeleton key={i} />)}
+          {!loading && !!totalProducts ? (parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
+            <ProductCart key={part._id} {...part} />
+            ))) : (<div>По вашему запросу товаров не найдено</div>)}
         </div>
       </div>
       <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />
