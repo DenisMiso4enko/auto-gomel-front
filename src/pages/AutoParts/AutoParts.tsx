@@ -3,7 +3,7 @@ import { AppDispatch, RootState } from "../../store";
 import FormSearch from "../../components/FormSerach/FormSearch";
 import PartsList from "../../components/PartsList/PartsList";
 import PaginationController from "../../components/Pagination/PaginationController";
-import React from "react";
+import React, { useEffect } from "react";
 import { setCurrentPage, setLimit } from "../../store/slices/autoParts/autoPartsSlice";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import { IProduct } from "../../types/productTypes";
