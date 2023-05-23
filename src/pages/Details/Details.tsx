@@ -8,6 +8,7 @@ import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import ImagesGallery from "../../components/ImagesGallery/ImagesGallery";
+import noImage from "/no-img.png";
 
 const Details = () => {
   // @ts-ignore
@@ -39,7 +40,12 @@ const Details = () => {
       <div className="details-wrapper">
         <div className="details__top">
           <div className="details__images">
-            <ImagesGallery product={product?.product} imagesUrl={product?.imagesUrl}/>
+            {!product.imagesUrl?.length ? (
+              <img src={noImage} alt={product.product}/>
+            ) : (
+              <ImagesGallery product={product?.product} imagesUrl={product?.imagesUrl}/>
+            )}
+
           </div>
           <div className="details__info">
             <div className="details__product details-item">

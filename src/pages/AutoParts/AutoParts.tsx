@@ -5,15 +5,18 @@ import PartsList from "../../components/PartsList/PartsList";
 import PaginationController from "../../components/Pagination/PaginationController";
 import React from "react";
 import { setCurrentPage, setLimit } from "../../store/slices/autoParts/autoPartsSlice";
-import NoResults from "../../components/NoResults/NoResults";
+import Skeleton from "../../components/Skeleton/Skeleton";
+import { IProduct } from "../../types/productTypes";
+import ProductCart from "../../components/ProductCart/ProductCart";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
-  const { parts, currentPage, totalPages,  } = useSelector((state: RootState) => state.autoParts);
+  const { parts, currentPage, totalPages, loading } = useSelector((state: RootState) => state.autoParts);
 
   const handlerChangeCurrentPage = (event: React.ChangeEvent<unknown>, value: number) => {
     dispatch(setCurrentPage(value));
   };
+
   return (
     <div className="parts container">
       {/*<h2 style={{ marginBottom: "20px" }} className="parts__page-title">*/}
@@ -30,11 +33,12 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          {parts?.length ? (
-            <PartsList parts={parts} />
-          ) : (
-            <NoResults/>
-          )}
+          {loading
+            ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
+            : parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
+              <ProductCart key={part._id} {...part} />
+            ))
+          }
         </div>
       </div>
       <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />

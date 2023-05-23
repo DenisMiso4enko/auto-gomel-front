@@ -1,5 +1,4 @@
 import React from "react";
-import noImage from "../../../public/no-img.png";
 import { PATHDOMAIN } from "../../constants";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Thumbs } from "swiper";
@@ -11,8 +10,6 @@ import "swiper/css/scrollbar";
 
 const ImagesGallery = ({ imagesUrl, product }: any) => {
   const [activeThumb, setActiveThumb] = useState();
-
-
   return (
     <>
       <Swiper
@@ -54,11 +51,3 @@ const ImagesGallery = ({ imagesUrl, product }: any) => {
 };
 
 export default ImagesGallery;
-
-
-/*
-{!imagesUrl?.length ? (
-  <img src={noImage} alt={product}/>
-) : (
-  <img src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product}/>
-)}*/
