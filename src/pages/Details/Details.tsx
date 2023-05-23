@@ -6,6 +6,8 @@ import { IProduct } from "../../types/productTypes";
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
+import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
+import noImage from "../../../public/no-img.png"
 
 const Details = () => {
   // @ts-ignore
@@ -40,7 +42,12 @@ const Details = () => {
       <div className="details-wrapper">
         <div className="details__top">
           <div className="details__images">
-            <img src={`${PATHDOMAIN}${product?.imagesUrl[0]}`} alt={product.product}/>
+            {!product?.imagesUrl?.length ? (
+              <img src={noImage} alt={product.product}/>
+              ) : (
+              <img src={`${PATHDOMAIN}${product?.imagesUrl[0]}`} alt={product.product}/>
+            )}
+
           </div>
           <div className="details__info">
             <div className="details__product details-item">
@@ -50,7 +57,10 @@ const Details = () => {
                 <p>{product.mark} {product.model}, {product.year} г. </p>
               </div>
             </div>
-            <div className="details__price details-item">{product.price} {product.currency}</div>
+            <div className="details__price details-item">
+              <AccountBalanceWalletIcon/>
+              <p>{product.price} {product.currency}</p>
+            </div>
             <div className="details__desc details-item">{product.description}</div>
             <div className="details__service">
               <div className="details__service-item">

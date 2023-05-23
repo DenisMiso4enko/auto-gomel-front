@@ -5,6 +5,7 @@ import PartsList from "../../components/PartsList/PartsList";
 import PaginationController from "../../components/Pagination/PaginationController";
 import React from "react";
 import { setCurrentPage, setLimit } from "../../store/slices/autoParts/autoPartsSlice";
+import NoResults from "../../components/NoResults/NoResults";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -15,15 +16,15 @@ const AutoParts = () => {
   };
   return (
     <div className="parts container">
-      <h2 style={{ marginBottom: "20px" }} className="parts__page-title">
-        Запчасти
-      </h2>
-      <div className="parts__number-render">
-        Показывать количество запчастей в списке:
-        <button onClick={() => dispatch(setLimit(8))}>8</button>
-        <button onClick={() => dispatch(setLimit(16))}>16</button>
-        <button onClick={() => dispatch(setLimit(32))}>32</button>
-      </div>
+      {/*<h2 style={{ marginBottom: "20px" }} className="parts__page-title">*/}
+      {/*  Запчасти*/}
+      {/*</h2>*/}
+      {/*<div className="parts__number-render">*/}
+      {/*  Показывать количество запчастей в списке:*/}
+      {/*  <button onClick={() => dispatch(setLimit(8))}>8</button>*/}
+      {/*  <button onClick={() => dispatch(setLimit(16))}>16</button>*/}
+      {/*  <button onClick={() => dispatch(setLimit(32))}>32</button>*/}
+      {/*</div>*/}
       <div className="parts-row">
         <div className="parts-row__left">
           <FormSearch title="Поиск запчастей" />
@@ -32,7 +33,7 @@ const AutoParts = () => {
           {parts?.length ? (
             <PartsList parts={parts} />
           ) : (
-            <h1>No resultss</h1>
+            <NoResults/>
           )}
         </div>
       </div>
