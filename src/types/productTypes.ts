@@ -43,6 +43,7 @@ export interface IOptions {
 
 export interface IAutoPartsInitialState {
   parts: IProduct[] | [];
+  product: IProduct | null;
   loading: boolean;
   errors: any;
   totalPages: number;

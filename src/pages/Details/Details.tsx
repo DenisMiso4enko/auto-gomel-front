@@ -1,8 +1,6 @@
-import React, { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { httpRequest } from "../../httpRequests";
-import { PATHDOMAIN } from "../../constants";
-import { IProduct } from "../../types/productTypes";
+import { fetchGetProduct } from "../../store/slices/autoParts/autoPartsServices";
 import LocalShippingIcon from '@mui/icons-material/LocalShipping';
 import WorkspacePremiumIcon from '@mui/icons-material/WorkspacePremium';
 import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
@@ -11,36 +9,19 @@ import ImagesGallery from "../../components/ImagesGallery/ImagesGallery";
 import noImage from "/no-img.png";
 import DetailsSkeleton from "../../components/DetailsSkeleton/DetailsSkeleton";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
+import { AppDispatch, RootState } from "../../store";
+import { useDispatch, useSelector } from "react-redux";
 
 const Details = () => {
-  // @ts-ignore
-  const [product, setProduct] = useState<IProduct>(null)
+  const dispatch = useDispatch<AppDispatch>()
   const { id } = useParams()
-  const [loading, setIsLoading] = useState(true)
-
-
-  const fetchGetProduct = async () => {
-    try {
-      const response = await httpRequest(`${PATHDOMAIN}/getOne/${id}`, 'GET')
-      if (response.status === 404) {
-        throw new Error('Ошибка, данные не получены')
-      }
-      const data = await response.json()
-      setIsLoading(false)
-      setProduct(data)
-    } catch (e) {
-      console.log(e);
-    }
-  }
+  const { product, loading } = useSelector((state: RootState) => state.autoParts);
 
   useEffect(() => {
-    window.scrollTo(0,0)
-    fetchGetProduct()
+    // @ts-ignore
+    dispatch(fetchGetProduct(id))
   }, [id])
 
-  if (!product) {
-    return <ErrorMessage message="Произошла ошибка, попробуйте позже"/>
-  }
 
   if (loading) {
     return (
@@ -50,92 +31,94 @@ const Details = () => {
 
   return (
     <div className="details container">
-      <div>Тут будет хебные крошки</div>
-      <div className="details-wrapper">
-        <div className="details__top">
-          <div className="details__images">
-            {!product.imagesUrl?.length ? (
-              <img src={noImage} alt={product.product}/>
-            ) : (
-              <ImagesGallery product={product?.product} imagesUrl={product?.imagesUrl}/>
-            )}
-
+      {product ? (<>
+        <div>Тут будет хебные крошки</div><div className="details-wrapper">
+          <div className="details__top">
+            <div className="details__images">
+              {!product.imagesUrl?.length ? (
+                <img src={noImage} alt={product.product} />
+              ) : (
+                <ImagesGallery product={product?.product} imagesUrl={product?.imagesUrl} />
+              )}
+            </div>
+            <div className="details__info">
+              <div className="details__product details-item">
+                <h2>{product.product}</h2>
+                <div className="car">
+                  <DirectionsCarIcon />
+                  <p>{product.mark} {product.model}, {product.year} г. </p>
+                </div>
+              </div>
+              <div className="details__price details-item">
+                <AccountBalanceWalletIcon />
+                <p>{product.price} {product.currency}</p>
+              </div>
+              <div className="details__desc details-item">{product.description}</div>
+              <div className="details__service">
+                <div className="details__service-item">
+                  <LocalShippingIcon color={"warning"} />
+                  <p>Отправляем по Беларуси</p>
+                </div>
+                <div className="details__service-item">
+                  <WorkspacePremiumIcon color={"warning"} />
+                  <p>7 дней гарантия</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="details__info">
-            <div className="details__product details-item">
-              <h2>{product.product}</h2>
-              <div className="car">
-                <DirectionsCarIcon/>
-                <p>{product.mark} {product.model}, {product.year} г. </p>
+          <div className="details__bottom">
+            <h3>Спецификация</h3>
+            <div className="details__specs">
+              <div className="details__specs-left">
+                <div className="details__specs-item">
+                  <p>Марка</p>
+                  <p>{product.mark || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Модель</p>
+                  <p>{product.model || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Год</p>
+                  <p>{product.year || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Коробка</p>
+                  <p>{product.box || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Кузов</p>
+                  <p>{product.bodyType || "-"}</p>
+                </div>
               </div>
-            </div>
-            <div className="details__price details-item">
-              <AccountBalanceWalletIcon/>
-              <p>{product.price} {product.currency}</p>
-            </div>
-            <div className="details__desc details-item">{product.description}</div>
-            <div className="details__service">
-              <div className="details__service-item">
-                <LocalShippingIcon color={"warning"}/>
-                <p>Отправляем по Беларуси</p>
-              </div>
-              <div className="details__service-item">
-                <WorkspacePremiumIcon color={"warning"}/>
-                <p>7 дней гарантия</p>
+              <div className="details__specs-right">
+                <div className="details__specs-item">
+                  <p>Тип</p>
+                  <p>{product.type || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Состояние</p>
+                  <p>{product.state || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Номер по каталогу</p>
+                  <p>{product.numberOfProduct || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Объем топлива</p>
+                  <p>{product.volume || "-"}</p>
+                </div>
+                <div className="details__specs-item">
+                  <p>Арктикул</p>
+                  <p>{product.article || "-"}</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="details__bottom">
-          <h3>Спецификация</h3>
-          <div className="details__specs">
-            <div className="details__specs-left">
-              <div className="details__specs-item">
-                <p>Марка</p>
-                <p>{product.mark || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Модель</p>
-                <p>{product.model || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Год</p>
-                <p>{product.year || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Коробка</p>
-                <p>{product.box || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Кузов</p>
-                <p>{product.bodyType || "-"}</p>
-              </div>
-            </div>
-            <div className="details__specs-right">
-              <div className="details__specs-item">
-                <p>Тип</p>
-                <p>{product.type || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Состояние</p>
-                <p>{product.state || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Номер по каталогу</p>
-                <p>{product.numberOfProduct || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Объем топлива</p>
-                <p>{product.volume || "-"}</p>
-              </div>
-              <div className="details__specs-item">
-                <p>Арктикул</p>
-                <p>{product.article || "-"}</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+      </>) : (
+      <ErrorMessage message="Произошла ошибка, попробуйте позже"/>
+      )}
     </div>
   );
 };

@@ -44,3 +44,24 @@ export const fetchGetProducts = createAsyncThunk(
     }
   }
 );
+
+export const fetchGetProduct = createAsyncThunk(
+  "parts/fetchGetProduct",
+  async function(id ,{ rejectWithValue }) {
+    try {
+      // @ts-ignore
+      const response: Response = await httpRequest(
+        `${PATHDOMAIN}/getOne/${id}`, 'GET'
+      );
+      if (response.status === 404) {
+        throw new Error('Ошибка, данные не получены')
+      }
+      const data = await response.json();
+      window.scrollTo(0, 0);
+      return data;
+    } catch (e: any) {
+      console.log(e.message);
+      return rejectWithValue(e);
+    }
+  }
+);
