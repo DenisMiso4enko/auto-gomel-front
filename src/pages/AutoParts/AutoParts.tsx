@@ -1,14 +1,11 @@
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "../../store";
 import FormSearch from "../../components/FormSerach/FormSearch";
-import PartsList from "../../components/PartsList/PartsList";
 import PaginationController from "../../components/Pagination/PaginationController";
-import React, { useEffect } from "react";
-import { setCurrentPage, setLimit } from "../../store/slices/autoParts/autoPartsSlice";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
 import Skeleton from "../../components/Skeleton/Skeleton";
 import { IProduct } from "../../types/productTypes";
 import ProductCart from "../../components/ProductCart/ProductCart";
-import ScrollButton from "../../components/ScrollButton/ScrollButton";
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -41,7 +38,6 @@ const AutoParts = () => {
         </div>
       </div>
       <PaginationController currentPage={currentPage} totalPages={totalPages} handlerChangeCurrentPage={handlerChangeCurrentPage} />
-      {/*<ScrollButton/>*/}
     </div>
   );
 };

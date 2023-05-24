@@ -9,28 +9,42 @@ import DirectionsCarIcon from '@mui/icons-material/DirectionsCar';
 import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet';
 import ImagesGallery from "../../components/ImagesGallery/ImagesGallery";
 import noImage from "/no-img.png";
+import DetailsSkeleton from "../../components/DetailsSkeleton/DetailsSkeleton";
+import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 
 const Details = () => {
   // @ts-ignore
   const [product, setProduct] = useState<IProduct>(null)
   const { id } = useParams()
+  const [loading, setIsLoading] = useState(true)
+
 
   const fetchGetProduct = async () => {
     try {
       const response = await httpRequest(`${PATHDOMAIN}/getOne/${id}`, 'GET')
+      if (response.status === 404) {
+        throw new Error('Ошибка, данные не получены')
+      }
       const data = await response.json()
+      setIsLoading(false)
       setProduct(data)
     } catch (e) {
+      console.log(e);
     }
   }
 
   useEffect(() => {
+    window.scrollTo(0,0)
     fetchGetProduct()
   }, [id])
 
   if (!product) {
+    return <ErrorMessage message="Произошла ошибка, попробуйте позже"/>
+  }
+
+  if (loading) {
     return (
-      <h1>Уппс, что-то пошло не так</h1>
+      <DetailsSkeleton/>
     )
   }
 
