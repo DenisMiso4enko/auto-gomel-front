@@ -2,25 +2,6 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 import { httpRequest } from "../../../httpRequests";
 import { PATHDOMAIN } from "../../../constants";
 
-export const fetchGetAllParts = createAsyncThunk(
-  "parts/fetchOptions",
-  async function(_, { getState, rejectWithValue }) {
-    try {
-      // @ts-ignore
-      const { currentPage, limit } = getState().autoParts;
-      const res: Response = await httpRequest(
-        `${PATHDOMAIN}/getAllParts?page=${currentPage}&limit=${limit}`,
-        "GET"
-      );
-      const data = await res.json();
-      window.scrollTo(0, 0);
-      return data;
-    } catch (e: any) {
-      console.log(e.message);
-      return rejectWithValue(e);
-    }
-  }
-);
 
 export const fetchGetProducts = createAsyncThunk(
   "parts/fetchGetProducts",

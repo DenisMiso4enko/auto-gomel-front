@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { IAutoPartsInitialState } from "../../../types/productTypes";
-import { fetchGetAllParts, fetchGetProducts, fetchGetProduct } from "./autoPartsServices";
+import { fetchGetProducts, fetchGetProduct } from "./autoPartsServices";
 
 const initialState: IAutoPartsInitialState = {
   parts: [],
@@ -33,22 +33,6 @@ export const autoPartsSlice = createSlice({
     }
   },
   extraReducers: (builder) => {
-    builder.addCase(fetchGetAllParts.pending, (state) => {
-      state.loading = true;
-      state.errors = undefined;
-    });
-    builder.addCase(fetchGetAllParts.fulfilled, (state, action) => {
-      const { results, totalPages, totalProducts } = action.payload;
-      state.parts = results;
-      state.totalPages = totalPages;
-      state.totalProducts = totalProducts;
-      state.loading = false;
-      state.errors = action.payload;
-    });
-    builder.addCase(fetchGetAllParts.rejected, (state, action) => {
-      state.loading = false;
-      state.errors = action.payload;
-    });
     builder.addCase(fetchGetProducts.pending, (state) => {
       state.loading = true;
       state.errors = undefined;
