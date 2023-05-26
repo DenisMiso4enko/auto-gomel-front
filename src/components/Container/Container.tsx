@@ -1,11 +1,11 @@
-import React from "react";
+import React from 'react'
 
-interface WrapperProp {
-  children: React.ReactNode;
+interface ContainerProp {
+    children: React.ReactNode
 }
 
-const Container = ({ children }: WrapperProp) => {
-  return <div className="flex-container">{children}</div>;
-};
+const Container = ({ children }: ContainerProp) => {
+    return <div className="flex-container">{children}</div>
+}
 
-export default Container;
+export default Container

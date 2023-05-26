@@ -1,2 +1,1 @@
-export const PATHDOMAIN = "http://localhost:8888";
-
+export const PATHDOMAIN = 'http://localhost:8888'
