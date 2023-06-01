@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { AppDispatch, RootState } from '../../store'
 import { fetchGetProduct } from '../../store/slices/autoParts/autoPartsServices'
@@ -11,6 +11,8 @@ import ImagesGallery from '../../components/ImagesGallery/ImagesGallery'
 import DetailsSkeleton from '../../components/DetailsSkeleton/DetailsSkeleton'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import noImage from '/no-img.png'
+import ArrowBack from '../../components/Icons/ArrowBack/index'
+// import { ArrowBack } from '@mui/icons-material'
 
 const Details = () => {
     const dispatch = useDispatch<AppDispatch>()
@@ -32,7 +34,9 @@ const Details = () => {
         <div className="details container">
             {product ? (
                 <>
-                    <div>Хлебные крошки...</div>
+                    <div className="details__arrowback">
+                        <ArrowBack />
+                    </div>
                     <div className="details-wrapper">
                         <div className="details__top">
                             <div className="details__images">
