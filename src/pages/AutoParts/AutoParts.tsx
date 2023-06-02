@@ -26,6 +26,12 @@ const AutoParts = () => {
                     <FormSearch title="Поиск запчастей" />
                 </div>
                 <div className="parts-row__right">
+                    <PaginationController
+                        variant="top"
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        handlerChangeCurrentPage={handlerChangeCurrentPage}
+                    />
                     {loading &&
                         [...new Array(limit)].map((_, i) => (
                             <Skeleton key={i} />
@@ -39,13 +45,13 @@ const AutoParts = () => {
                     ) : (
                         <div>По вашему запросу товаров не найдено</div>
                     )}
+                    <PaginationController
+                        currentPage={currentPage}
+                        totalPages={totalPages}
+                        handlerChangeCurrentPage={handlerChangeCurrentPage}
+                    />
                 </div>
             </div>
-            <PaginationController
-                currentPage={currentPage}
-                totalPages={totalPages}
-                handlerChangeCurrentPage={handlerChangeCurrentPage}
-            />
         </div>
     )
 }

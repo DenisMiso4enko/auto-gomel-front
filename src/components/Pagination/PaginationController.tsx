@@ -2,6 +2,7 @@ import React, { FC } from 'react'
 import Pagination from '@mui/material/Pagination'
 
 type PaginationControllerProps = {
+    variant?: string
     currentPage: number
     totalPages: number
     handlerChangeCurrentPage: (
@@ -11,13 +12,14 @@ type PaginationControllerProps = {
 }
 
 const PaginationController: FC<PaginationControllerProps> = ({
+    variant,
     currentPage,
     totalPages,
     handlerChangeCurrentPage,
 }) => {
     return (
         <div className="pagination-container">
-            <div className="pagination">
+            <div className={`pagination pagination--${variant}`}>
                 <Pagination
                     count={totalPages}
                     page={currentPage}
