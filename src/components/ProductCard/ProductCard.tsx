@@ -6,7 +6,11 @@ import noImage from "/no-img.png";
 import dayjs from "dayjs";
 import HistoryIcon from "@mui/icons-material/History";
 
+<<<<<<< HEAD
 const ProductCarD: FC<IProduct> = ({
+=======
+const ProductCard: FC<IProduct> = ({
+>>>>>>> origin/master
                                      description,
                                      imagesUrl,
                                      product,
@@ -22,6 +26,7 @@ const ProductCarD: FC<IProduct> = ({
 
   return (
     <div className="product-card">
+<<<<<<< HEAD
       <div
         className={
           !imagesUrl.length
@@ -29,6 +34,9 @@ const ProductCarD: FC<IProduct> = ({
             : "product-card__image"
         }
       >
+=======
+      <div className="product-card__image">
+>>>>>>> origin/master
         {imagesUrl.length ? (
           <img src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product} />
         ) : (
@@ -50,7 +58,11 @@ const ProductCarD: FC<IProduct> = ({
         </div>
         <div className="product-card__bottom">
           <div className="product-card__date">
+<<<<<<< HEAD
             <HistoryIcon /> {dayjs(createdAt).format("MM.D.YYYY")}
+=======
+            <HistoryIcon /> {dayjs(createdAt).format("D.MM.YYYY")}
+>>>>>>> origin/master
           </div>
           <button
             className="btn btn-success"
@@ -64,4 +76,8 @@ const ProductCarD: FC<IProduct> = ({
   );
 };
 
+<<<<<<< HEAD
 export default ProductCarD;
+=======
+export default ProductCard;
+>>>>>>> origin/master
