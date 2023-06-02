@@ -28,6 +28,7 @@ const Details = () => {
     }, [id])
 
     if (loading) {
+    // if (0) {
         return <DetailsSkeleton />
     }
 

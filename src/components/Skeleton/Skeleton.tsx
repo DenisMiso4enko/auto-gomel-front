@@ -5,10 +5,14 @@ const Skeleton = () => {
                 <div className="square"></div>
             </div>
             <div className="skeleton-left">
-                <div className="line h17 w40 m10"></div>
-                <div className="line"></div>
-                <div className="line h8 w50"></div>
-                <div className="line  w75"></div>
+                <div className="line h25 w30"></div>
+                <div className="line h20 w20"></div>
+                <div className="line h20 w25"></div>
+                <div className="line h20 w20"></div>
+                <div className="skeleton-left__bottom mt30">
+                    <div className="line h20 w20"></div>
+                    <div className="line h25 w25"></div>
+                </div>
             </div>
         </div>
     )
