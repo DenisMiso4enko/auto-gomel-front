@@ -1,4 +1,4 @@
-import ProductCart from '../ProductCart/ProductCart'
+import ProductCard from '../ProductCard/ProductCard'
 import Skeleton from '../Skeleton/Skeleton'
 import { IProduct } from '../../types/productTypes'
 
@@ -8,7 +8,7 @@ const PartsList = ({ parts, loading }: any) => {
             {loading
                 ? [...new Array(8)].map((_, i) => <Skeleton key={i} />)
                 : parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
-                      <ProductCart key={part._id} {...part} />
+                      <ProductCard key={part._id} {...part} />
                   ))}
         </>
     )

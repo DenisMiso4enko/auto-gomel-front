@@ -1,7 +1,7 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
 import SectionTitle from '../SectionTitle/SectionTitle'
-import ProductCart from '../ProductCart/ProductCart'
+import ProductCard from '../ProductCard/ProductCard'
 
 const PopularParts = () => {
     const { parts } = useSelector((state: RootState) => state.autoParts)
@@ -11,7 +11,7 @@ const PopularParts = () => {
             <SectionTitle title="Популярные запчасти" />
             <div className="popular-parts__list">
                 {parts?.map((product) => (
-                    <ProductCart key={product._id} {...product} />
+                    <ProductCard key={product._id} {...product} />
                 ))}
             </div>
             <button className="btn btn-lg btn-default">Смотреть все</button>
