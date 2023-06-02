@@ -10,24 +10,24 @@ import ScrollButton from './components/ScrollButton/ScrollButton'
 import Footer from './components/Footer/Footer'
 
 function App() {
-    const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>()
 
-    useEffect(() => {
-        dispatch(fetchOptions())
-    }, [])
+  useEffect(() => {
+    dispatch(fetchOptions())
+  }, [])
 
-    return (
-        <div className="App">
-            <BrowserRouter>
-                <Header />
-                <Container>
-                    <AppRoutes />
-                </Container>
-                <ScrollButton />
-                <Footer />
-            </BrowserRouter>
-        </div>
-    )
+  return (
+    <div className="App">
+      <BrowserRouter>
+        <Header />
+        <Container>
+          <AppRoutes />
+        </Container>
+        <ScrollButton />
+        <Footer />
+      </BrowserRouter>
+    </div>
+  )
 }
 
 export default App

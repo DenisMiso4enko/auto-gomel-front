@@ -5,14 +5,14 @@ import MapComp from '../../components/Map/Map'
 import SectionAdresses from '../../components/SectionAdresses/SectionAdresses'
 
 const MainPage = () => {
-    return (
-        <div className="main-page">
-            <Banner />
-            <WeOffer />
-            <PopularMarks />
-            <SectionAdresses />
-        </div>
-    )
+  return (
+    <div className="main-page">
+      <Banner />
+      <WeOffer />
+      <PopularMarks />
+      <SectionAdresses />
+    </div>
+  )
 }
 
 export default MainPage
