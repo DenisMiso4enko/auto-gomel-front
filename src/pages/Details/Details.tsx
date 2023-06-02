@@ -47,7 +47,13 @@ const Details = () => {
                     </div>
                     <div className="details-wrapper">
                         <div className="details__top">
-                            <div className="details__images">
+                            <div
+                                className={
+                                    !product.imagesUrl?.length
+                                        ? 'details__images--padding details__images'
+                                        : 'details__images'
+                                }
+                            >
                                 {!product.imagesUrl?.length ? (
                                     <img src={noImage} alt={product.product} />
                                 ) : (
