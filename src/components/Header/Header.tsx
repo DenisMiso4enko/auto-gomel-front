@@ -1,15 +1,20 @@
+import { useNavigate } from 'react-router-dom'
 import NavMenu from '../NavMenu/NavMenu'
 import PhoneInTalkIcon from '@mui/icons-material/PhoneInTalk'
 
 const Header = () => {
+    const navigate = useNavigate()
+    const goHome = () => navigate('/')
+
     return (
         <header className="header">
             <div className="header__body container">
                 <div
                     className="logo"
                     style={{ fontSize: '20px', fontWeight: '700' }}
+                    onClick={goHome}
                 >
-                    AUTOГОМЕЛЬ
+                    АВТО.ГОМЕЛЬ
                 </div>
                 <NavMenu />
                 <div className="header__search">

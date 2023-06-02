@@ -12,9 +12,10 @@ import DetailsSkeleton from '../../components/DetailsSkeleton/DetailsSkeleton'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import noImage from '/no-img.png'
 import ArrowBack from '../../components/Icons/ArrowBack/index'
-// import { ArrowBack } from '@mui/icons-material'
 
 const Details = () => {
+    const navigate = useNavigate()
+    const goBack = () => navigate(-1)
     const dispatch = useDispatch<AppDispatch>()
     const { id } = useParams()
     const { product, loading } = useSelector(
@@ -36,6 +37,12 @@ const Details = () => {
                 <>
                     <div className="details__arrowback">
                         <ArrowBack />
+                        <div className="details__breadcrumbs">
+                            <span className="details__bread" onClick={goBack}>
+                                Запчасти
+                            </span>{' '}
+                            / {product.product} ({product.mark} {product.model})
+                        </div>
                     </div>
                     <div className="details-wrapper">
                         <div className="details__top">

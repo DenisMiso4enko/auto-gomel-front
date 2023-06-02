@@ -1,4 +1,14 @@
 .arrow-back {
   width: fit-content;
-  cursor: pointer;
+  display: flex;
+  align-items: center;
+
+  &:hover {
+    cursor: pointer;
+
+    svg {
+      fill: blue;
+    }
+  }
+
 }
