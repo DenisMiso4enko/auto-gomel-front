@@ -9,9 +9,9 @@
 	padding: 0 15px;
 }
 .skeleton {
-	padding:15px;
+	// padding:15px;
 	//max-width: 300px;
-	height: 300px;
+	height: 350px;
 	width: 100%;
 	background: #fff;
 	margin-bottom: 20px;
@@ -24,6 +24,7 @@
 }
 .skeleton .square {
 	height: 100%;
+	width: 365px;
 	//max-height: 200px;
 	border-radius: 5px;
 	background: rgba(130, 130, 130, 0.2);
@@ -33,7 +34,7 @@
 	animation: wave-squares 2s infinite ease-out;
 }
 .skeleton .line {
-	height: 12px;
+	height: 20px;
 	margin-bottom:6px;
 	border-radius: 2px;
 	background: rgba(130, 130, 130, 0.2);
@@ -51,6 +52,11 @@
 	gap: 10px;
 	flex:2;
 	padding-right:15px;
+}
+.skeleton-left__bottom {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
 }
 .flex1{
 	flex: 1;
@@ -82,8 +88,14 @@
 .h25{
 	height: 25px !important;
 }
+.w20{
+	width: 20% !important
+}
 .w25{
 	width: 25% !important
+}
+.w30{
+	width: 32% !important
 }
 .w40{
 	width:40% !important;
@@ -94,8 +106,17 @@
 .w75{
 	width: 75% !important
 }
-.m10{
+.mb10{
 	margin-bottom: 10px !important;
+}
+.mt10{
+	margin-top: 10px !important;
+}
+.mb30{
+	margin-bottom: 30px !important;
+}
+.mt30{
+	margin-top: 180px !important;
 }
 .circle{
 	border-radius: 50% !important;
