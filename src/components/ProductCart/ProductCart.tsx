@@ -22,7 +22,13 @@ const ProductCart: FC<IProduct> = ({
 
     return (
         <div className="product-card">
-            <div className="product-card__image">
+            <div
+                className={
+                    !imagesUrl.length
+                        ? 'product-card__image product-card__image--padding'
+                        : 'product-card__image'
+                }
+            >
                 {imagesUrl.length ? (
                     <img src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product} />
                 ) : (
