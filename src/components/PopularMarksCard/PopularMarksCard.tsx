@@ -9,12 +9,12 @@ type PopularMarksCardProp = {
 const PopularMarksCard: FC<PopularMarksCardProp> = ({ image, title }) => {
   const navigate = useNavigate()
 
-  const handleOnClick = () => {
-    navigate(`parts/${title}`)
+  const handlerOnClickMark = () => {
+    navigate(`/parts?mark=${title}`)
   }
 
   return (
-    <div className="mark-card" onClick={handleOnClick}>
+    <div className="mark-card" onClick={handlerOnClickMark}>
       <div className="mark-card__image">
         <img src={image} alt={title} />
       </div>

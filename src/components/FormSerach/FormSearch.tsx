@@ -15,6 +15,14 @@ interface IFormSearch {
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const dispatch = useDispatch<AppDispatch>()
 
+  //states global
+  const { autos, options, partsCategory } = useSelector(
+    (state: RootState) => state.settings
+  )
+  const { currentPage, limit } = useSelector(
+    (state: RootState) => state.autoParts
+  )
+
   //states searchParams
   const [searchParams, setSearchParams] = useSearchParams()
   const queryMark = searchParams.get('mark') || ''
@@ -25,12 +33,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const queryProduct = searchParams.get('product') || ''
 
   //states local
-  const { autos, options, partsCategory } = useSelector(
-    (state: RootState) => state.settings
-  )
-  const { currentPage, limit } = useSelector(
-    (state: RootState) => state.autoParts
-  )
   const [mark, setMark] = useState(queryMark)
   const [modelVal, setModelVal] = useState(queryModel)
   const [yearVal, setYearVal] = useState(queryYear)

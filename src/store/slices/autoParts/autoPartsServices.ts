@@ -12,7 +12,7 @@ export const fetchGetProducts = createAsyncThunk(
             // @ts-ignore
             const { limit } = getState().autoParts
             const res: Response = await httpRequest(
-                `${PATHDOMAIN}/getAllParts?page=${page}&limit=${limit}&mark=${
+                `${PATHDOMAIN}/getAllParts?page=${page || 1}&limit=${limit}&mark=${
                     mark || ''
                 }&model=${model || ''}&year=${year || ''}&article=${
                     article || ''
