@@ -57,7 +57,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     setMark(mark)
     setModelVal('')
     const { models } = autos?.find((el: IAutos) => el.mark === mark)
-    setModels(models)
+    setModels(models ? models : [])
   }
 
   const handlerOnSubmitSearchForm = async (e: any) => {
@@ -79,6 +79,10 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   }
 
   useEffect(() => {
+    if (mark) {
+      const { models } = autos?.find((el: IAutos) => el.mark === mark)
+      setModels(models ? models : [])
+    }
     dispatch(fetchGetProducts({ ...formFields, page: currentPage }))
   }, [
     queryMark,

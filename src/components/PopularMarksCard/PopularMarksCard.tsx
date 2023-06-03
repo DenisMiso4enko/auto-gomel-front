@@ -4,13 +4,14 @@ import { useNavigate } from 'react-router-dom'
 type PopularMarksCardProp = {
   image: string
   title: string
+  value: string
 }
 
-const PopularMarksCard: FC<PopularMarksCardProp> = ({ image, title }) => {
+const PopularMarksCard: FC<PopularMarksCardProp> = ({ image, title, value }) => {
   const navigate = useNavigate()
 
   const handlerOnClickMark = () => {
-    navigate(`/parts?mark=${title}`)
+    navigate(`/parts?mark=${value}`)
   }
 
   return (

@@ -11,33 +11,41 @@ export const marksData = [
     {
         image: audi,
         title: 'Audi',
+        value: 'Audi',
     },
     {
         image: mers,
-        title: 'Mercedes Benz',
+        title: 'Mercedes-Benz',
+        value: 'Mercedes',
     },
     {
         image: volvo,
         title: 'Volvo',
+        value: 'Volvo',
     },
     {
         image: volkswagen,
         title: 'Volkswagen',
+        value: 'Volkswagen',
     },
     {
         image: renault,
         title: 'Renault',
+        value: 'Renault',
     },
     {
         image: ford,
         title: 'Ford',
+        value: 'Ford',
     },
     {
         image: opel,
         title: 'Opel',
+        value: 'Opel',
     },
     {
         image: iveco,
         title: 'Iveco',
+        value: 'Iveco',
     },
 ]
