@@ -5,11 +5,8 @@ const ArrowBack = () => {
   const navigate = useNavigate()
   const goBack = () => navigate(-1)
 
-  const handlerOnClickArrowBack = () => {
-    goBack()
-  }
   return (
-    <div className="arrow-back" onClick={handlerOnClickArrowBack}>
+    <div className="arrow-back" onClick={goBack}>
       <svg width="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
         <title />
         <g data-name="Layer 2" id="Layer_2">
