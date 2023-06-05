@@ -1,27 +1,58 @@
-import { FC } from 'react'
-import { currentType } from '../../pages/Details/Details'
-import ArrowBack from '../Icons/ArrowBack'
-import './index.scss'
+import { FC } from "react";
+import { currentType } from "../../pages/Details/Details";
+import "./index.scss";
+import * as React from "react";
+import { emphasize, styled } from "@mui/material/styles";
+import Breadcrumbs from "@mui/material/Breadcrumbs";
+import Chip from "@mui/material/Chip";
+import HomeIcon from "@mui/icons-material/Home";
+
+const StyledBreadcrumb = styled(Chip)(({ theme }) => {
+  const backgroundColor =
+    theme.palette.mode === "light"
+      ? theme.palette.grey[100]
+      : theme.palette.grey[800];
+  return {
+    backgroundColor,
+    height: theme.spacing(3),
+    color: theme.palette.text.primary,
+    fontWeight: theme.typography.fontWeightRegular,
+    "&:hover, &:focus": {
+      backgroundColor: emphasize(backgroundColor, 0.06)
+    },
+    "&:active": {
+      boxShadow: theme.shadows[1],
+      backgroundColor: emphasize(backgroundColor, 0.12)
+    }
+  };
+}) as typeof Chip;
 
 interface CrumbsProps {
   goBack: () => void
-  current: currentType
+  current: currentType,
 }
 
 const Crumbs: FC<CrumbsProps> = ({ goBack, current }) => {
-  const { product, year, mark } = current
+  const { product, year, mark } = current;
   return (
     <div className="crumbs">
-      <ArrowBack />
-      <p className="crumbs__item " onClick={goBack}>
-        назад
-      </p>
-      <p>/</p>
-      <p className="crumbs__item crumbs-disabled">
-        {product} {mark} {year}
-      </p>
+      <div role="presentation">
+        <Breadcrumbs aria-label="breadcrumb">
+          <StyledBreadcrumb
+            component="a"
+            href="/"
+            label="Главная"
+            icon={<HomeIcon fontSize="small" />}
+          />
+          <StyledBreadcrumb component="a" href="/parts" label="Запчасти" />
+          <StyledBreadcrumb
+            label={`${product} ${mark} ${year}`}
+            disabled={true}
+          />
+        </Breadcrumbs>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Crumbs
+export default Crumbs;
