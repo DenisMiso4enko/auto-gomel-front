@@ -6,6 +6,7 @@ import { emphasize, styled } from "@mui/material/styles";
 import Breadcrumbs from "@mui/material/Breadcrumbs";
 import Chip from "@mui/material/Chip";
 import HomeIcon from "@mui/icons-material/Home";
+import { useNavigate } from "react-router-dom";
 
 const StyledBreadcrumb = styled(Chip)(({ theme }) => {
   const backgroundColor =
@@ -34,17 +35,18 @@ interface CrumbsProps {
 
 const Crumbs: FC<CrumbsProps> = ({ goBack, current }) => {
   const { product, year, mark } = current;
+  const navigate = useNavigate();
   return (
     <div className="crumbs">
       <div role="presentation">
         <Breadcrumbs aria-label="breadcrumb">
           <StyledBreadcrumb
             component="a"
-            href="/"
             label="Главная"
             icon={<HomeIcon fontSize="small" />}
+            onClick={() => navigate("/")}
           />
-          <StyledBreadcrumb component="a" href="/parts" label="Запчасти" />
+          <StyledBreadcrumb component="a" label="Запчасти" onClick={goBack} />
           <StyledBreadcrumb
             label={`${product} ${mark} ${year}`}
             disabled={true}
