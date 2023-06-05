@@ -15,12 +15,12 @@ const PopularMarks = () => {
       <Swiper
         loop={true}
         slidesPerView={4}
-        spaceBetween={30}
+        spaceBetween={0}
         pagination={{
           clickable: true
         }}
         autoplay={{
-          delay: 1000,
+          delay: 2000,
           pauseOnMouseEnter: true,
           disableOnInteraction: false
         }}
