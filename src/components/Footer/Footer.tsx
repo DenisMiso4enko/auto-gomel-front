@@ -1,3 +1,6 @@
+import { useState, useEffect } from 'react'
+import { ExchangeRates } from '../ExchangeRates'
+
 const Footer = () => {
   return (
     <footer className="footer">
@@ -6,7 +9,7 @@ const Footer = () => {
           <div className="footer__top-item">
             <div
               className="logo"
-              style={{ fontSize: '20px', fontWeight: '700' }}
+              style={{ fontSize: '18px', fontWeight: '700' }}
             >
               AUTOGOMEL
             </div>
@@ -21,22 +24,26 @@ const Footer = () => {
           </div>
 
           <div className="footer__top-item">
-            <h3>Курсы валют</h3>
-            <ul>
-              <li>1 USD 2.86</li>
-              <li>1 EUR 3.10</li>
-              <li>1 RUB 0.04</li>
-              <li>USD/EUR 1.09</li>
-            </ul>
+            <ExchangeRates />
           </div>
 
           <div className="footer__top-item">
             <h3>Контакты</h3>
             <ul>
-              <li>+375 29 899 99 99</li>
-              <li>+375 29 899 99 99</li>
-              <li>+375 29 899 99 99</li>
-              <li>avda2010@mail.ru</li>
+              <li>
+                <a href="tel:+375 29 899 99 99">+375(29) 899-99-99</a>
+              </li>
+              <li>
+                <a href="tel:+375 29 899 99 99">+375(29) 899-99-99</a>
+              </li>
+              <li>
+                <a href="tel:+375 29 899 99 99">+375(29) 899-99-99</a>
+              </li>
+              <li>
+                <a href="mailto:avda2010@mail.ru?subject=Вопросы и предложения">
+                  avda2010@mail.ru
+                </a>
+              </li>
             </ul>
           </div>
         </div>

@@ -1,6 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { IOptionsInitialState } from '../../../types/productTypes'
-import { fetchOptions } from './settingsServices'
+import { fetchOptions, fetchRates } from './settingsServices'
 
 const initialState: IOptionsInitialState = {
     autos: null,
@@ -8,6 +8,7 @@ const initialState: IOptionsInitialState = {
     status: '',
     errors: null,
     partsCategory: null,
+    rates: null,
 }
 
 export const settingsSlice = createSlice({
@@ -34,6 +35,19 @@ export const settingsSlice = createSlice({
             state.errors = null
         })
         builder.addCase(fetchOptions.rejected, (state, action) => {
+            state.status = 'rejected'
+            state.errors = action.payload
+        })
+        builder.addCase(fetchRates.pending, (state) => {
+            state.status = 'pending'
+            state.errors = null
+        })
+        builder.addCase(fetchRates.fulfilled, (state, action) => {
+            state.status = 'fulfilled'
+            state.errors = null
+            state.rates = action.payload
+        })
+        builder.addCase(fetchRates.rejected, (state, action) => {
             state.status = 'rejected'
             state.errors = action.payload
         })

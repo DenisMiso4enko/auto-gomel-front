@@ -50,7 +50,7 @@ const ProductCart: FC<IProduct> = ({
         </div>
         <div className="product-card__bottom">
           <div className="product-card__date">
-            <HistoryIcon /> {dayjs(createdAt).format('D.MM.YYYY')}
+            <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
           </div>
           <button
             className="btn btn-success"

@@ -1,5 +1,9 @@
 @import "./scss/main";
 
+html {
+	font-size: 12px;
+}
+
 .App {
 	display: flex;
 	flex-direction: column;

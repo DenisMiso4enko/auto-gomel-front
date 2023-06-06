@@ -29,6 +29,16 @@ export interface IOptionsInitialState {
   status: string
   errors: any
   partsCategory: any
+  rates: IRates[] | null
+}
+
+export interface IRates {
+  Cur_ID: number
+  Date: string
+  Cur_Abbreviation: string
+  Cur_Scale: number
+  Cur_Name: string
+  Cur_OfficialRate: number
 }
 
 export interface IOptions {

@@ -32,3 +32,20 @@ export const fetchOptions = createAsyncThunk(
         }
     }
 )
+
+export const fetchRates = createAsyncThunk(
+    'options/fetchRates',
+    async function (_, {rejectWithValue}) {
+        try {
+            const ratesResponse: Response = await httpRequest(
+              'https://api.nbrb.by/exrates/rates?periodicity=0',
+              'GET'
+            )
+            const dataRates = await ratesResponse.json()
+            return dataRates
+        } catch (e: any) {
+            console.log(e.message())
+            return rejectWithValue(e)
+        }
+    }
+)
