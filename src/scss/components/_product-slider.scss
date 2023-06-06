@@ -1,5 +1,7 @@
-.product-images-slider {
+.swiper.product-images-slider {
 	margin-bottom: 20px;
+	box-shadow: none;
+	padding: 2rem;
 	.swiper-slide {
 		padding-top: 100%;
 		overflow: hidden;
@@ -23,7 +25,9 @@
 	//}
 }
 
-.product-images-slider-thumbs {
+.swiper.product-images-slider-thumbs {
+	box-shadow: none;
+	padding: 0;
 	.swiper-slide {
 		cursor: pointer;
 		border-radius: 9px;

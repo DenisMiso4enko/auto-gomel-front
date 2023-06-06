@@ -22,11 +22,11 @@ export const ExchangeRates = () => {
   }
   return (
     <>
-      <h3>Курсы валют {dayjs(usd?.Date).format('DD.MM.YYYY HH:MM')}</h3>
+      <h3>Курсы валют {dayjs(usd?.Date).format('DD.MM.YYYY')}</h3>
       <ul>
         {currentRates.length &&
           currentRates.map(
-            ({ Cur_Abbreviation, Cur_Scale, Cur_Name, Cur_OfficialRate }) => (
+            ({ Cur_Abbreviation, Cur_Scale, Cur_OfficialRate }) => (
               <li key={Cur_Abbreviation}>{`${Cur_Scale} ${Cur_Abbreviation} ${Cur_OfficialRate} BYN`}</li>
             )
           )}

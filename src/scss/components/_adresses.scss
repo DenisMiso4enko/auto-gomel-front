@@ -1,24 +1,41 @@
 .adresses {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	gap: 20px;
 	margin: 30px 0;
+	display: flex;
+	flex-flow: row wrap;
+	align-items: center;
+	justify-content: space-evenly;
+	gap: 20px;
+	
 	&__item {
+		min-width: 15rem;
 		padding: 20px;
 		border-radius: 8px;
+		background-color: rgba(85, 184, 46, 0.103);
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	}
 
 	&__adress {
 		margin-bottom: 30px;
+		text-align: center;
+		font-weight: 400;
+		font-size: 1rem;
+	}
 
+	&__work {
+		margin-top: 2rem;
+		text-align: center;
+		font-weight: 200;
+		// font-size: .95rem;
+		color: #0000009a;
 	}
 
 	&__phones {
 		display: flex;
 		flex-direction: column;
 		gap: 10px;
+		font-weight: 600;
+		font-size: 1.1rem;
+
 		div {
 			display: flex;
 			align-items: center;
