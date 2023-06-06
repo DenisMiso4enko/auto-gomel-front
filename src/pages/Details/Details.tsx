@@ -10,7 +10,8 @@ import AccountBalanceWalletIcon from "@mui/icons-material/AccountBalanceWallet";
 import ImagesGallery from "../../components/ImagesGallery/ImagesGallery";
 import DetailsSkeleton from "../../components/DetailsSkeleton/DetailsSkeleton";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import noImage from "/no-img.png";
+// import noImage from "/no-img.png";
+import noImage from "../../assets/nofoto2.jpg";
 import Crumbs from "../../components/Crumbs/Crumbs";
 
 export type currentType = {

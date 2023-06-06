@@ -1,32 +1,33 @@
-import { FC } from 'react'
-import { useNavigate } from 'react-router-dom'
-import { IProduct } from '../../types/productTypes'
-import { PATHDOMAIN } from '../../constants'
-import noImage from '/no-img.png'
-import dayjs from 'dayjs'
-import HistoryIcon from '@mui/icons-material/History'
+import { FC } from "react";
+import { useNavigate } from "react-router-dom";
+import { IProduct } from "../../types/productTypes";
+import { PATHDOMAIN } from "../../constants";
+// import noImage from "/no-img.png";
+import noImage from "../../assets/nofoto2.jpg";
+import dayjs from "dayjs";
+import HistoryIcon from "@mui/icons-material/History";
 
 const ProductCart: FC<IProduct> = ({
-  description,
-  imagesUrl,
-  product,
-  price,
-  year,
-  mark,
-  model,
-  currency,
-  createdAt,
-  _id,
-}) => {
-  const navigate = useNavigate()
+                                     description,
+                                     imagesUrl,
+                                     product,
+                                     price,
+                                     year,
+                                     mark,
+                                     model,
+                                     currency,
+                                     createdAt,
+                                     _id
+                                   }) => {
+  const navigate = useNavigate();
 
   return (
-    <div className="product-card">
+    <div className="product-card" onClick={() => navigate(`/parts/${_id}`)}>
       <div
         className={
           imagesUrl.length
-            ? 'product-card__image'
-            : 'product-card__image product-card__image--padding'
+            ? "product-card__image"
+            : "product-card__image product-card__image--padding"
         }
       >
         {imagesUrl.length ? (
@@ -36,32 +37,23 @@ const ProductCart: FC<IProduct> = ({
         )}
       </div>
       <div className="product-card__content">
-        <div className="product-card__top">
-          <p className="product-card__subtitle">
-            {mark} {model}, {year}
-          </p>
+        <div className="product-card__info">
+          <p className="product-card__subtitle">{mark} {model}, {year}</p>
           <h3 className="product-card__title">{product}</h3>
-          <div className="product-card__price">
-            <p>
-              {price} <span>{currency}</span>
-            </p>
-          </div>
           <p className="product-card__description">{description}</p>
         </div>
-        <div className="product-card__bottom">
-          <div className="product-card__date">
-            <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
-          </div>
-          <button
-            className="btn btn-success"
-            onClick={() => navigate(`/parts/${_id}`)}
-          >
-            Узнать больше
-          </button>
+        <div>
+          <p className="product-card__price">{price} {currency}</p>
+        </div>
+        <div className="product-card__date">
+          <span><HistoryIcon /> {dayjs(createdAt).format("DD.MM.YYYY")}</span>
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default ProductCart
+export default ProductCart;
+// <div className="product-card__date">
+//   <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
+// </div>
