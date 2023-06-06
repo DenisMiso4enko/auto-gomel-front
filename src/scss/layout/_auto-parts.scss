@@ -12,11 +12,15 @@
 	display: flex;
 	gap: 30px;
 	min-height: 78vh;
+	@media (max-width: 900px) {
+		flex-direction: column;
+	}
 	&__left {
 		width: 23%;
-		@media (max-width: 1024px) {
-			width: 30%;
+		@media (max-width: 900px) {
+			width: 100%;
 		}
+
 
 	}
 
@@ -25,5 +29,8 @@
 		flex-direction: column;
 		gap: 30px;
 		width: 80%;
+		@media (max-width: 900px) {
+			width: 100%;
+		}
 	}
 }

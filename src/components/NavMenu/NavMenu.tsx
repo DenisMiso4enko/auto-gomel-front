@@ -6,7 +6,7 @@ const NavMenu = ({ isOpen, setIsOpen }: any) => {
     <nav className={`menu ${isOpen ? "active" : ""}`}>
       <ul className="menu__list">
         {menuData?.map(el => (
-          <li className="">
+          <li className="" key={el.title}>
             <NavLink className="menu-item" to={el.link} onClick={() => setIsOpen(false)}>
               {el.title}
             </NavLink>
