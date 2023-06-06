@@ -1,7 +1,6 @@
 import React from 'react'
 import mtsLogo from '/icons/mts-logo.svg'
 import velcomeLogo from '/icons/velcome-logo.svg'
-import './index.scss'
 
 const Adresses = () => {
   return (
