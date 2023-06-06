@@ -53,10 +53,9 @@
 
 	&__content {
 		display: flex;
+		justify-content: space-between;
 		width: 70%;
-		//justify-content: space-between;
 		gap: 10px;
-		//flex-grow: 1;
 	}
 
 	&__info {
@@ -82,6 +81,7 @@
 
 	&__price {
 		background-color: #4CAF50;
+		text-align: center;
 		padding: 4px;
 		border-radius: 10px;
 		@include heading($font-weight-400, $font-h4, 23px, $color-white);
