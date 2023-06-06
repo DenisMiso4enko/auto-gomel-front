@@ -5,6 +5,9 @@ $component: menu-item;
 	font-size: $font-text;
 	font-weight: $font-weight-400;
 	color: $color-black;
+	@media (max-width: 900px) {
+		font-size: 50px;
+	}
 	&:before {
 		content: '';
 		position: absolute;

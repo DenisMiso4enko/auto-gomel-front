@@ -7,8 +7,7 @@
 	justify-content: center;
 	text-align: center;
 
-	background: url("/spare-parts-car.jpg") no-repeat;
-	background-position: center;
+	background: url("/spare-parts-car.jpg") no-repeat center;
 	background-size: cover;
 
 	margin-bottom: $space-sections;
@@ -28,15 +27,23 @@
 		margin: 0 auto;
 		height: 100%;
 
+		padding: 20px;
+
 		color: $color-white;
 	}
 	&__title {
-		//font-size: $font-h1;
 		@include heading( $font-weight-700,$font-h1, 140%, $color-white);
 		margin-bottom: 30px;
+		@media (max-width: 900px) {
+			font-size: 32px;
+		}
+
 	}
 	&__subtitle {
 		@include heading( $font-weight-400,$font-h3, 140%, $color-gray-200);
 		margin-bottom: 20px;
+		@media (max-width: 900px) {
+			font-size: 18px;
+		}
 	}
 }
