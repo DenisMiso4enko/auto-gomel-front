@@ -1,32 +1,20 @@
-import { NavLink } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
+import { menuData } from "./menuData";
 
-const NavMenu = () => {
+const NavMenu = ({ isOpen, setIsOpen }: any) => {
   return (
-    <nav className="menu">
+    <nav className={`menu ${isOpen ? "active" : ""}`}>
       <ul className="menu__list">
-        <li className="menu__list-item">
-          <NavLink className="menu-item" to="/">
-            Главная
-          </NavLink>
-        </li>
-        <li className="menu__list-item">
-          <NavLink className="menu-item" to="/parts">
-            Запчасти
-          </NavLink>
-        </li>
-        <li className="menu__list-item">
-          <NavLink className="menu-item" to="/delivery">
-            Доставка
-          </NavLink>
-        </li>
-        <li className="menu__list-item">
-          <NavLink className="menu-item" to="/about">
-            О нас
-          </NavLink>
-        </li>
+        {menuData?.map(el => (
+          <li className="">
+            <NavLink className="menu-item" to={el.link} onClick={() => setIsOpen(false)}>
+              {el.title}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
-  )
-}
+  );
+};
 
-export default NavMenu
+export default NavMenu;

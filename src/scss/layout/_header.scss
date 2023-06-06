@@ -1,6 +1,5 @@
 .header {
 	background-color: $color-white;
-	//color: $color-white;
 	-webkit-box-shadow: 0px 12px 25px -17px rgba(34, 60, 80, 0.24);
 	-moz-box-shadow: 0px 12px 25px -17px rgba(34, 60, 80, 0.24);
 	box-shadow: 0px 12px 25px -17px rgba(34, 60, 80, 0.24);
@@ -16,10 +15,64 @@
 		}
 	}
 
+	&__right {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+
 	&__phone {
 		display: flex;
 		align-items: center;
 		gap: 10px;
 	}
 
+}
+
+.menu-btn {
+	width: 20px;
+	height: 30px;
+	position: relative;
+	overflow: hidden;
+	cursor: pointer;
+	display: none;
+	z-index: 100;
+	@media (max-width: 900px) {
+		display: block;
+	}
+}
+
+.menu-btn span {
+	width: 20px;
+	height: 2px;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	background-color: #222222;
+	transition: all 0.5s;
+
+}
+
+.menu-btn span:nth-of-type(2) {
+	top: calc(50% - 5px);
+}
+
+.menu-btn span:nth-of-type(3) {
+	top: calc(50% + 5px);
+}
+
+
+.menu-btn.active span:nth-of-type(1) {
+	display: none;
+}
+
+.menu-btn.active span:nth-of-type(2) {
+	top: 50%;
+	transform: translate(-50%, 0%) rotate(45deg);
+}
+
+.menu-btn.active span:nth-of-type(3) {
+	top: 50%;
+	transform: translate(-50%, 0%) rotate(-45deg);
 }
