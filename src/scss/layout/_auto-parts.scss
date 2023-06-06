@@ -10,10 +10,13 @@
 
 .parts-row {
 	display: flex;
-	gap: 50px;
+	gap: 30px;
 	min-height: 78vh;
 	&__left {
 		width: 23%;
+		@media (max-width: 1024px) {
+			width: 30%;
+		}
 
 	}
 
