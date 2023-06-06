@@ -13,6 +13,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 // import noImage from "/no-img.png";
 import noImage from "../../assets/nofoto2.jpg";
 import Crumbs from "../../components/Crumbs/Crumbs";
+import Salesman from "../../components/Salesman/Salesman";
 
 export type currentType = {
   product: string | undefined
@@ -78,9 +79,8 @@ const Details = () => {
                   </div>
                 </div>
                 <div className="details__price details-item">
-                  <AccountBalanceWalletIcon />
                   <p>
-                    {product.price} {product.currency}
+                    <AccountBalanceWalletIcon /> {product.price} {product.currency}
                   </p>
                 </div>
                 <div className="details__desc details-item">
@@ -96,6 +96,7 @@ const Details = () => {
                     <p>7 дней гарантия</p>
                   </div>
                 </div>
+                <Salesman />
               </div>
             </div>
             <div className="details__bottom">

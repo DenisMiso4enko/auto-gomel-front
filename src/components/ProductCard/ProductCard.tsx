@@ -2,7 +2,6 @@ import { FC } from "react";
 import { useNavigate } from "react-router-dom";
 import { IProduct } from "../../types/productTypes";
 import { PATHDOMAIN } from "../../constants";
-// import noImage from "/no-img.png";
 import noImage from "../../assets/nofoto2.jpg";
 import dayjs from "dayjs";
 import HistoryIcon from "@mui/icons-material/History";
