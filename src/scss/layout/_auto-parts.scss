@@ -19,12 +19,12 @@
 .parts-row {
 	display: flex;
 	justify-content: center;
-	align-items: center;
 	gap: 30px;
 	min-height: 78vh;
-
+	
 	@media (max-width: 900px) {
 		flex-direction: column;
+		align-items: center;
 	}
 
 	&__left {

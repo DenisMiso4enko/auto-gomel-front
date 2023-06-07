@@ -79,11 +79,14 @@
 		@include heading($font-weight-400, $font-h3, 23px, $color-black);
 	}
 
-	&__rates {
-		display: flex;
-		align-items: center;
-		justify-content: center;
+	@media (max-width: 600px) {
+		&__rates {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
 	}
+
 
 	&__price {
 		height: fit-content;
