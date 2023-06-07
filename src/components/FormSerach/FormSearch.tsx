@@ -13,7 +13,6 @@ interface IFormSearch {
 }
 
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
-  const [modeDisabled, setModeDisabled] = useState(true)
   const dispatch = useDispatch<AppDispatch>()
 
   //states global
@@ -59,7 +58,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     setModelVal('')
     const { models } = autos?.find((el: IAutos) => el.mark === mark)
     setModels(models ? models : [])
-    setModeDisabled(false)
   }
 
   const handlerOnSubmitSearchForm = async (e: any) => {
@@ -77,7 +75,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     setArticleVal('')
     setNumberVal('')
     setSearchParams({})
-    setModeDisabled(true)
     dispatch(setCurrentPage(1))
   }
 
@@ -125,7 +122,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             className="select-box"
             value={modelVal}
             onChange={(event) => setModelVal(event.target.value)}
-            disabled={modeDisabled}
+            disabled={models.length == 0}
           >
             <option value="0">Модель</option>
             {models?.map((el: any) => (
@@ -144,7 +141,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             className="select-box"
             value={yearVal}
             onChange={(event) => setYearVal(event.target.value)}
-            disabled={modeDisabled}
+            disabled={models.length == 0}
           >
             <option value="0">Год</option>
             {years &&
