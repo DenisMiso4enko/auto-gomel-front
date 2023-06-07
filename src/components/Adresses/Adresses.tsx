@@ -8,7 +8,7 @@ const Addresses = () => {
   return (
     <div className="addresses">
       {addressesData?.map(item => (
-        <div className="addresses__item">
+        <div key={item.name} className="addresses__item">
           <div className="addresses__left">
             <img src={item.image} alt={item.name} />
           </div>
