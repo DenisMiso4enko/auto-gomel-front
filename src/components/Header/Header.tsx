@@ -1,8 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import NavMenu from "../NavMenu/NavMenu";
-import PhoneInTalkIcon from "@mui/icons-material/PhoneInTalk";
+import PhoneIcon from '@mui/icons-material/Phone';
 import { useState } from "react";
-import MobileMenu from "../MobileMenu/MobileMenu";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -27,7 +26,7 @@ const Header = () => {
         <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="header__right">
           <div className="header__phone">
-            <PhoneInTalkIcon />
+            <PhoneIcon />
             <a href="tel:+375298378081">+375 29 837 80 81</a>
           </div>
           <div className={`menu-btn ${isOpen ? "active" : ""}`} onClick={handleBurgerOpen}>

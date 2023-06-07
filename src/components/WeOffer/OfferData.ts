@@ -1,24 +1,24 @@
-import ss from '/original-product.svg'
+import ss from "/original-product.svg";
 
 export const offerData = [
   {
     image: ss,
-    title: 'Original Products',
-    text: 'В своём стремлении улучшить пользовательский опыт мы упускаем, что активно развивающиеся страны третьего мира призывают нас к новым свершениям, которые, в свою очередь, должны быть преданы социально-демократической анафеме. Имеется спорная точка зрения, гласящая примерно следующее: действия представителей оппозиции представляют собой не что иное, как квинтэссенцию победы маркетинга над разумом и должны быть превращены в посмешище',
+    title: "Original Products",
+    text: "В своём стремлении улучшить пользовательский"
   },
   {
     image: ss,
-    title: 'Satisfaction Guaranty',
-    text: 'хотя само их существование приносит несомненную пользу обществу. В своём стремлении улучшить пользовательский опыт мы упускаем, что действия представителей оппозиции будут в равной степени предоставлены сами себе.',
+    title: "Satisfaction Guaranty",
+    text: "хотя само их существование приносит."
   },
   {
     image: ss,
-    title: 'New Arrival',
-    text: 'We provide money back if the product not original',
+    title: "New Arrival",
+    text: "We provide money back if the product not original"
   },
   {
     image: ss,
-    title: 'Fast Shipping',
-    text: 'We provide money back if the product not original',
-  },
-]
+    title: "Fast Shipping",
+    text: "We provide money back if the product not original"
+  }
+];

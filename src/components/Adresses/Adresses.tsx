@@ -1,53 +1,45 @@
-import mtsLogo from '/icons/mts-logo.svg'
-import velcomeLogo from '/icons/velcome-logo.svg'
+import mtsLogo from "/icons/mts-logo.svg";
+import velcomeLogo from "/icons/velcome-logo.svg";
+import { addressesData } from "./data";
+import HistoryIcon from "@mui/icons-material/History";
+import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
 
-const Adresses = () => {
+const Addresses = () => {
   return (
-    <div className="adresses">
-      <div className="adresses__item">
-        <h3 className="adresses__adress">
-          Гомель, ул. Г/Подпольщиков, 18 <br />
-          Авторынок "Бакуненский"
-        </h3>
-        <div className="adresses__phones">
-          <div>
-            <img src={mtsLogo} alt="mts" />
-            <p>+375 29 752 27 57</p>
+    <div className="addresses">
+      {addressesData?.map(item => (
+        <div className="addresses__item">
+          <div className="addresses__left">
+            <img src={item.image} alt={item.name} />
           </div>
-          <div>
-            <img src={velcomeLogo} alt="velcome" />
-            <p>+375 29 752 27 57</p>
-          </div>
-        </div>
-        <div className="adresses__work">
-          <p>
-            пн-пт: 9:00 - 21:00 <br /> сб-вс: 8:00 - 22:00
-          </p>
-        </div>
-      </div>
-      <div className="adresses__item">
-        <h3 className="adresses__adress">
-          Гомель, ул. Ефремова <br />
-          Авторынок "Ефремовский"
-        </h3>
-        <div className="adresses__phones">
-          <div>
-            <img src={mtsLogo} alt="mts" />
-            <p>+375 29 752 27 57</p>
-          </div>
-          <div>
-            <img src={velcomeLogo} alt="velcome" />
-            <p>+375 29 752 27 57</p>
+          <div className="addresses__right">
+            <h3 className="addresses__address">
+              {item.address} <br />
+              {item.name}
+            </h3>
+            <div className="addresses__phones">
+              <div>
+                <img src={mtsLogo} alt="mts" />
+                <a href={`tel:${item.phone1}`}>{item.phone1}</a>
+              </div>
+              <div>
+                <img src={velcomeLogo} alt="velcome" />
+                <a href={`tel:${item.phone2}`}>{item.phone2}</a>
+              </div>
+            </div>
+            <div className="addresses__email">
+              <AlternateEmailIcon />
+              <a href={`mailto:${item.email}`}>{item.email}</a>
+            </div>
+            <div className="addresses__work">
+              <HistoryIcon />
+              <p>{item.open} {item.openWeekend}</p>
+            </div>
           </div>
         </div>
-        <div className="adresses__work">
-          <p>
-            пн-пт: 10:00 - 20:00 <br /> сб-вс: 9:00 - 21:00
-          </p>
-        </div>
-      </div>
+      ))}
     </div>
-  )
-}
+  );
+};
 
-export default Adresses
+export default Addresses;
