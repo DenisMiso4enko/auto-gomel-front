@@ -18,7 +18,7 @@ const Header = () => {
       <div className="header__body container">
         <div
           className="logo"
-          style={{ fontSize: "20px", fontWeight: "700" }}
+          style={{ fontSize: '20px', fontWeight: '700' }}
           onClick={goHome}
         >
           АВТО.ГОМЕЛЬ
@@ -26,10 +26,15 @@ const Header = () => {
         <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="header__right">
           <div className="header__phone">
-            <PhoneIcon />
-            <a href="tel:+375298378081">+375 29 837 80 81</a>
+            <a href="tel:+375298378081">
+              <PhoneIcon />
+              <span>+375 29 837 80 81</span>
+            </a>
           </div>
-          <div className={`menu-btn ${isOpen ? "active" : ""}`} onClick={handleBurgerOpen}>
+          <div
+            className={`menu-btn ${isOpen ? 'active' : ''}`}
+            onClick={handleBurgerOpen}
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -37,7 +42,7 @@ const Header = () => {
         </div>
       </div>
     </header>
-  );
+  )
 };
 
 export default Header;

@@ -79,12 +79,24 @@
 		@include heading($font-weight-400, $font-h3, 23px, $color-black);
 	}
 
+	&__rates {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+
 	&__price {
+		height: fit-content;
 		background-color: #4CAF50;
 		text-align: center;
 		padding: 4px;
 		border-radius: 10px;
 		@include heading($font-weight-400, $font-h4, 23px, $color-white);
+
+		@media (max-width: 600px) {
+			font-size: 1rem;
+			line-height: 1rem;
+		}
 	}
 
 	&__year {
@@ -103,6 +115,7 @@
 
 	&__date {
 		padding: 4px;
+
 		@media (max-width: 768px) {
 			display: none;
 		}

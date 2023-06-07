@@ -3,10 +3,20 @@
 	border-radius: 8px;
 	padding: 10px;
 
+	@media (max-width: 850px) {
+		display: flex;
+		flex-flow: column;
+		align-items: center;
+	}
+
 	&__name {
 		font-size: 24px;
 		font-weight: bold;
 		margin-bottom: 5px;
+
+		@media (max-width: 900px) {
+			margin: 1rem 0;
+		}
 	}
 
 	&__time {
@@ -14,6 +24,7 @@
 		align-items: center;
 		gap: 10px;
 		margin-bottom: 5px;
+
 		//svg {
 		//	fill: $color-orange;
 		//}
@@ -26,6 +37,7 @@
 		font-size: 16px;
 		line-height: 24px;
 		margin-bottom: 20px;
+
 		span {
 			font-weight: bold;
 		}
@@ -34,10 +46,15 @@
 	&__phones {
 		display: flex;
 		flex-direction: column;
-		//align-items: center;
 		gap: 8px;
+
+		@media (max-width: 900px) {
+			margin: 1rem 0;
+		}
+
 		div {
 			margin-bottom: 20px;
+
 			a {
 				padding: 10px 10px;
 				background: #388E3C;
@@ -45,6 +62,7 @@
 				border-radius: 8px;
 				font-weight: bold;
 				transition: background .3s ease;
+
 				&:hover {
 					background: #4CAF50;
 				}
@@ -52,7 +70,8 @@
 		}
 	}
 
-	&__say {
+	&__say > span {
+		padding-left: .3rem;
 		font-weight: bold;
 	}
 }

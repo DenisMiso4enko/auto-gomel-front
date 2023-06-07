@@ -25,6 +25,24 @@
 		display: flex;
 		align-items: center;
 		gap: 10px;
+
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			span {
+				padding-left: .5rem;
+			}
+		}
+
+		@media (max-width: 400px) {
+			a {
+				span {
+					display: none;
+				}
+			}
+		}
 	}
 
 }
@@ -32,13 +50,19 @@
 .menu-btn {
 	width: 20px;
 	height: 30px;
+	margin-left: 2rem;
 	position: relative;
 	overflow: hidden;
 	cursor: pointer;
 	display: none;
 	z-index: 100;
+
 	@media (max-width: 900px) {
 		display: block;
+	}
+
+	@media (max-width: 300px) {
+		margin-left: 1rem;
 	}
 }
 

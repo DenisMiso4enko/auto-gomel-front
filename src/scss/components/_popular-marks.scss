@@ -1,5 +1,6 @@
 .mark-card {
 	text-align: center;
+
 	&:active {
 		cursor: pointer;
 	}
@@ -30,6 +31,11 @@
 	&:active {
 		cursor: grabbing;
 	}
+
+	@media (max-width: 600px) {
+		padding: 2rem 0;
+	}
+
 }
 
 .swiper-slide {

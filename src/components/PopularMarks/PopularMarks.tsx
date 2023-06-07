@@ -27,8 +27,11 @@ const PopularMarks = () => {
         modules={[Autoplay]}
         className="mySwiper"
         breakpoints={{
-          320: {
+          280: {
             slidesPerView: 2
+          },
+          510: {
+            slidesPerView: 3
           },
           768: {
             slidesPerView: 4

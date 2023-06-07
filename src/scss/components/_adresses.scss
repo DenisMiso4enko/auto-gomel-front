@@ -1,12 +1,13 @@
 .addresses {
 	margin: 30px 0;
 	display: flex;
+	flex-flow: row wrap;
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 20px;
 
 	&__left {
-		width: 40%;
+		width: 50%;
 		border-radius: 8px;
 		overflow: hidden;
 
@@ -17,12 +18,21 @@
 	}
 
 	&__item {
-		width: 50%;
+		width: 48%;
 		display: flex;
 		gap: 10px;
 		padding: 20px;
 		border-radius: 8px;
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+	}
+
+	@media (max-width: 900px) {
+		&__item {
+			width: 90%;
+		}
+		&__left {
+			display: none;
+		}
 	}
 
 	&__address {

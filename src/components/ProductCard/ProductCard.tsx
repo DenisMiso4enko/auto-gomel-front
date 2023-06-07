@@ -41,7 +41,7 @@ const ProductCart: FC<IProduct> = ({
           <h3 className="product-card__title">{product}</h3>
           <p className="product-card__description">{description}</p>
         </div>
-        <div>
+        <div className="product-card__rates">
           <p className="product-card__price">{price} {currency}</p>
         </div>
         <div className="product-card__date">
