@@ -20,9 +20,9 @@
 	&__item {
 		width: 48%;
 		display: flex;
-		gap: 10px;
-		padding: 20px;
-		border-radius: 8px;
+		gap: .7rem;
+		padding: 1.5rem;
+		border-radius: .5rem;
 		box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 	}
 
@@ -38,14 +38,14 @@
 	&__address {
 		font-weight: 600;
 		font-size: 1rem;
-		line-height: 18px;
-		margin-bottom: 15px;
+		line-height: 1.3rem;
+		margin-bottom: 1rem;
 	}
 
 	&__work {
 		display: flex;
 		align-items: center;
-		gap: 10px;
+		gap: .7rem;
 
 		svg {
 			fill: $color-orange;
@@ -53,15 +53,15 @@
 
 		p {
 			font-weight: 400;
-			line-height: 20px;
+			line-height: 1.5rem;
 		}
 	}
 
 	&__email {
 		display: flex;
 		align-items: center;
-		gap: 10px;
-		margin-bottom: 8px;
+		gap: .7rem;
+		margin-bottom: .5rem;
 
 		a {
 			color: $color-black;
@@ -82,13 +82,13 @@
 		flex-direction: column;
 		font-weight: 500;
 		font-size: 1.1rem;
-		gap: 5px;
-		margin-bottom: 10px;
+		gap: .3rem;
+		margin-bottom: .7rem;
 
 		div {
 			display: flex;
 			align-items: center;
-			gap: 10px;
+			gap: .7rem;
 
 			a {
 				color: $color-black;
@@ -100,8 +100,8 @@
 			}
 
 			img {
-				width: 18px;
-				height: 18px;
+				width: 1.1rem;
+				height: 1.2rem;
 			}
 		}
 	}

@@ -27,23 +27,23 @@
 		margin: 0 auto;
 		height: 100%;
 
-		padding: 20px;
+		padding: 1.5rem;
 
 		color: $color-white;
 	}
 	&__title {
 		@include heading( $font-weight-700,$font-h1, 140%, $color-white);
-		margin-bottom: 30px;
+		margin-bottom: 2rem;
 		@media (max-width: 900px) {
-			font-size: 32px;
+			font-size: 2.2rem;
 		}
 
 	}
 	&__subtitle {
 		@include heading( $font-weight-400,$font-h3, 140%, $color-gray-200);
-		margin-bottom: 20px;
+		margin-bottom: 1.5rem;
 		@media (max-width: 900px) {
-			font-size: 18px;
+			font-size: 1.2rem;
 		}
 	}
 }

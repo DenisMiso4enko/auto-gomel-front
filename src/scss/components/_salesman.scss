@@ -1,7 +1,7 @@
 .salesman-info {
 	border: 1px solid $color-gray-300;
-	border-radius: 8px;
-	padding: 10px;
+	border-radius: .5rem;
+	padding: .7rem;
 
 	@media (max-width: 850px) {
 		display: flex;
@@ -10,9 +10,9 @@
 	}
 
 	&__name {
-		font-size: 24px;
+		font-size: 1.5rem;
 		font-weight: bold;
-		margin-bottom: 5px;
+		margin-bottom: .3rem;
 
 		@media (max-width: 900px) {
 			margin: 1rem 0;
@@ -22,21 +22,18 @@
 	&__time {
 		display: flex;
 		align-items: center;
-		gap: 10px;
-		margin-bottom: 5px;
+		gap: .7rem;
+		margin-bottom: .3rem;
 
-		//svg {
-		//	fill: $color-orange;
-		//}
 		p {
-			font-size: 18px;
+			font-size: 1rem;
 		}
 	}
 
 	&__address {
-		font-size: 16px;
-		line-height: 24px;
-		margin-bottom: 20px;
+		font-size: 1.1rem;
+		line-height: 1.5rem;
+		margin-bottom: 1.3rem;
 
 		span {
 			font-weight: bold;
@@ -46,20 +43,20 @@
 	&__phones {
 		display: flex;
 		flex-direction: column;
-		gap: 8px;
+		gap: .6rem;
 
 		@media (max-width: 900px) {
 			margin: 1rem 0;
 		}
 
 		div {
-			margin-bottom: 20px;
+			margin-bottom: 1.4rem;
 
 			a {
-				padding: 10px 10px;
+				padding: .7rem .7rem;
 				background: #388E3C;
 				color: $color-white;
-				border-radius: 8px;
+				border-radius: .5rem;
 				font-weight: bold;
 				transition: background .3s ease;
 

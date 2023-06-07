@@ -85,7 +85,8 @@ $btn-variants: (
 
 .scroll-btn {
 	position: fixed;
-	top: 80%;
+	z-index: 1000;
+	top: 86%;
 	right: 10%;
 	padding: 4px 6px;
 	border: none;
