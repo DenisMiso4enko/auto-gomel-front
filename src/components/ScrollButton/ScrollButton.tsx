@@ -23,13 +23,13 @@ const ScrollButton = () => {
   }
 
   return (
-    <>
+    <div className='container'>
       {toTopButton && (
         <button className="scroll-btn" type="button" onClick={top}>
           <ArrowUpwardIcon fontSize={'large'} />
         </button>
       )}
-    </>
+    </div>
   )
 }
 
