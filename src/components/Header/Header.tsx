@@ -5,11 +5,12 @@ import { useState } from 'react'
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false)
+
   const navigate = useNavigate()
+  const goHome = () => navigate('/')
+
   const locate = useLocation()
   const isHome = locate.pathname === '/'
-  console.log(isHome)
-  const goHome = () => navigate('/')
 
   const handleBurgerOpen = () => {
     setIsOpen(!isOpen)

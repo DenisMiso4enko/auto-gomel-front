@@ -8,6 +8,6 @@ export const httpRequest = (path: string, method: string, body?: any) => {
       Authorization: `Bearer ${token}`,
       mode: "no-cors"
     },
-    body: JSON.stringify(body)
+    body: JSON.stringify(body),
   });
 };
