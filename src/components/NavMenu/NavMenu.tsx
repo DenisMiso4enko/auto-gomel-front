@@ -1,20 +1,24 @@
-import { NavLink } from "react-router-dom";
-import { menuData } from "./menuData";
+import { NavLink } from 'react-router-dom'
+import { menuData } from './menuData'
 
 const NavMenu = ({ isOpen, setIsOpen }: any) => {
   return (
-    <nav className={`menu ${isOpen ? "active" : ""}`}>
+    <nav className={`menu ${isOpen ? 'active' : ''}`}>
       <ul className="menu__list">
-        {menuData?.map(el => (
+        {menuData?.map((el) => (
           <li className="" key={el.title}>
-            <NavLink className="menu-item" to={el.link} onClick={() => setIsOpen(false)}>
+            <NavLink
+              className="menu-item"
+              to={el.link}
+              onClick={() => setIsOpen(false)}
+            >
               {el.title}
             </NavLink>
           </li>
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default NavMenu;
+export default NavMenu

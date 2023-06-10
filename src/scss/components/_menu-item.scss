@@ -1,32 +1,33 @@
 $component: menu-item;
 
 .#{$component} {
-	position: relative;
-	font-size: $font-text;
-	font-weight: $font-weight-400;
-	color: $color-light-blue;
-	transition: color .2s ease-in-out;
+  position: relative;
+  font-size: $font-text;
+  font-weight: $font-weight-400;
+  color: $color-light-blue;
+  transition: color 0.2s ease-in-out;
 
-	&:hover {
-		color: $color-medium-blue;
-	}
+  &:hover {
+    color: $color-medium-blue;
+  }
 
-	@media (max-width: 900px) {
-		font-size: 50px;
-	}
-	&:before {
-		content: '';
-		position: absolute;
-		width: 0;
-		height: 1px;
-		left: 0;
-		bottom: -5px;
-		background: $color-medium-blue;
-		border-radius: 4px;
-		transition: width .3s ease;
-	}
+  @media (max-width: 900px) {
+    font-size: 50px;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 1px;
+    left: 0;
+    bottom: -5px;
+    background: $color-medium-blue;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+  }
 
-	&.active:before, &:hover:before  {
-		width: 100%;
-	}
+  &.active:before,
+  &:hover:before {
+    width: 100%;
+  }
 }

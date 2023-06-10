@@ -1,65 +1,64 @@
 .footer {
-	&__top {
-		display: flex;
-		flex-wrap: wrap;
-		align-items: baseline;
-		justify-content: space-between;
-		padding: 2rem 0;
-		border-bottom: 1px solid $color-medium-blue;
+  &__top {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 2rem 0;
+    border-bottom: 1px solid $color-medium-blue;
 
-		&-item {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-			flex-flow: column;
+    &-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: column;
 
-			.logo {
-				color: $color-red-100;
-				font-size: 1.25rem;
-				font-weight: 700;
-			}
+      .logo {
+        color: $color-red-100;
+        font-size: 1.25rem;
+        font-weight: 700;
+      }
 
-			h3 {
-				color: $color-light-blue;
-				text-align: center;
-				margin-bottom: 1rem;
+      h3 {
+        color: $color-light-blue;
+        text-align: center;
+        margin-bottom: 1rem;
 
-				span {
-					font-size: .9rem;
-					font-weight: normal;
-				}
-			}
+        span {
+          font-size: 0.9rem;
+          font-weight: normal;
+        }
+      }
 
-			ul {
-				display: flex;
-				flex-direction: column;
-				text-align: center;
-				gap: .7rem;
-				font-size: .9rem;
+      ul {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 0.7rem;
+        font-size: 0.9rem;
 
-				a {
-					transition: color .15s ease-in-out;
-				}
+        a {
+          transition: color 0.15s ease-in-out;
+        }
 
-				a:hover {
-					color: $color-medium-blue;
-				}
-			}
+        a:hover {
+          color: $color-medium-blue;
+        }
+      }
 
-			@media (max-width: 600px) {
-				width: 48%;
+      @media (max-width: 600px) {
+        width: 48%;
 
-				&:not(:last-child) {
-					margin-bottom: 3rem;
-				}
-			}
-		}
-	}
+        &:not(:last-child) {
+          margin-bottom: 3rem;
+        }
+      }
+    }
+  }
 
-	&__bottom {
-		padding: 2rem 0;
-		text-align: center;
-		font-size: .85rem;
-	}
-
+  &__bottom {
+    padding: 2rem 0;
+    text-align: center;
+    font-size: 0.85rem;
+  }
 }

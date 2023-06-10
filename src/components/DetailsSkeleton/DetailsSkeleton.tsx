@@ -30,7 +30,7 @@ const DetailsSkeleton = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DetailsSkeleton;
+export default DetailsSkeleton

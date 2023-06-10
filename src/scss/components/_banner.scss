@@ -1,51 +1,51 @@
 .banner {
-	margin-bottom: $space-sections;
-	position: relative;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	align-items: center;
-	text-align: center;
-	background: url("/spare-parts-car.jpg") no-repeat center;
-	background-size: cover;
+  margin-bottom: $space-sections;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: url('/spare-parts-car.jpg') no-repeat center;
+  background-size: cover;
 
-	&:before {
-		content: "";
-		position: absolute;
-		width: 100%;
-		height: 100%;
-		background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0) 50%);
-	}
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+      linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0) 50%);
+  }
 
-	&__content {
-		margin: 0 auto;
-		padding: 9rem 0 5rem 0;
-		max-width: 800px;
-		height: 100%;
-		position: relative;
-		color: $color-white;
-	}
+  &__content {
+    margin: 0 auto;
+    padding: 9rem 0 5rem 0;
+    max-width: 800px;
+    height: 100%;
+    position: relative;
+    color: $color-white;
+  }
 
-	&__title {
-		margin: 0 auto;
-		margin-bottom: 3rem;
-		max-width: 65%;
-		text-align: center;
-		@include heading($font-weight-700, $font-h1, 140%, $color-white);
+  &__title {
+    margin: 0 auto;
+    margin-bottom: 3rem;
+    max-width: 65%;
+    text-align: center;
+    @include heading($font-weight-700, $font-h1, 140%, $color-white);
 
-		@media (max-width: 900px) {
-			max-width: 100%;
-			font-size: 2.2rem;
-		}
+    @media (max-width: 900px) {
+      max-width: 100%;
+      font-size: 2.2rem;
+    }
+  }
 
-	}
+  &__subtitle {
+    @include heading($font-weight-400, $font-h3, 140%, $color-gray-200);
+    margin-bottom: 2.5rem;
 
-	&__subtitle {
-		@include heading($font-weight-400, $font-h3, 140%, $color-gray-200);
-		margin-bottom: 2.5rem;
-
-		@media (max-width: 900px) {
-			font-size: 1.2rem;
-		}
-	}
+    @media (max-width: 900px) {
+      font-size: 1.2rem;
+    }
+  }
 }

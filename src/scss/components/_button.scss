@@ -1,4 +1,4 @@
-$component: "btn";
+$component: 'btn';
 
 $btn-padding-y-lg: ($spacer * 0.675);
 $btn-padding-x-lg: ($spacer * 1.25);
@@ -7,102 +7,100 @@ $btn-padding-y-sm: ($spacer * 0.313);
 $btn-padding-x-sm: ($spacer * 0.675);
 
 $btn-sizes: (
-		"lg": (
-				"padding": $btn-padding-y-lg $btn-padding-x-lg,
-		),
-		"sm": (
-				"padding": $btn-padding-y-sm $btn-padding-x-sm,
-		),
+  'lg': (
+    'padding': $btn-padding-y-lg $btn-padding-x-lg,
+  ),
+  'sm': (
+    'padding': $btn-padding-y-sm $btn-padding-x-sm,
+  ),
 );
 
 $btn-variants: (
-		"default": (
-				"color": $color-black,
-				"color-hover": $color-white,
-				"bg-color": $color-white,
-				"bg-color-hover": $color-green,
-				"border": 1px solid $color-white,
-				"border-hover": 1px solid $color-green,
-		),
-		"success": (
-				"color": $color-white,
-				"color-hover": $color-white,
-				"bg-color": $color-green,
-				"bg-color-hover": $color-green-100,
-				"border": 1px solid $color-green,
-				"border-hover": 1px solid $color-green-100,
-		),
-		"red": (
-				"color": $color-white,
-				"color-hover": $color-white,
-				"bg-color": $color-red,
-				"bg-color-hover": $color-red-100,
-				"border": 1px solid $color-red,
-				"border-hover": 1px solid $color-red-100,
-		),
-
+  'default': (
+    'color': $color-black,
+    'color-hover': $color-white,
+    'bg-color': $color-white,
+    'bg-color-hover': $color-green,
+    'border': 1px solid $color-white,
+    'border-hover': 1px solid $color-green,
+  ),
+  'success': (
+    'color': $color-white,
+    'color-hover': $color-white,
+    'bg-color': $color-green,
+    'bg-color-hover': $color-green-100,
+    'border': 1px solid $color-green,
+    'border-hover': 1px solid $color-green-100,
+  ),
+  'red': (
+    'color': $color-white,
+    'color-hover': $color-white,
+    'bg-color': $color-red,
+    'bg-color-hover': $color-red-100,
+    'border': 1px solid $color-red,
+    'border-hover': 1px solid $color-red-100,
+  ),
 );
 
 .#{$component} {
-	outline: 0;
-	border-radius: $border-radius-btn;
-	border: none;
-	display: inline-block;
-	align-items: center;
-	padding: $btn-padding-x-sm $btn-padding-x-sm;
-	font-size: $font-text;
-	font-weight: $font-weight-400;
-	//line-height: 140%;
-	color: var(--btn-color);
-	cursor: pointer;
+  outline: 0;
+  border-radius: $border-radius-btn;
+  border: none;
+  display: inline-block;
+  align-items: center;
+  padding: $btn-padding-x-sm $btn-padding-x-sm;
+  font-size: $font-text;
+  font-weight: $font-weight-400;
+  //line-height: 140%;
+  color: var(--btn-color);
+  cursor: pointer;
 
-	transition: border .2s ease-in-out, color .2s ease-in-out, background .2s ease-in-out;
+  transition: border 0.2s ease-in-out, color 0.2s ease-in-out,
+    background 0.2s ease-in-out;
 
+  @each $name, $styles in $btn-sizes {
+    &-#{$name} {
+      padding: map-get($styles, 'padding');
+    }
+  }
 
-	@each $name, $styles in $btn-sizes {
-		&-#{$name} {
-			padding: map-get($styles, "padding");
-		}
-	}
-
-	@each $name, $styles in $btn-variants {
-		&-#{$name} {
-			color: map-get($styles, "color");
-			background: map-get($styles, "bg-color");
-			border: map-get($styles, "border");
-			&:hover {
-				color: map-get($styles, "color-hover");
-				background: map-get($styles, "bg-color-hover");
-				border: map-get($styles, "border-hover");
-			}
-		}
-	}
+  @each $name, $styles in $btn-variants {
+    &-#{$name} {
+      color: map-get($styles, 'color');
+      background: map-get($styles, 'bg-color');
+      border: map-get($styles, 'border');
+      &:hover {
+        color: map-get($styles, 'color-hover');
+        background: map-get($styles, 'bg-color-hover');
+        border: map-get($styles, 'border-hover');
+      }
+    }
+  }
 }
 
-
 .scroll-btn {
-	position: fixed;
-	z-index: 1000;
-	top: 86%;
-	right: 10%;
-	padding: 4px 6px;
-	border: none;
-	border-radius: 100%;
-	cursor: pointer;
-	background-color: $color-white;
-	box-shadow: 0 0 5px 3px rgba(0,0,0,0.2);
-	transition: .15s ease-in-out;
-	opacity: .8;
+  position: fixed;
+  z-index: 1000;
+  top: 86%;
+  right: 10%;
+  padding: 4px 6px;
+  border: none;
+  border-radius: 100%;
+  cursor: pointer;
+  background-color: $color-white;
+  box-shadow: 0 0 5px 3px rgba(0, 0, 0, 0.2);
+  transition: 0.15s ease-in-out;
+  opacity: 0.8;
 
-	svg {
-		fill: #0000009d;
-	}
-	
-	&:hover {
-		box-shadow: 0 0 5px 5px $color-medium-blue;
-		opacity: .9;
-		svg {
-			fill: #000;
-		}
-	}
+  svg {
+    fill: #0000009d;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 5px $color-medium-blue;
+    opacity: 0.9;
+    svg {
+      fill: #000;
+    }
+  }
 }

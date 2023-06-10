@@ -1,6 +1,6 @@
-import React from "react";
-import MapComp from "../Map/Map";
-import Adresses from "../Adresses/Adresses";
+import React from 'react'
+import MapComp from '../Map/Map'
+import Adresses from '../Adresses/Adresses'
 
 const SectionAddresses = () => {
   return (
@@ -9,7 +9,7 @@ const SectionAddresses = () => {
       <MapComp />
       <Adresses />
     </div>
-  );
-};
+  )
+}
 
-export default SectionAddresses;
+export default SectionAddresses

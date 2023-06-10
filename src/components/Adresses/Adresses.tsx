@@ -1,13 +1,13 @@
-import mtsLogo from "/icons/mts-logo.svg";
-import velcomeLogo from "/icons/velcome-logo.svg";
-import { addressesData } from "./data";
-import HistoryIcon from "@mui/icons-material/History";
-import AlternateEmailIcon from "@mui/icons-material/AlternateEmail";
+import mtsLogo from '/icons/mts-logo.svg'
+import velcomeLogo from '/icons/velcome-logo.svg'
+import { addressesData } from './data'
+import HistoryIcon from '@mui/icons-material/History'
+import AlternateEmailIcon from '@mui/icons-material/AlternateEmail'
 
 const Addresses = () => {
   return (
     <div className="addresses">
-      {addressesData?.map(item => (
+      {addressesData?.map((item) => (
         <div key={item.name} className="addresses__item">
           <div className="addresses__left">
             <img src={item.image} alt={item.name} />
@@ -33,13 +33,15 @@ const Addresses = () => {
             </div>
             <div className="addresses__work">
               <HistoryIcon />
-              <p>{item.open} {item.openWeekend}</p>
+              <p>
+                {item.open} {item.openWeekend}
+              </p>
             </div>
           </div>
         </div>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default Addresses;
+export default Addresses

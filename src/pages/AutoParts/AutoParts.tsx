@@ -1,24 +1,24 @@
-import { useDispatch, useSelector } from "react-redux";
-import { AppDispatch, RootState } from "../../store";
-import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
-import Skeleton from "../../components/Skeleton/Skeleton";
-import FormSearch from "../../components/FormSerach/FormSearch";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import PaginationController from "../../components/Pagination/PaginationController";
-import { IProduct } from "../../types/productTypes";
-import React from "react";
+import { useDispatch, useSelector } from 'react-redux'
+import { AppDispatch, RootState } from '../../store'
+import { setCurrentPage } from '../../store/slices/autoParts/autoPartsSlice'
+import Skeleton from '../../components/Skeleton/Skeleton'
+import FormSearch from '../../components/FormSerach/FormSearch'
+import ProductCard from '../../components/ProductCard/ProductCard'
+import PaginationController from '../../components/Pagination/PaginationController'
+import { IProduct } from '../../types/productTypes'
+import React from 'react'
 
 const AutoParts = () => {
-  const dispatch = useDispatch<AppDispatch>();
+  const dispatch = useDispatch<AppDispatch>()
   const { parts, currentPage, totalPages, loading, totalProducts, limit } =
-    useSelector((state: RootState) => state.autoParts);
+    useSelector((state: RootState) => state.autoParts)
 
   const handlerChangeCurrentPage = (
     event: React.ChangeEvent<unknown>,
     value: number
   ) => {
-    dispatch(setCurrentPage(value));
-  };
+    dispatch(setCurrentPage(value))
+  }
 
   return (
     <div className="parts container">
@@ -43,7 +43,7 @@ const AutoParts = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AutoParts;
+export default AutoParts

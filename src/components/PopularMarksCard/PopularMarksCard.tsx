@@ -7,7 +7,11 @@ type PopularMarksCardProp = {
   value: string
 }
 
-const PopularMarksCard: FC<PopularMarksCardProp> = ({ image, title, value }) => {
+const PopularMarksCard: FC<PopularMarksCardProp> = ({
+  image,
+  title,
+  value,
+}) => {
   const navigate = useNavigate()
 
   const handlerOnClickMark = () => {

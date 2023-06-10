@@ -1,74 +1,74 @@
 .salesman-info {
-	border: 1px solid $color-gray-300;
-	border-radius: .5rem;
-	padding: .7rem;
+  border: 1px solid $color-gray-300;
+  border-radius: 0.5rem;
+  padding: 0.7rem;
 
-	@media (max-width: 850px) {
-		display: flex;
-		flex-flow: column;
-		align-items: center;
-	}
+  @media (max-width: 850px) {
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+  }
 
-	&__name {
-		font-size: 1.5rem;
-		font-weight: bold;
-		margin-bottom: .3rem;
+  &__name {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
 
-		@media (max-width: 900px) {
-			margin: 1rem 0;
-		}
-	}
+    @media (max-width: 900px) {
+      margin: 1rem 0;
+    }
+  }
 
-	&__time {
-		display: flex;
-		align-items: center;
-		gap: .7rem;
-		margin-bottom: .3rem;
+  &__time {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-bottom: 0.3rem;
 
-		p {
-			font-size: 1rem;
-		}
-	}
+    p {
+      font-size: 1rem;
+    }
+  }
 
-	&__address {
-		font-size: 1.1rem;
-		line-height: 1.5rem;
-		margin-bottom: 1.3rem;
+  &__address {
+    font-size: 1.1rem;
+    line-height: 1.5rem;
+    margin-bottom: 1.3rem;
 
-		span {
-			font-weight: bold;
-		}
-	}
+    span {
+      font-weight: bold;
+    }
+  }
 
-	&__phones {
-		display: flex;
-		flex-direction: column;
-		gap: .6rem;
+  &__phones {
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
 
-		@media (max-width: 900px) {
-			margin: 1rem 0;
-		}
+    @media (max-width: 900px) {
+      margin: 1rem 0;
+    }
 
-		div {
-			margin-bottom: 1.4rem;
+    div {
+      margin-bottom: 1.4rem;
 
-			a {
-				padding: .7rem .7rem;
-				background: #388E3C;
-				color: $color-white;
-				border-radius: .5rem;
-				font-weight: bold;
-				transition: background .3s ease;
+      a {
+        padding: 0.7rem 0.7rem;
+        background: #388e3c;
+        color: $color-white;
+        border-radius: 0.5rem;
+        font-weight: bold;
+        transition: background 0.3s ease;
 
-				&:hover {
-					background: #4CAF50;
-				}
-			}
-		}
-	}
+        &:hover {
+          background: #4caf50;
+        }
+      }
+    }
+  }
 
-	&__say > span {
-		padding-left: .3rem;
-		font-weight: bold;
-	}
+  &__say > span {
+    padding-left: 0.3rem;
+    font-weight: bold;
+  }
 }
