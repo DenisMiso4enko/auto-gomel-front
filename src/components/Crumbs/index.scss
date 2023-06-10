@@ -1,16 +1,15 @@
 .crumbs {
-	display: flex;
-	align-items: center;
-	gap: 10px;
-	margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
 
-	&__item{
-		font-size: 20px;
-		cursor: pointer;
-
-	}
-	&-disabled{
-		color: #8f8f8f;
-		cursor: not-allowed;
-	}
+  &__item {
+    font-size: 20px;
+    cursor: pointer;
+  }
+  &-disabled {
+    color: #8f8f8f;
+    cursor: not-allowed;
+  }
 }

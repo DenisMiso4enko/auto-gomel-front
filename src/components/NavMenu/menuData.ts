@@ -1,18 +1,18 @@
 export const menuData = [
   {
-    title: "Главная",
-    link: "/"
+    title: 'Главная',
+    link: '/',
   },
   {
-    title: "Запчасти",
-    link: "/parts"
+    title: 'Запчасти',
+    link: '/parts',
   },
   {
-    title: "Доставка",
-    link: "/delivery"
+    title: 'Доставка',
+    link: '/delivery',
   },
   {
-    title: "О нас",
-    link: "/about"
+    title: 'О нас',
+    link: '/about',
   },
-];
+]

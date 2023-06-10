@@ -1,5 +1,5 @@
-import React from "react";
-import HistoryIcon from "@mui/icons-material/History";
+import React from 'react'
+import HistoryIcon from '@mui/icons-material/History'
 
 const Salesman = () => {
   return (
@@ -30,6 +30,6 @@ const Salesman = () => {
       </div>
     </div>
   )
-};
+}
 
-export default Salesman;
+export default Salesman

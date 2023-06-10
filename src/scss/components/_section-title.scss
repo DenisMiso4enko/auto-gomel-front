@@ -1,9 +1,9 @@
 .section-title {
-	@include section-title;
-	padding-left: 1rem;
-	text-align: center;
+  @include section-title;
+  padding-left: 1rem;
+  text-align: center;
 
-	@media (max-width: 900px) {
-		font-size: 2rem;
-	}
+  @media (max-width: 900px) {
+    font-size: 2rem;
+  }
 }

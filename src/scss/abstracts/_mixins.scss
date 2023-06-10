@@ -1,21 +1,21 @@
 @mixin heading($weight, $size, $line, $color) {
-	font-weight: $weight;
-	font-size: $size;
-	line-height: $line;
+  font-weight: $weight;
+  font-size: $size;
+  line-height: $line;
 
-	color: $color;
+  color: $color;
 }
 
 @mixin flex-center {
-	display: flex;
-	align-items: center;
-	justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin section-title {
-	font-weight: $font-weight-500;
-	font-size: $font-h2;
-	//line-height: ;
-	color: $color-black;
-	margin-bottom: 2.5rem;
+  font-weight: $font-weight-500;
+  font-size: $font-h2;
+  //line-height: ;
+  color: $color-black;
+  margin-bottom: 2.5rem;
 }

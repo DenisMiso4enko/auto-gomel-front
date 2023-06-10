@@ -1,25 +1,25 @@
 .details {
-	margin-top: 2.5rem;
+  margin-top: 6rem;
 }
 
 .details__arrowback {
-	margin: 1rem;
-	display: flex;
+  margin: 1rem;
+  display: flex;
 
-	.details__breadcrumbs {
-		display: flex;
-		align-items: center;
+  .details__breadcrumbs {
+    display: flex;
+    align-items: center;
 
-		.details__bread {
-			margin-left: .5rem;
-			transition: .2s;
-		}
-		.details__bread {
-			&:hover {
-				cursor: pointer;
-				color: blue;
-				text-decoration: underline;
-			}
-		}
-	}
+    .details__bread {
+      margin-left: 0.5rem;
+      transition: 0.2s;
+    }
+    .details__bread {
+      &:hover {
+        cursor: pointer;
+        color: blue;
+        text-decoration: underline;
+      }
+    }
+  }
 }

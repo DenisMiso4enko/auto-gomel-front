@@ -1,9 +1,9 @@
 .offer {
-	margin-bottom: $space-sections;
-	&__list {
-		display: flex;
-		flex-flow: row wrap;
-		justify-content: space-evenly;
-		gap: 1.5rem;
-	}
+  margin-bottom: $space-sections;
+  &__list {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    gap: 1.5rem;
+  }
 }
