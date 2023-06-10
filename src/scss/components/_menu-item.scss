@@ -4,7 +4,13 @@ $component: menu-item;
 	position: relative;
 	font-size: $font-text;
 	font-weight: $font-weight-400;
-	color: $color-black;
+	color: $color-light-blue;
+	transition: color .2s ease-in-out;
+
+	&:hover {
+		color: $color-medium-blue;
+	}
+
 	@media (max-width: 900px) {
 		font-size: 50px;
 	}
@@ -12,12 +18,11 @@ $component: menu-item;
 		content: '';
 		position: absolute;
 		width: 0;
-		height: 2px;
+		height: 1px;
 		left: 0;
 		bottom: -5px;
-		background: $color-black;
+		background: $color-medium-blue;
 		border-radius: 4px;
-
 		transition: width .3s ease;
 	}
 

@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 import NavMenu from "../NavMenu/NavMenu";
 import PhoneIcon from '@mui/icons-material/Phone';
 import { useState } from "react";
@@ -6,6 +6,9 @@ import { useState } from "react";
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const locate = useLocation()
+  const isHome = locate.pathname === '/'
+  console.log(isHome)
   const goHome = () => navigate("/");
 
   const handleBurgerOpen = () => {
@@ -14,7 +17,7 @@ const Header = () => {
   };
 
   return (
-    <header className="header">
+    <header className={isHome? 'header' : 'header header--background'}>
       <div className="header__body container">
         <div
           className="logo"

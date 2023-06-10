@@ -6,13 +6,9 @@ const Footer = () => {
     <footer className="footer">
       <div className="footer__body container">
         <div className="footer__top">
+          
           <div className="footer__top-item">
-            <div
-              className="logo"
-              style={{ fontSize: '18px', fontWeight: '700' }}
-            >
-              AUTOGOMEL
-            </div>
+            <div className="logo">АВТО.ГОМЕЛЬ</div>
           </div>
 
           <div className="footer__top-item">

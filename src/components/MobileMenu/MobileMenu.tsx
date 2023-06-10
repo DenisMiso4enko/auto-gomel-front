@@ -1,13 +1,11 @@
-import React from "react";
-import { menuData } from "../NavMenu/menuData";
-import "./index.scss"
-import { NavLink } from "react-router-dom";
-
+import { NavLink } from 'react-router-dom'
+import { menuData } from '../NavMenu/menuData'
+import './index.scss'
 
 const MobileMenu = () => {
   return (
     <div className="mobile-menu">
-      {menuData?.map(el => (
+      {menuData?.map((el) => (
         <li className="">
           <NavLink className="" to={el.link}>
             {el.title}
@@ -15,7 +13,7 @@ const MobileMenu = () => {
         </li>
       ))}
     </div>
-  );
-};
+  )
+}
 
-export default MobileMenu;
+export default MobileMenu

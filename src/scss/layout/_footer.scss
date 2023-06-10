@@ -5,7 +5,7 @@
 		align-items: baseline;
 		justify-content: space-between;
 		padding: 2rem 0;
-		border-bottom: 1px solid $color-white;
+		border-bottom: 1px solid $color-medium-blue;
 
 		&-item {
 			display: flex;
@@ -13,10 +13,21 @@
 			justify-content: center;
 			flex-flow: column;
 
-			// margin-bottom: 0rem;
+			.logo {
+				color: $color-red-100;
+				font-size: 1.25rem;
+				font-weight: 700;
+			}
+
 			h3 {
+				color: $color-light-blue;
 				text-align: center;
 				margin-bottom: 1rem;
+
+				span {
+					font-size: .9rem;
+					font-weight: normal;
+				}
 			}
 
 			ul {
@@ -24,6 +35,15 @@
 				flex-direction: column;
 				text-align: center;
 				gap: .7rem;
+				font-size: .9rem;
+
+				a {
+					transition: color .15s ease-in-out;
+				}
+
+				a:hover {
+					color: $color-medium-blue;
+				}
 			}
 
 			@media (max-width: 600px) {

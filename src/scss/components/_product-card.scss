@@ -87,14 +87,14 @@
 		}
 	}
 
-
 	&__price {
+		width: fit-content;
 		height: fit-content;
-		background-color: #4CAF50;
+		background-color: #42bb46;
 		text-align: center;
-		padding: 4px;
-		border-radius: 10px;
-		@include heading($font-weight-400, $font-h4, 23px, $color-white);
+		padding: .5rem;
+		border-radius: .7rem;
+		@include heading($font-weight-400, $font-h4, $font-h4, $color-white);
 
 		@media (max-width: 600px) {
 			font-size: 1rem;
@@ -117,7 +117,9 @@
 	}
 
 	&__date {
-		padding: 4px;
+		padding: .3rem;
+		display: flex;
+		align-items: end;
 
 		@media (max-width: 768px) {
 			display: none;
@@ -126,8 +128,8 @@
 		span {
 			display: flex;
 			align-items: center;
-			gap: 10px;
-			font-size: 16px;
+			gap: .7rem;
+			font-size: 1rem;
 		}
 	}
 }
