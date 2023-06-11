@@ -1,10 +1,10 @@
 import React from 'react'
 import './index.scss'
-import { crumbInfo } from '../../pages/Details/Details'
+import { currentType } from '../../pages/Details/Details'
 
 interface BreadCrumbsProps {
   prev?: string
-  current: crumbInfo
+  current: currentType
   goBack: () => void
 }
 
