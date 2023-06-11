@@ -6,8 +6,8 @@ export const httpRequest = (path: string, method: string, body?: any) => {
     headers: {
       "Content-Type": "application/json;charset=utf-8",
       Authorization: `Bearer ${token}`,
-      mode: "no-cors"
     },
+    credentials: "include",
     body: JSON.stringify(body),
   });
 };
