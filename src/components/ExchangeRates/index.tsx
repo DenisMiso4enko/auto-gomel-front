@@ -1,18 +1,17 @@
 import { useSelector } from 'react-redux'
 import { RootState } from '../../store'
-import { IRates } from '../../types/productTypes'
 import dayjs from 'dayjs'
 
 export const ExchangeRates = () => {
   const { rates } = useSelector((state: RootState) => state.settings)
 
-  const eur: IRates | undefined = rates?.find(
+  const eur: any = rates?.find(
     ({ Cur_Abbreviation }) => Cur_Abbreviation === 'EUR'
   )
-  const rub: IRates | undefined = rates?.find(
+  const rub: any = rates?.find(
     ({ Cur_Abbreviation }) => Cur_Abbreviation === 'RUB'
   )
-  const usd: IRates | undefined = rates?.find(
+  const usd: any = rates?.find(
     ({ Cur_Abbreviation }) => Cur_Abbreviation === 'USD'
   )
   const currentRates = [eur, usd, rub]
