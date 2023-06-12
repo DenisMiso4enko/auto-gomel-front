@@ -16,13 +16,16 @@
     align-items: center;
 
     .logo {
-      color: $color-red-100;
+      color: $color-white;
       cursor: pointer;
       transition: color 0.2s ease-in-out;
-
-      &:active {
-        color: $color-red;
+      &:hover {
+        color: $color-gray-400;
       }
+
+      //&:active {
+      //  color: $color-red;
+      //}
     }
   }
 
@@ -48,7 +51,7 @@
       }
 
       &:hover {
-        color: $color-medium-blue;
+        color: $color-gray-400;
       }
     }
 
