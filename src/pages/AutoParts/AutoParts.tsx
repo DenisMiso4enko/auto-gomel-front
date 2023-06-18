@@ -7,6 +7,7 @@ import ProductCard from '../../components/ProductCard/ProductCard'
 import PaginationController from '../../components/Pagination/PaginationController'
 import { IProduct } from '../../types/productTypes'
 import React from 'react'
+import { Helmet } from 'react-helmet'
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -22,6 +23,9 @@ const AutoParts = () => {
 
   return (
     <div className="parts container">
+      <Helmet>
+        <title>Запчасти | АВТО.ГОМЕЛЬ</title>
+      </Helmet>
       <div className="parts-row">
         <div className="parts-row__left">
           <FormSearch title="Поиск запчастей" />
