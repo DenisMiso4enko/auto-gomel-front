@@ -1,5 +1,5 @@
-import efremova from '/efremova.jpeg'
-import bakuninski from '/bakuninski.webp'
+import efremova from '/efremova.jpg'
+import bakuninski from '/bakuninski.jpg'
 
 export const addressesData = [
   {

@@ -14,6 +14,7 @@ import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
 import noImage from '../../assets/nofoto2.jpg'
 import Crumbs from '../../components/Crumbs/Crumbs'
 import Salesman from '../../components/Salesman/Salesman'
+import { Helmet } from 'react-helmet'
 
 export type currentType = {
   product: string | undefined
@@ -49,6 +50,9 @@ const Details = () => {
     <div className="details container">
       {product ? (
         <>
+          <Helmet>
+            <title>{`${current.product} ${current.mark} | АВТО.ГОМЕЛЬ`}</title>
+          </Helmet>
           <Crumbs goBack={goBack} current={current} />
           <div className="details-wrapper">
             <div className="details__top">
