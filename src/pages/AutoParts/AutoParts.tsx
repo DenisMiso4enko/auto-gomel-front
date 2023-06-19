@@ -8,6 +8,7 @@ import PaginationController from '../../components/Pagination/PaginationControll
 import { IProduct } from '../../types/productTypes'
 import React from 'react'
 import { Helmet } from 'react-helmet'
+import NoResults from '../../components/NoResults/NoResults'
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -19,6 +20,7 @@ const AutoParts = () => {
     value: number
   ) => {
     dispatch(setCurrentPage(value))
+    window.scrollTo(0, 0)
   }
 
   return (
@@ -37,7 +39,7 @@ const AutoParts = () => {
               <ProductCard key={part._id} {...part} />
             ))
           ) : (
-            <div>По вашему запросу товаров не найдено</div>
+            <NoResults />
           )}
           <PaginationController
             currentPage={currentPage}

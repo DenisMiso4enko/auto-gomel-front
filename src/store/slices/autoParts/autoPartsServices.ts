@@ -20,7 +20,7 @@ export const fetchGetProducts = createAsyncThunk(
         'GET'
       )
       const data = await res.json()
-      window.scrollTo(0, 0)
+      // window.scrollTo(0, 0)
       return data
     } catch (e: any) {
       console.log(e.message)
@@ -41,7 +41,7 @@ export const fetchGetProduct = createAsyncThunk(
         throw new Error('Ошибка, данные не получены')
       }
       const data = await response.json()
-      window.scrollTo(0, 0)
+      // window.scrollTo(0, 0)
       return data
     } catch (e: any) {
       console.log(e.message)
