@@ -19,9 +19,13 @@ const ProductCart: FC<IProduct> = ({
   _id,
 }) => {
   const navigate = useNavigate()
+  const handlerOnClickProduct = () => {
+    navigate(`/parts/${_id}`)
+    window.scrollTo(0, 0)
+  }
 
   return (
-    <div className="product-card" onClick={() => navigate(`/parts/${_id}`)}>
+    <div className="product-card" onClick={handlerOnClickProduct}>
       <div
         className={
           imagesUrl.length
@@ -37,10 +41,10 @@ const ProductCart: FC<IProduct> = ({
       </div>
       <div className="product-card__content">
         <div className="product-card__info">
-          <p className="product-card__subtitle">
+          <p className="product-card__subtitle">{product}</p>
+          <h3 className="product-card__title">
             {mark} {model}, {year}
-          </p>
-          <h3 className="product-card__title">{product}</h3>
+          </h3>
           <p className="product-card__description">{description}</p>
         </div>
         <div className="product-card__rates">
