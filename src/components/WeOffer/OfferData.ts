@@ -1,24 +1,26 @@
-import ss from '/original-product.svg'
+import garage from '../../../public/garage.svg'
+import gar from '../../../public/gar.svg'
+import camera from '../../../public/camer.svg'
 
 export const offerData = [
   {
-    image: ss,
-    title: 'Original Products',
-    text: 'В своём стремлении улучшить пользовательский',
+    image: garage,
+    title: 'В наличии более 60 000 запчастей',
+    // text: 'В своём стремлении улучшить пользовательский',
   },
   {
-    image: ss,
-    title: 'Satisfaction Guaranty',
-    text: 'хотя само их существование приносит.',
+    image: gar,
+    title: 'Гарантия 14 дней',
+    // text: 'хотя само их существование приносит.',
   },
   {
-    image: ss,
-    title: 'New Arrival',
-    text: 'We provide money back if the product not original',
+    image: camera,
+    title: 'Реальные фото запчастей',
+    // text: 'We provide money back if the product not original',
   },
-  {
-    image: ss,
-    title: 'Fast Shipping',
-    text: 'We provide money back if the product not original',
-  },
+  // {
+  //   image: ss,
+  //   title: 'Fast Shipping',
+  //   // text: 'We provide money back if the product not original',
+  // },
 ]
