@@ -1,7 +1,6 @@
 import React from "react";
 import { Helmet } from "react-helmet";
-import truck from "../../assets/delivery-truck.svg";
-import box from "../../assets/delivery-bold-duotone.png";
+import { DeliveryData } from "./DeliveryData";
 
 const Delivery = () => {
   return (
@@ -16,22 +15,15 @@ const Delivery = () => {
         как можно ближе мы регулярно открываем новые пункты самовывоза.
       </p>
       <div className="delivery__list">
-        <div className="delivery-card">
-          <div className="delivery-card__image">
-            <img src={truck} alt="Транспортная компания" />
+        {DeliveryData.map((data, i) => (
+          <div className="delivery-card" key={i}>
+            <div className="delivery-card__image">
+              <img src={data.image} alt="Транспортная компания" />
+            </div>
+            <h3 className="delivery-card__title">{data.title}</h3>
+            <p className="delivery-card__subtitle">{data.subtitle}</p>
           </div>
-          <h3 className="delivery-card__title">Транспортная компания</h3>
-          <p className="delivery-card__subtitle">Этот способ может быть выбран по договоренности с менеджером.</p>
-        </div>
-
-        <div className="delivery-card">
-          <div className="delivery-card__image">
-            <img src={box} alt="Самовызов" />
-          </div>
-          <h3 className="delivery-card__title">Самовывоз</h3>
-          <p className="delivery-card__subtitle">Этот способ следует выбирать, если Вы сможете забрать заказ
-            самостоятельно или через доверенное лицо в офисе.</p>
-        </div>
+        ))}
       </div>
 
     </div>

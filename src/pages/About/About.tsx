@@ -1,8 +1,6 @@
 import { Helmet } from "react-helmet";
-import img1 from "../../assets/foto1.png"
-import img2 from "../../assets/foto2.png"
-import img3 from "../../assets/foto3.png"
-import img4 from "../../assets/foto4.png"
+import { images } from "./AboutData";
+
 
 const About = () => {
   return (
@@ -47,29 +45,11 @@ const About = () => {
       </div>
 
       <div className="about__gallery">
-        <div className="gallery__images">
-          <img src={img1} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img2} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img3} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img4} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img1} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img2} alt="разборка" />
-        </div>
-        <div className="gallery__images">
-          <img src={img3} alt="разборка" />
-        </div>
-
-
+        {images.map((image, i) => (
+          <div className="gallery__images" key={i}>
+            <img src={image.imgage} alt="разборка" />
+          </div>
+        ))}
       </div>
       <div className="about__block3">
 
