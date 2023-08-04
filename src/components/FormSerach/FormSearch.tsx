@@ -1,47 +1,47 @@
-import { useEffect, useState } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
-import { AppDispatch, RootState } from '../../store'
-import { IAutos } from '../../types/productTypes'
-import { setCurrentPage } from '../../store/slices/autoParts/autoPartsSlice'
-import { useSearchParams } from 'react-router-dom'
-import { fetchGetProducts } from '../../store/slices/autoParts/autoPartsServices'
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { AppDispatch, RootState } from "../../store";
+import { IAutos } from "../../types/productTypes";
+import { setCurrentPage } from "../../store/slices/autoParts/autoPartsSlice";
+import { useSearchParams } from "react-router-dom";
+import { fetchGetProducts } from "../../store/slices/autoParts/autoPartsServices";
 
 interface IFormSearch {
-  container?: string
-  sm?: boolean
-  title?: string
+  container?: string;
+  sm?: boolean;
+  title?: string;
 }
 
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
-  const dispatch = useDispatch<AppDispatch>()
+  const dispatch = useDispatch<AppDispatch>();
 
   //states global
   const { autos, options, partsCategory } = useSelector(
     (state: RootState) => state.settings
-  )
+  );
   const { currentPage, limit } = useSelector(
     (state: RootState) => state.autoParts
-  )
+  );
 
   //states searchParams
-  const [searchParams, setSearchParams] = useSearchParams()
-  const queryMark = searchParams.get('mark') || ''
-  const queryModel = searchParams.get('model') || ''
-  const queryYear = searchParams.get('year') || ''
-  const queryArticle = searchParams.get('article') || ''
-  const queryNumberOfProduct = searchParams.get('numberOfProduct') || ''
-  const queryProduct = searchParams.get('product') || ''
+  const [searchParams, setSearchParams] = useSearchParams();
+  const queryMark = searchParams.get("mark") || "";
+  const queryModel = searchParams.get("model") || "";
+  const queryYear = searchParams.get("year") || "";
+  const queryArticle = searchParams.get("article") || "";
+  const queryNumberOfProduct = searchParams.get("numberOfProduct") || "";
+  const queryProduct = searchParams.get("product") || "";
 
   //states local
-  const [mark, setMark] = useState(queryMark)
-  const [modelVal, setModelVal] = useState(queryModel)
-  const [yearVal, setYearVal] = useState(queryYear)
-  const [productVal, setProductVal] = useState(queryProduct)
-  const [articleVal, setArticleVal] = useState(queryArticle)
-  const [numberVal, setNumberVal] = useState(queryNumberOfProduct)
-  const [models, setModels] = useState([])
-  const marks = autos?.map((el: IAutos) => el.mark)
-  const years = options?.map((el) => el.years)
+  const [mark, setMark] = useState(queryMark);
+  const [modelVal, setModelVal] = useState(queryModel);
+  const [yearVal, setYearVal] = useState(queryYear);
+  const [productVal, setProductVal] = useState(queryProduct);
+  const [articleVal, setArticleVal] = useState(queryArticle);
+  const [numberVal, setNumberVal] = useState(queryNumberOfProduct);
+  const [models, setModels] = useState([]);
+  const marks = autos?.map((el: IAutos) => el.mark);
+  const years = options?.map((el) => el.years);
 
   const formFields = {
     mark: mark,
@@ -49,41 +49,41 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     year: yearVal,
     product: productVal,
     article: articleVal,
-    numberOfProduct: numberVal,
-  }
+    numberOfProduct: numberVal
+  };
 
   const handlerOnChangeMarks = (e: any) => {
-    const mark = e.target.value
-    setMark(mark)
-    setModelVal('')
-    const { models } = autos?.find((el: IAutos) => el.mark === mark)
-    setModels(models ? models : [])
-  }
+    const mark = e.target.value;
+    setMark(mark);
+    setModelVal("");
+    const { models } = autos?.find((el: IAutos) => el.mark === mark);
+    setModels(models ? models : []);
+  };
 
   const handlerOnSubmitSearchForm = async (e: any) => {
-    e.preventDefault()
-    setSearchParams({ ...formFields })
-    dispatch(setCurrentPage(1))
-  }
+    e.preventDefault();
+    setSearchParams({ ...formFields });
+    dispatch(setCurrentPage(1));
+  };
 
   const handlerClearSearch = () => {
-    setMark('')
-    setProductVal('')
-    setModelVal('')
-    setModels([])
-    setYearVal('')
-    setArticleVal('')
-    setNumberVal('')
-    setSearchParams({})
-    dispatch(setCurrentPage(1))
-  }
+    setMark("");
+    setProductVal("");
+    setModelVal("");
+    setModels([]);
+    setYearVal("");
+    setArticleVal("");
+    setNumberVal("");
+    setSearchParams({});
+    dispatch(setCurrentPage(1));
+  };
 
   useEffect(() => {
     if (mark) {
-      const { models } = autos?.find((el: IAutos) => el.mark === mark)
-      setModels(models ? models : [])
+      const { models } = autos?.find((el: IAutos) => el.mark === mark);
+      setModels(models ? models : []);
     }
-    dispatch(fetchGetProducts({ ...formFields, page: currentPage }))
+    dispatch(fetchGetProducts({ ...formFields, page: currentPage }));
   }, [
     queryMark,
     queryModel,
@@ -92,8 +92,12 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     queryNumberOfProduct,
     queryProduct,
     currentPage,
-    limit,
-  ])
+    limit
+  ]);
+
+  // const checkButtonDisabled = () => {
+  //   return !mark || !productVal || !articleVal || !numberVal;
+  // }
 
   return (
     <div className="form-search__container">
@@ -189,7 +193,8 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           onChange={(event) => setArticleVal(event.target.value)}
         />
 
-        <button className="btn btn-lg btn-success">Поиск</button>
+        <button className="btn btn-lg btn-success" disabled={!mark && !productVal && !articleVal && !numberVal}>Поиск
+        </button>
         {mark ||
         productVal.trim() ||
         modelVal ||
@@ -206,7 +211,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
         ) : null}
       </form>
     </div>
-  )
-}
+  );
+};
 
-export default FormSearch
+export default FormSearch;

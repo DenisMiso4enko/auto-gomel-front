@@ -69,7 +69,7 @@ $btn-variants: (
       color: map-get($styles, 'color');
       background: map-get($styles, 'bg-color');
       border: map-get($styles, 'border');
-      &:hover {
+      &:hover:not([disabled]) {
         color: map-get($styles, 'color-hover');
         background: map-get($styles, 'bg-color-hover');
         border: map-get($styles, 'border-hover');
@@ -103,4 +103,9 @@ $btn-variants: (
       fill: #000;
     }
   }
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }

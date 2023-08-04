@@ -1,6 +1,5 @@
-import { NavLink } from 'react-router-dom'
-import { menuData } from '../NavMenu/menuData'
-import './index.scss'
+import { NavLink } from "react-router-dom";
+import { menuData } from "../NavMenu/menuData";
 
 const MobileMenu = () => {
   return (
@@ -13,7 +12,7 @@ const MobileMenu = () => {
         </li>
       ))}
     </div>
-  )
-}
+  );
+};
 
-export default MobileMenu
+export default MobileMenu;

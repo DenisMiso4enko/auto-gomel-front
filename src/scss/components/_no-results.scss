@@ -1,8 +1,9 @@
 .no-results {
   min-height: 70vh;
-  h2 {
+  text-align: center;
+  &__title {
     padding-top: 2rem;
-    text-align: center;
     font-size: 1.75rem;
+    margin-bottom: 20px;
   }
 }
