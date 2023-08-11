@@ -1,17 +1,17 @@
-import { NavLink } from "react-router-dom";
-import { menuData } from "./menuData";
-import { useEffect } from "react";
+import { NavLink } from 'react-router-dom'
+import { menuData } from './menuData'
+import { useEffect } from 'react'
 
 const NavMenu = ({ isOpen, setIsOpen }: any) => {
   useEffect(() => {
     if (isOpen) {
-      document.body.classList.add("stop-scrolling");
+      document.body.classList.add('stop-scrolling')
     } else {
-      document.body.classList.remove("stop-scrolling");
+      document.body.classList.remove('stop-scrolling')
     }
-  }, [isOpen]);
+  }, [isOpen])
   return (
-    <nav className={`menu ${isOpen ? "active" : ""}`}>
+    <nav className={`menu ${isOpen ? 'active' : ''}`}>
       <ul className="menu__list">
         {menuData?.map((el) => (
           <li className="" key={el.title}>
@@ -26,7 +26,7 @@ const NavMenu = ({ isOpen, setIsOpen }: any) => {
         ))}
       </ul>
     </nav>
-  );
-};
+  )
+}
 
-export default NavMenu;
+export default NavMenu

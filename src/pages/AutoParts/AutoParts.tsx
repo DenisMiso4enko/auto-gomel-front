@@ -8,7 +8,6 @@ import PaginationController from '../../components/Pagination/PaginationControll
 import { IProduct } from '../../types/productTypes'
 import React from 'react'
 import { Helmet } from 'react-helmet'
-import NoResults from '../../components/NoResults/NoResults'
 
 const AutoParts = () => {
   const dispatch = useDispatch<AppDispatch>()
@@ -39,7 +38,9 @@ const AutoParts = () => {
               <ProductCard key={part._id} {...part} />
             ))
           ) : (
-            <NoResults />
+            <div className="notfound">
+              <h3>По вашему запросу ничего не найдено...</h3>
+            </div>
           )}
           <PaginationController
             currentPage={currentPage}

@@ -26,7 +26,7 @@ const Salesman = () => {
         </div>
       </div>
       <div className="salesman-info__say">
-        Скажите, что вы звоните с сайта <span>avtogomel.by</span>
+        Скажите, что вы звоните с сайта <span>автогомель.бел</span>
       </div>
     </div>
   )

@@ -63,6 +63,3 @@ const ProductCart: FC<IProduct> = ({
 }
 
 export default ProductCart
-// <div className="product-card__date">
-//   <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
-// </div>

@@ -4,6 +4,7 @@ import AutoParts from '../../pages/AutoParts/AutoParts'
 import Details from '../../pages/Details/Details'
 import About from '../../pages/About/About'
 import Delivery from '../../pages/Delivery/Delivery'
+import NoResults from '../NoResults/NoResults'
 
 export const AppRoutes = () => {
   return (
@@ -14,6 +15,9 @@ export const AppRoutes = () => {
         <Route path="/parts/:id" element={<Details />} />
         <Route path="/about" element={<About />} />
         <Route path="/delivery" element={<Delivery />} />
+        <Route path="*" element={<NoResults />} />
+        <Route path="/about/*" element={<NoResults />} />
+        <Route path="/delievery/*" element={<NoResults />} />
       </Route>
     </Routes>
   )

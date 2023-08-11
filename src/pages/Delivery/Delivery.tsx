@@ -1,6 +1,6 @@
-import React from "react";
-import { Helmet } from "react-helmet";
-import { DeliveryData } from "./DeliveryData";
+import React from 'react'
+import { Helmet } from 'react-helmet'
+import { DeliveryData } from './DeliveryData'
 
 const Delivery = () => {
   return (
@@ -10,9 +10,10 @@ const Delivery = () => {
       </Helmet>
       <h2 className="delivery__title">Доставка</h2>
       <p className="delivery__description">
-        В случае доставки курьером покупатели могут оплатить заказ как наличным, так и безналичным способом. Мы
-        постоянно совершенствуем нашу службу доставки для того, чтобы сделать ее максимально удобной. Чтобы быть к Вам
-        как можно ближе мы регулярно открываем новые пункты самовывоза.
+        В случае доставки курьером покупатели могут оплатить заказ как наличным,
+        так и безналичным способом. Мы постоянно совершенствуем нашу службу
+        доставки для того, чтобы сделать ее максимально удобной. Чтобы быть к
+        Вам как можно ближе мы регулярно открываем новые пункты самовывоза.
       </p>
       <div className="delivery__list">
         {DeliveryData.map((data, i) => (
@@ -25,9 +26,8 @@ const Delivery = () => {
           </div>
         ))}
       </div>
-
     </div>
-  );
-};
+  )
+}
 
-export default Delivery;
+export default Delivery

@@ -1,4 +1,4 @@
-import { Helmet } from "react-helmet"
+import { Helmet } from 'react-helmet'
 
 const ErrorMessage = ({ message }: { message: string }) => {
   return (

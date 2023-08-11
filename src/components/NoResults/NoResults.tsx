@@ -1,31 +1,35 @@
-import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { useEffect, useState } from 'react'
+import { useLocation, useNavigate } from 'react-router-dom'
 
 const NoResults = () => {
-  const [counter, setCounter] = useState(3);
-  const navigate = useNavigate();
+  const secondLimit = 10000
+  const second = 1000
+  const [counter, setCounter] = useState(10)
+  const navigate = useNavigate()
 
   useEffect(() => {
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 0)
     const interval = setTimeout(() => {
-      navigate("/");
-    }, 3000);
-    return () => clearInterval(interval);
-  }, [navigate]);
+      navigate('/')
+    }, secondLimit)
+    return () => clearInterval(interval)
+  }, [navigate])
 
   useEffect(() => {
     const interval = setInterval(() => {
-      setCounter(prevState => prevState - 1);
-    }, 1000);
-    return () => clearInterval(interval);
-  }, [counter]);
+      setCounter((prevState) => prevState - 1)
+    }, second)
+    return () => clearInterval(interval)
+  }, [counter])
 
   return (
     <div className="no-results">
-      <h2 className="no-results__title">По запросу ничего не найдено</h2>
-      <p className="no-results__text">Вернуться на главную через {counter} секунды</p>
+      <h2 className="no-results__title">Такой страницы не существует!</h2>
+      <p className="no-results__text">
+        Возврат на главную страницу произойдёт через {counter}...
+      </p>
     </div>
-  );
-};
+  )
+}
 
-export default NoResults;
+export default NoResults
