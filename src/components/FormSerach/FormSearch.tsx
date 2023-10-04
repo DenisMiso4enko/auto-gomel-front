@@ -126,7 +126,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             className="select-box"
             value={modelVal}
             onChange={(event) => setModelVal(event.target.value)}
-            disabled={models.length == 0}
+            disabled={models?.length == 0}
           >
             <option value="0">Модель</option>
             {models?.map((el: any) => (

@@ -17,7 +17,7 @@ const Header = () => {
   }
 
   return (
-    <header className={isHome ? 'header' : 'header header--background'}>
+    <header className={'header--background'}>
       <div className="header__body container">
         <div
           className="logo"
@@ -31,7 +31,7 @@ const Header = () => {
           <div className="header__phone">
             <a href="tel:+375298378081">
               <PhoneIcon />
-              <span>+375 29 837 80 81</span>
+              <span>+375 (44) 752 27 57</span>
             </a>
           </div>
           <div
@@ -49,3 +49,5 @@ const Header = () => {
 }
 
 export default Header
+
+// className={isHome ? 'header' : 'header header--background'} изначально стиль для header

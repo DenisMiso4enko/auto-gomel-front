@@ -67,14 +67,14 @@ const About = () => {
         </div>
       </div>
 
-      <div className="about__gallery">
-        {images.map((image, i) => (
-          <div className="gallery__images" key={i}>
-            <img src={image.imgage} alt="разборка" />
-          </div>
-        ))}
-      </div>
-      <div className="about__block3"></div>
+      {/*<div className="about__gallery">*/}
+      {/*  {images.map((image, i) => (*/}
+      {/*    <div className="gallery__images" key={i}>*/}
+      {/*      <img src={image.imgage} alt="разборка" />*/}
+      {/*    </div>*/}
+      {/*  ))}*/}
+      {/*</div>*/}
+      {/*<div className="about__block3"></div>*/}
     </div>
   )
 }

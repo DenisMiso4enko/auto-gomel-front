@@ -1,9 +1,9 @@
 .parts {
   min-height: 90vh;
-  margin-top: 8rem;
+  margin-top: 2.5rem;
 
   @media (max-width: 900px) {
-    margin-top: 7rem;
+    margin-top: 2.5rem;
   }
 
   &__page-title {
@@ -22,6 +22,7 @@
   @media (max-width: 900px) {
     flex-direction: column;
     align-items: center;
+    gap: 4rem;
   }
 
   &__left {
@@ -49,9 +50,21 @@
 }
 
 .notfound {
-  min-height: 80%;
+  height: 42vh;
+  width: 100%;
+  display: flex;
   text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   h3 {
     margin-top: 2rem;
   }
+}
+
+.right__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  align-items: stretch;
 }

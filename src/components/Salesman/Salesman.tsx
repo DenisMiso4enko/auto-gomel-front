@@ -16,13 +16,13 @@ const Salesman = () => {
       </div>
       <div className="salesman-info__phones">
         <div>
-          <a href="tel:+375298378081">+375 (29) 837 80 81</a>
+          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
         </div>
         <div>
-          <a href="tel:+375298378081">+375 (29) 837 80 81</a>
+          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
         </div>
         <div>
-          <a href="tel:+375298378081">+375 (29) 837 80 81</a>
+          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
         </div>
       </div>
       <div className="salesman-info__say">
