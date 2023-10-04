@@ -1,4 +1,4 @@
-import mtsLogo from '/icons/mts-logo.svg'
+import mtsLogo from '/icons/icons8-мтс.svg'
 import velcomeLogo from '/icons/velcome-logo.svg'
 import { addressesData } from './data'
 import HistoryIcon from '@mui/icons-material/History'

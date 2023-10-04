@@ -9,7 +9,7 @@ import 'swiper/css/autoplay'
 
 const PopularMarks = () => {
   return (
-    <div className="section marks container">
+    <div className=" marks container">
       <SectionTitle title="Поиск по модели" />
       <Swiper
         loop={true}

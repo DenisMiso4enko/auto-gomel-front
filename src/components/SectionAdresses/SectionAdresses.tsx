@@ -1,4 +1,3 @@
-import React from 'react'
 import MapComp from '../Map/Map'
 import Adresses from '../Adresses/Adresses'
 

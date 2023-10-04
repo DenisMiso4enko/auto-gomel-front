@@ -1,51 +1,84 @@
 .banner {
-  margin-bottom: $space-sections;
-  position: relative;
+  margin-bottom: 100px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  background: url('/spare-parts-car.jpg') no-repeat center;
-  background-size: cover;
-
-  &:before {
-    content: '';
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
-      linear-gradient(180deg, rgba(0, 0, 0, 0.82) 0%, rgba(0, 0, 0, 0) 50%);
-  }
+  padding-top: 40px;
 
   &__content {
+  }
+
+  &__image {
     margin: 0 auto;
-    padding: 9rem 0 5rem 0;
-    max-width: 800px;
-    height: 100%;
-    position: relative;
-    color: $color-white;
+    width: 800px;
+    height: 450px;
+    border-radius: 20px;
+    overflow: hidden;
+    margin-bottom: 40px;
+    @media (max-width: 900px) {
+      display: flex;
+      flex: 1 1 auto;
+      width: initial;
+      height: 400px;
+      padding: 0 10px;
+    }
+
+    img {
+      border-radius: 20px;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
   }
 
   &__title {
+    color: #001122;
     margin: 0 auto;
-    margin-bottom: 3rem;
-    max-width: 65%;
-    text-align: center;
-    @include heading($font-weight-700, $font-h1, 140%, $color-white);
+    margin-bottom: 40px;
+    @include heading($font-weight-700, 60px, 140%, #001122);
 
     @media (max-width: 900px) {
-      max-width: 100%;
-      font-size: 2.2rem;
+      font-size: 52px;
+      line-height: 100%;
+    }
+
+    @media (max-width: 480px) {
+      font-size: 40px;
+      line-height: 1em;
     }
   }
 
   &__subtitle {
-    @include heading($font-weight-400, $font-h3, 140%, $color-gray-200);
-    margin-bottom: 2.5rem;
+    @include heading($font-weight-400, $font-h3, 140%, #888888);
+    max-width: 500px;
+    margin: 0 auto;
+    margin-bottom: 1rem;
 
     @media (max-width: 900px) {
-      font-size: 1.2rem;
+      font-size: 20px;
+    }
+  }
+
+  &__btn {
+    padding: 15px;
+    outline: none;
+    border: none;
+    border-radius: 8px;
+    background-color: $color-black;
+    color: $color-white;
+    font-size: 14px;
+    -webkit-box-shadow: 0 7px 8px 0 rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0 7px 8px 0 rgba(34, 60, 80, 0.2);
+    box-shadow: 0 7px 8px 0 rgba(34, 60, 80, 0.2);
+    cursor: pointer;
+    transition: border 0.2s ease-in-out, color 0.2s ease-in-out,
+    background 0.2s ease-in-out;
+
+    &:hover {
+      background-color: #013300;
+      // color: $color-black;
     }
   }
 }

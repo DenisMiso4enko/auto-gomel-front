@@ -27,18 +27,18 @@ $btn-variants: (
   'success': (
     'color': $color-white,
     'color-hover': $color-white,
-    'bg-color': $color-green,
-    'bg-color-hover': $color-green-100,
-    'border': 1px solid $color-green,
-    'border-hover': 1px solid $color-green-100,
+    'bg-color': #222222,
+    'bg-color-hover': #013300,
+    //'border': 1px solid #222222,
+    'border-hover': #929191,
   ),
   'red': (
     'color': $color-white,
     'color-hover': $color-white,
     'bg-color': $color-red,
-    'bg-color-hover': $color-red-100,
-    'border': 1px solid $color-red,
-    'border-hover': 1px solid $color-red-100,
+    'bg-color-hover': #9E0D0B,
+    //'border': 1px solid $color-red,
+    //'border-hover': 1px solid $color-red-100,
   ),
 );
 
