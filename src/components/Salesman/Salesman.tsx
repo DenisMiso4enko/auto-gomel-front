@@ -1,4 +1,3 @@
-import React from 'react'
 import HistoryIcon from '@mui/icons-material/History'
 
 const Salesman = () => {
@@ -16,13 +15,13 @@ const Salesman = () => {
       </div>
       <div className="salesman-info__phones">
         <div>
-          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
+          <a href="tel:+375447522757">+375 (44) 752 27 57</a>
         </div>
         <div>
-          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
+          <a href="tel:+375297522757">+375 (29) 752 27 57</a>
         </div>
         <div>
-          <a href="tel:+375447522757">+375 (44) 762 27 57</a>
+          <a href="tel:+375447585536">+375 (44) 758 55 36</a>
         </div>
       </div>
       <div className="salesman-info__say">

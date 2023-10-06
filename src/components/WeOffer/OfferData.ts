@@ -1,6 +1,6 @@
-import garage from '../../../public/garage.svg'
-import gar from '../../../public/gar.svg'
-import camera from '../../../public/camer.svg'
+import garage from '/garage.svg'
+import gar from '/gar.svg'
+import camera from '/camer.svg'
 
 export const offerData = [
   {

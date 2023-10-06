@@ -61,6 +61,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   }
 
   const handlerOnSubmitSearchForm = async (e: any) => {
+    window.scrollTo(0, 0)
     e.preventDefault()
     setSearchParams({ ...formFields })
     dispatch(setCurrentPage(1))

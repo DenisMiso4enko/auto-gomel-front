@@ -32,6 +32,7 @@ const Details = () => {
   )
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     // @ts-ignore
     dispatch(fetchGetProduct(id))
   }, [id])

@@ -24,12 +24,12 @@ const Header = () => {
           style={{ fontSize: '20px', fontWeight: '700' }}
           onClick={goHome}
         >
-          АВТО.ГОМЕЛЬ
+          АВТОГОМЕЛЬ
         </div>
         <NavMenu isOpen={isOpen} setIsOpen={setIsOpen} />
         <div className="header__right">
           <div className="header__phone">
-            <a href="tel:+375298378081">
+            <a href="tel:+375447522757">
               <PhoneIcon />
               <span>+375 (44) 752 27 57</span>
             </a>
