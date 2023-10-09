@@ -19,6 +19,10 @@
     rgba(130, 130, 130, 0.2) 33%
   );
   animation: wave-squares 2s infinite ease-out;
+
+  @media (max-width: 900px) {
+    margin-bottom: 20px;
+  }
 }
 .skeleton-title,
 .skeleton-car,

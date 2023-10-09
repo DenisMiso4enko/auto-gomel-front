@@ -15,6 +15,7 @@ import noImage from '../../assets/nofoto2.jpg'
 import Crumbs from '../../components/Crumbs/Crumbs'
 import Salesman from '../../components/Salesman/Salesman'
 import { Helmet } from 'react-helmet'
+import { useConvertedToByn } from '../../libs/hooks/useConvertedToByn'
 
 export type currentType = {
   product: string | undefined
@@ -30,6 +31,18 @@ const Details = () => {
   const { product, loading } = useSelector(
     (state: RootState) => state.autoParts
   )
+  const { rates } = useSelector((state: RootState) => state.settings)
+  const usd: any = rates?.find(
+    ({ Cur_Abbreviation }) => Cur_Abbreviation === 'USD'
+  )
+  const { priceToBYN } = useConvertedToByn(product?.price!)
+  // console.log('курс доллара', usd)
+  // const convertToUsd = (price: number) => {
+  //   const percent = 5
+  //   const converted = price * usd?.Cur_OfficialRate
+  //   // const newPrice = converted + (converted * percent) / 100
+  //   return `${(converted + (+converted * percent) / 100).toFixed(2)} BYN`
+  // }
 
   useEffect(() => {
     window.scrollTo(0, 0)
@@ -85,8 +98,12 @@ const Details = () => {
                 </div>
                 <div className="details__price details-item">
                   <p>
-                    <AccountBalanceWalletIcon /> {product.price}{' '}
-                    {product.currency}
+                    <AccountBalanceWalletIcon />
+                    {product.currency === 'USD'
+                      ? priceToBYN
+                      : `${product.price}  ${product.currency}`}
+                    {/* {convertToUsd(product.price)} {product.price}{' '}
+                    {product.currency} */}
                   </p>
                 </div>
                 <div className="details__desc details-item">

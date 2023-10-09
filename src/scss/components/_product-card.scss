@@ -18,7 +18,7 @@
       color: #388e3c;
     }
   }
-  
+
   @media (max-width: 800px) {
     width: 48%;
   }
@@ -76,7 +76,6 @@
   }
 
   &__product {
-
   }
 
   &__subtitle {
@@ -136,7 +135,9 @@
 
   &__info {
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
+    gap: 10px;
+    // justify-content: space-between;
   }
 
   &__date {
