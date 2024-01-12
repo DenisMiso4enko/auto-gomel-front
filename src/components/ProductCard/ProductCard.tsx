@@ -7,55 +7,53 @@ import dayjs from 'dayjs'
 import HistoryIcon from '@mui/icons-material/History'
 
 const ProductCart: FC<IProduct> = ({
-  description,
-  imagesUrl,
-  product,
-  price,
-  year,
-  mark,
-  model,
-  currency,
-  createdAt,
-  _id,
-}) => {
+                                     description,
+                                     imagesUrl,
+                                     product,
+                                     price,
+                                     year,
+                                     mark,
+                                     model,
+                                     currency,
+                                     createdAt,
+                                     _id,
+                                   }) => {
   const navigate = useNavigate()
   const handlerOnClickProduct = () => {
     navigate(`/parts/${_id}`)
-    window.scrollTo(0, 0)
+    // window.scrollTo(0, 0)
   }
 
   return (
     <div className="product-card" onClick={handlerOnClickProduct}>
-      <div
-        className={
+
+      {imagesUrl.length ? (
+        <img className={
           imagesUrl.length
             ? 'product-card__image'
             : 'product-card__image product-card__image--padding'
-        }
-      >
-        {imagesUrl.length ? (
-          <img src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product} />
-        ) : (
-          <img src={noImage} alt={product} />
-        )}
-      </div>
+        } src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product} />
+      ) : (
+        <img className={
+          imagesUrl.length
+            ? 'product-card__image'
+            : 'product-card__image product-card__image--padding'
+        } src={noImage} alt={product} />
+      )}
       <div className="product-card__content">
         <div className="product-card__info">
           <p className="product-card__subtitle">{product}</p>
           <h3 className="product-card__title">
             {mark} {model}, {year}
           </h3>
-          <p className="product-card__description">{description}</p>
         </div>
-        <div className="product-card__rates">
+        <div className="product-card__bottom">
+          <span className="product-card__date">
+            <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
+          </span>
           <p className="product-card__price">
             {price} {currency}
           </p>
-        </div>
-        <div className="product-card__date">
-          <span>
-            <HistoryIcon /> {dayjs(createdAt).format('DD.MM.YYYY')}
-          </span>
         </div>
       </div>
     </div>

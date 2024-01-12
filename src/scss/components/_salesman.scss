@@ -1,7 +1,7 @@
 .salesman-info {
-  border: 1px solid $color-gray-300;
-  border-radius: 0.5rem;
-  padding: 0.7rem;
+  //border: 1px solid $color-gray-300;
+  //border-radius: 0.5rem;
+  //padding: 0.7rem;
 
   @media (max-width: 850px) {
     display: flex;
@@ -23,7 +23,7 @@
     display: flex;
     align-items: center;
     gap: 0.7rem;
-    margin-bottom: 0.3rem;
+    margin-bottom: 1rem;
 
     p {
       font-size: 1rem;
@@ -32,8 +32,8 @@
 
   &__address {
     font-size: 1.1rem;
-    line-height: 1.5rem;
-    margin-bottom: 1.3rem;
+    line-height: 1.6rem;
+    margin-bottom: 2rem;
 
     span {
       font-weight: bold;
@@ -54,21 +54,28 @@
 
       a {
         padding: 0.7rem 0.7rem;
-        background: #388e3c;
-        color: $color-white;
+        background: #F5F5F5;
+        color: $color-black;
         border-radius: 0.5rem;
-        font-weight: bold;
+        font-weight: 500;
         transition: background 0.3s ease;
+        border: 1px solid #E5E7EB;
 
         &:hover {
-          background: #4caf50;
+          transform: scale(1.5);
+          outline: 1px solid #4979E5;
         }
       }
     }
   }
 
+  &__say {
+    margin-top: 1rem;
+  }
+
   &__say > span {
     padding-left: 0.3rem;
-    font-weight: bold;
+	  font-size: 18px;
+    font-weight: 600;
   }
 }

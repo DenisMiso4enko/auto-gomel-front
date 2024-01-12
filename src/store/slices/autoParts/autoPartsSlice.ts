@@ -10,7 +10,7 @@ const initialState: IAutoPartsInitialState = {
   totalPages: 1,
   currentPage: 1,
   totalProducts: 0,
-  limit: 8,
+  limit: 9,
 }
 
 export const autoPartsSlice = createSlice({

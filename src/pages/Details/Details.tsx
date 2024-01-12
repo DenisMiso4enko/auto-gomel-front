@@ -10,7 +10,6 @@ import AccountBalanceWalletIcon from '@mui/icons-material/AccountBalanceWallet'
 import ImagesGallery from '../../components/ImagesGallery/ImagesGallery'
 import DetailsSkeleton from '../../components/DetailsSkeleton/DetailsSkeleton'
 import ErrorMessage from '../../components/ErrorMessage/ErrorMessage'
-// import noImage from "/no-img.png";
 import noImage from '../../assets/nofoto2.jpg'
 import Crumbs from '../../components/Crumbs/Crumbs'
 import Salesman from '../../components/Salesman/Salesman'
@@ -28,10 +27,11 @@ const Details = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { id } = useParams()
   const { product, loading } = useSelector(
-    (state: RootState) => state.autoParts
+    (state: RootState) => state.autoParts,
   )
 
   useEffect(() => {
+    window.scrollTo(0, 0)
     // @ts-ignore
     dispatch(fetchGetProduct(id))
   }, [id])
@@ -73,7 +73,7 @@ const Details = () => {
                 )}
               </div>
               <div className="details__info">
-                <div className="details__product details-item">
+                <div className="details__product">
                   <h2>{product.product}</h2>
                   <div className="car">
                     <DirectionsCarIcon />
@@ -88,19 +88,20 @@ const Details = () => {
                     {product.currency}
                   </p>
                 </div>
-                <div className="details__desc details-item">
-                  {product.description}
-                </div>
+                {product.description && (
+                  <div className="details__desc details-item">
+                    {product.description}
+                  </div>
+                )}
                 <div className="details__service">
-                  <div className="details__service-item">
-                    <LocalShippingIcon color={'warning'} />
-                    <p>Отправляем по Беларуси</p>
-                  </div>
-                  <div className="details__service-item">
-                    <WorkspacePremiumIcon color={'warning'} />
-                    <p>7 дней гарантия</p>
-                  </div>
+                    <p className="details__service-item">Отправляем по Беларуси</p>
+                    {/*<LocalShippingIcon color={'warning'} />*/}
+                    {/*<p>Отправляем по Беларуси</p>*/}
+                    <p className="details__service-item">7 дней гарантия</p>
+                    {/*<WorkspacePremiumIcon color={'warning'} />*/}
+                    {/*<p>7 дней гарантия</p>*/}
                 </div>
+                <div className="details-item"></div>
                 <Salesman />
               </div>
             </div>

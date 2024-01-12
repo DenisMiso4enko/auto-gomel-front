@@ -27,8 +27,8 @@ $btn-variants: (
   'success': (
     'color': $color-white,
     'color-hover': $color-white,
-    'bg-color': $color-green,
-    'bg-color-hover': $color-green-100,
+    'bg-color': $color-blue,
+    'bg-color-hover': $color-blue-100,
     'border': 1px solid $color-green,
     'border-hover': 1px solid $color-green-100,
   ),
@@ -68,11 +68,11 @@ $btn-variants: (
     &-#{$name} {
       color: map-get($styles, 'color');
       background: map-get($styles, 'bg-color');
-      border: map-get($styles, 'border');
+      //border: map-get($styles, 'border');
       &:hover:not([disabled]) {
         color: map-get($styles, 'color-hover');
         background: map-get($styles, 'bg-color-hover');
-        border: map-get($styles, 'border-hover');
+        //border: map-get($styles, 'border-hover');
       }
     }
   }
@@ -97,7 +97,7 @@ $btn-variants: (
   }
 
   &:hover {
-    box-shadow: 0 0 5px 5px $color-medium-blue;
+    //box-shadow: 0 0 5px 5px $color-medium-blue;
     opacity: 0.9;
     svg {
       fill: #000;
@@ -108,4 +108,9 @@ $btn-variants: (
 .btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
+}
+
+
+.btn-form {
+  margin-top: 20px;
 }

@@ -14,7 +14,6 @@ interface IFormSearch {
 
 const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const dispatch = useDispatch<AppDispatch>()
-
   //states global
   const { autos, options, partsCategory } = useSelector(
     (state: RootState) => state.settings
@@ -22,7 +21,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const { currentPage, limit } = useSelector(
     (state: RootState) => state.autoParts
   )
-
   //states searchParams
   const [searchParams, setSearchParams] = useSearchParams()
   const queryMark = searchParams.get('mark') || ''
@@ -31,7 +29,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
   const queryArticle = searchParams.get('article') || ''
   const queryNumberOfProduct = searchParams.get('numberOfProduct') || ''
   const queryProduct = searchParams.get('product') || ''
-
   //states local
   const [mark, setMark] = useState(queryMark)
   const [modelVal, setModelVal] = useState(queryModel)
@@ -95,9 +92,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     limit,
   ])
 
-  // const checkButtonDisabled = () => {
-  //   return !mark || !productVal || !articleVal || !numberVal;
-  // }
 
   return (
     <div className="form-search__container">
@@ -117,7 +111,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" />
+            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
           </div>
         </div>
 
@@ -136,7 +130,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" />
+            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
           </div>
         </div>
 
@@ -156,7 +150,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
               ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" />
+            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
           </div>
         </div>
 
@@ -174,27 +168,27 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" />
+            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
           </div>
         </div>
 
-        <input
-          className="form-control"
-          type="text"
-          placeholder="Номер по каталогу"
-          value={numberVal}
-          onChange={(event) => setNumberVal(event.target.value)}
-        />
-        <input
-          className="form-control"
-          type="text"
-          placeholder="Артикул"
-          value={articleVal}
-          onChange={(event) => setArticleVal(event.target.value)}
-        />
+        {/*<input*/}
+        {/*  className="form-control"*/}
+        {/*  type="text"*/}
+        {/*  placeholder="Номер по каталогу"*/}
+        {/*  value={numberVal}*/}
+        {/*  onChange={(event) => setNumberVal(event.target.value)}*/}
+        {/*/>*/}
+        {/*<input*/}
+        {/*  className="form-control"*/}
+        {/*  type="text"*/}
+        {/*  placeholder="Артикул"*/}
+        {/*  value={articleVal}*/}
+        {/*  onChange={(event) => setArticleVal(event.target.value)}*/}
+        {/*/>*/}
 
         <button
-          className="btn btn-lg btn-success"
+          className="btn btn-lg btn-success btn-form"
           disabled={!mark && !productVal && !articleVal && !numberVal}
         >
           Поиск

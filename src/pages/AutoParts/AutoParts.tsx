@@ -6,7 +6,7 @@ import FormSearch from '../../components/FormSerach/FormSearch'
 import ProductCard from '../../components/ProductCard/ProductCard'
 import PaginationController from '../../components/Pagination/PaginationController'
 import { IProduct } from '../../types/productTypes'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Helmet } from 'react-helmet'
 
 const AutoParts = () => {
@@ -14,12 +14,16 @@ const AutoParts = () => {
   const { parts, currentPage, totalPages, loading, totalProducts, limit } =
     useSelector((state: RootState) => state.autoParts)
 
+  useEffect(() => {
+    window.scrollTo(0, 0)
+  }, [])
+
   const handlerChangeCurrentPage = (
     event: React.ChangeEvent<unknown>,
     value: number
   ) => {
-    dispatch(setCurrentPage(value))
     window.scrollTo(0, 0)
+    dispatch(setCurrentPage(value))
   }
 
   return (
@@ -32,23 +36,26 @@ const AutoParts = () => {
           <FormSearch title="Поиск запчастей" />
         </div>
         <div className="parts-row__right">
-          {loading && [...new Array(limit)].map((_, i) => <Skeleton key={i} />)}
-          {!loading && !!totalProducts ? (
-            parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
-              <ProductCard key={part._id} {...part} />
-            ))
-          ) : (
-            <div className="notfound">
-              <h3>По вашему запросу ничего не найдено...</h3>
-            </div>
-          )}
+          <div className="parts-row__list">
+            {loading && [...new Array(limit)].map((_, i) => <Skeleton key={i} />)}
+            {!loading && !!parts ? (
+              parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
+                <ProductCard key={part._id} {...part} />
+              ))
+            ) : (
+              <div className="notfound">
+                <h3>По вашему запросу ничего не найдено...</h3>
+              </div>
+            )}
+          </div>
           <PaginationController
             currentPage={currentPage}
             totalPages={totalPages}
             handlerChangeCurrentPage={handlerChangeCurrentPage}
           />
         </div>
-      </div>
+        </div>
+
     </div>
   )
 }

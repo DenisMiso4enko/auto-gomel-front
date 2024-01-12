@@ -1,12 +1,14 @@
 // Colors
-$color-white: #ffffff;
+$color-white: #FAFAFA;
 // $color-green: #6FB062;
 // $color-green: #173C2B;
 $color-green: #00796b;
+$color-blue: #3662E3;
+$color-blue-100: #4375F3FF;
 // $color-green-100: #3c654a;
 $color-green-100: #009688;
-$color-red: #de3939;
-$color-red-100: #fa4c4c;
+$color-red: #E02500;
+$color-red-100: #F24449;
 $color-purple: #2b2747;
 $color-black: #262724;
 $color-light-blue: #f4f6fa;
@@ -17,6 +19,7 @@ $color-gray-400: #bdbdbd;
 $color-gray-300: #d9d9d9;
 $color-gray-300: #d9d9d9;
 $color-gray-200: #dcdcdc;
+$color-gray-border: #E5E5E5;
 $color-orange: #ed6c02;
 
 //Typography
@@ -33,7 +36,8 @@ $font-weight-500: 700;
 $font-weight-700: 700;
 
 //
-$border-radius-btn: 10px;
+$border-radius-btn: 3px;
+$border-radius-inputs: 3px;
 
 // spacing
 
