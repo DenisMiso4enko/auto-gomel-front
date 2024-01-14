@@ -92,7 +92,6 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
     limit,
   ])
 
-
   return (
     <div className="form-search__container">
       <h3 className="form-title">{title}</h3>
@@ -111,7 +110,12 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
+            <img
+              src="/polygone.svg"
+              alt="polygone"
+              height="24px"
+              width="24px"
+            />
           </div>
         </div>
 
@@ -130,7 +134,12 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
+            <img
+              src="/polygone.svg"
+              alt="polygone"
+              height="24px"
+              width="24px"
+            />
           </div>
         </div>
 
@@ -150,7 +159,12 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
               ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
+            <img
+              src="/polygone.svg"
+              alt="polygone"
+              height="24px"
+              width="24px"
+            />
           </div>
         </div>
 
@@ -168,7 +182,12 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
             ))}
           </select>
           <div className="icon-container">
-            <img src="/polygone.svg" alt="polygone" height="24px" width="24px" />
+            <img
+              src="/polygone.svg"
+              alt="polygone"
+              height="24px"
+              width="24px"
+            />
           </div>
         </div>
 

@@ -27,7 +27,7 @@ const Details = () => {
   const dispatch = useDispatch<AppDispatch>()
   const { id } = useParams()
   const { product, loading } = useSelector(
-    (state: RootState) => state.autoParts,
+    (state: RootState) => state.autoParts
   )
 
   useEffect(() => {
@@ -94,12 +94,14 @@ const Details = () => {
                   </div>
                 )}
                 <div className="details__service">
-                    <p className="details__service-item">Отправляем по Беларуси</p>
-                    {/*<LocalShippingIcon color={'warning'} />*/}
-                    {/*<p>Отправляем по Беларуси</p>*/}
-                    <p className="details__service-item">7 дней гарантия</p>
-                    {/*<WorkspacePremiumIcon color={'warning'} />*/}
-                    {/*<p>7 дней гарантия</p>*/}
+                  <p className="details__service-item">
+                    Отправляем по Беларуси
+                  </p>
+                  {/*<LocalShippingIcon color={'warning'} />*/}
+                  {/*<p>Отправляем по Беларуси</p>*/}
+                  <p className="details__service-item">7 дней гарантия</p>
+                  {/*<WorkspacePremiumIcon color={'warning'} />*/}
+                  {/*<p>7 дней гарантия</p>*/}
                 </div>
                 <div className="details-item"></div>
                 <Salesman />

@@ -37,14 +37,15 @@ const AutoParts = () => {
         </div>
         <div className="parts-row__right">
           <div className="parts-row__list">
-            {loading && [...new Array(limit)].map((_, i) => <Skeleton key={i} />)}
-            {!loading && !!parts ? (
+            {loading &&
+              [...new Array(limit)].map((_, i) => <Skeleton key={i} />)}
+            {!loading && !!parts.length ? (
               parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
                 <ProductCard key={part._id} {...part} />
               ))
             ) : (
               <div className="notfound">
-                <h3>По вашему запросу ничего не найдено...</h3>
+                <h4>По вашему запросу ничего не найдено...</h4>
               </div>
             )}
           </div>
@@ -54,8 +55,7 @@ const AutoParts = () => {
             handlerChangeCurrentPage={handlerChangeCurrentPage}
           />
         </div>
-        </div>
-
+      </div>
     </div>
   )
 }

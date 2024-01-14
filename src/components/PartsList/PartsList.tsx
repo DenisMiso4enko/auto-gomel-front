@@ -10,6 +10,9 @@ const PartsList = ({ parts, loading }: any) => {
         : parts?.map((part: JSX.IntrinsicAttributes & IProduct) => (
             <ProductCard key={part._id} {...part} />
           ))}
+      {/* {
+        !loading && !parts.length && (<h4>По вашему запросу ничего не найдено...</h4>)
+      } */}
     </>
   )
 }

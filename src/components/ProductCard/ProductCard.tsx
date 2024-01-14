@@ -7,17 +7,17 @@ import dayjs from 'dayjs'
 import HistoryIcon from '@mui/icons-material/History'
 
 const ProductCart: FC<IProduct> = ({
-                                     description,
-                                     imagesUrl,
-                                     product,
-                                     price,
-                                     year,
-                                     mark,
-                                     model,
-                                     currency,
-                                     createdAt,
-                                     _id,
-                                   }) => {
+  description,
+  imagesUrl,
+  product,
+  price,
+  year,
+  mark,
+  model,
+  currency,
+  createdAt,
+  _id,
+}) => {
   const navigate = useNavigate()
   const handlerOnClickProduct = () => {
     navigate(`/parts/${_id}`)
@@ -26,19 +26,26 @@ const ProductCart: FC<IProduct> = ({
 
   return (
     <div className="product-card" onClick={handlerOnClickProduct}>
-
       {imagesUrl.length ? (
-        <img className={
-          imagesUrl.length
-            ? 'product-card__image'
-            : 'product-card__image product-card__image--padding'
-        } src={`${PATHDOMAIN}${imagesUrl[0]}`} alt={product} />
+        <img
+          className={
+            imagesUrl.length
+              ? 'product-card__image'
+              : 'product-card__image product-card__image--padding'
+          }
+          src={`${PATHDOMAIN}${imagesUrl[0]}`}
+          alt={product}
+        />
       ) : (
-        <img className={
-          imagesUrl.length
-            ? 'product-card__image'
-            : 'product-card__image product-card__image--padding'
-        } src={noImage} alt={product} />
+        <img
+          className={
+            imagesUrl.length
+              ? 'product-card__image'
+              : 'product-card__image product-card__image--padding'
+          }
+          src={noImage}
+          alt={product}
+        />
       )}
       <div className="product-card__content">
         <div className="product-card__info">
