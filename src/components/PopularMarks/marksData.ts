@@ -1,11 +1,11 @@
-import audi from '/Audi_1.jpg'
-import mers from '/Mercedes_1.jpg'
-import volvo from '/Volvo_Logos_.jpg'
-import volkswagen from '/Volkswagen_1.jpg'
-import renault from '/Renault_1.jpg'
-import ford from '/Ford_1.jpg'
-import opel from '/Opel_1.jpg'
-import iveco from '/IVECO_logo.jpg'
+import audi from '/Audi_1.webp'
+import mers from '/Mercedes-benz_1.webp'
+import volvo from '/Volvo_1.webp'
+import volkswagen from '/Volkswagen_1.webp'
+import renault from '/Renault_1.webp'
+import ford from '/Ford_1.webp'
+import opel from '/Opel_1.webp'
+import iveco from '/Iveco_1.webp'
 
 export const marksData = [
   {

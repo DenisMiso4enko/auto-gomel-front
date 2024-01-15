@@ -34,6 +34,10 @@ const NavMenu = ({ isOpen, setIsOpen }: any) => {
               onClick={(event) => {
                 setIsOpen(false)
                 handlerChangeCurrentPage(event, 1)
+                // TS ругается на метод matches =>
+                // if (event.target.matches('a[href$="parts"]')) {
+                //   handlerChangeCurrentPage(event, 1)
+                // }
               }}
             >
               {el.title}

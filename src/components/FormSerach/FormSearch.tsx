@@ -208,7 +208,8 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
 
         <button
           className="btn btn-lg btn-success btn-form"
-          disabled={!mark && !productVal && !articleVal && !numberVal}
+          // Кикнул строку, чтобы небыло бага при кликании на "Запчасти" и последующей чистке формы поиска
+          // disabled={!mark && !productVal && !articleVal && !numberVal}
         >
           Поиск
         </button>
@@ -225,7 +226,7 @@ const FormSearch = ({ container, sm, title }: IFormSearch) => {
           >
             Очистить форму
           </button>
-        ) : null}
+        ) : false}
       </form>
     </div>
   )
